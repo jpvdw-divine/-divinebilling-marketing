@@ -1,4 +1,50 @@
-@import url('tokens.css');
+/* Bill-All design tokens — inlined to avoid a render-blocking @import round-trip */
+:root {
+  /* Canvas */
+  --page:        #FBFBFD;
+  --surface:     #FFFFFF;
+  --surface-alt: #F6F6F9;
+
+  /* Ink */
+  --ink:         #0D0D12;
+  --ink-2:       #6E6E80;
+  --ink-3:       #8E8EA0;
+
+  /* Accent — violet */
+  --accent:      #6D5AE6;
+  --accent-hover:#5B48D4;
+  --accent-bg:   #F0EEFE;
+  --accent-text: #3C3489;
+
+  /* Lines */
+  --line:        #EAEAF0;
+  --line-strong: #E1E1EA;
+
+  /* Money states — accent never touches these */
+  --paid:        #0F6E56;  --paid-bg:    #E1F5EE;
+  --pending:     #854F0B;  --pending-bg: #FAEEDA;
+  --overdue:     #A32D2D;  --overdue-bg: #FCEBEB;
+
+  /* Inverted panel — login split */
+  --panel-bg:     #0D0D12;
+  --panel-ink:    #FFFFFF;
+  --panel-ink-2:  #9E9EAE;
+  --panel-ink-3:  #5A5A6A;
+  --panel-accent: #8E7BF0;
+
+  /* Type */
+  --font:        'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono:   'JetBrains Mono', ui-monospace, monospace;
+  --track-tight: -0.035em;
+  --track:       -0.035em;
+
+  /* Layout */
+  --wrap: 1080px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
