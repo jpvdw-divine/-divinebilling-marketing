@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bill-All — billing, books and clarity for SA business owners. By Divine Online Solutions.">
+  <title>Every bill. One place. · Bill-All</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/billall-logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.8.97">
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav__in">
+      
+      <a class="brand" href="/"><span class="brand__mark">B</span>Bill-All</a>
+      
+      
+      <div class="nav__links">
+        <a href="/modules">Modules</a>
+        <a href="/pricing">Pricing</a>
+        <a href="http://demo.bill-all.divineonline.solutions" target="_blank" rel="noopener noreferrer">Demo</a>
+      </div>
+      
+      
+      <div class="nav__end">
+        <a class="btn btn--sm btn--ghost" href="https://bill-all.divineonline.solutions/login">Log in</a>
+        <a class="btn btn--sm btn--dark" href="https://bill-all.divineonline.solutions/get-started">Get started</a>
+      </div>
+      
+    </div>
+  </nav>
+
+  
+    
+  
+
+  
+<header class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <span class="eyebrow">Built in Cape Town · SA-hosted</span>
+      <h1>Every bill.<br>One place.</h1>
+      <p class="lede">One clear view of cash flow, contractors, invoices and profit — without spreadsheets scattered across inboxes.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="https://bill-all.divineonline.solutions/get-started">Start free trial</a>
+        <a class="btn btn--ghost" href="http://demo.bill-all.divineonline.solutions" target="_blank" rel="noopener noreferrer">Try the live demo</a>
+      </div>
+      <p class="hero__note">From R275/pm ex VAT.<br>Contractors use the portal free, on every plan.</p>
+    </div>
+
+    <div class="switcher">
+      <div class="switcher__head">
+        <p>Build your plan</p>
+        <span class="switcher__count"><span id="switcher-count" class="mono">4</span> of 25 modules</span>
+      </div>
+      <div class="switcher__list" id="switcher-list"></div>
+      <div class="switcher__foot">
+        <div class="switcher__tier">
+          <p>Your tier</p>
+          <p id="switcher-tier">Basic</p>
+        </div>
+        <div class="switcher__price">
+          <div class="amt mono">R <span id="switcher-price">250</span></div>
+          <div class="per">per month, ex VAT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="modules">
+  <div class="wrap">
+    <div class="section__head">
+      <h2>Switch on what you need.</h2>
+      <p>Modules that share one workspace — billing, books, contractors and clients. Start with the core and add as you grow. Nothing is re-typed.</p>
+    </div>
+    <div class="grid grid--3">
+      
+      <div class="card card--module">
+        <span class="chip chip--core">Core</span>
+        <h3>Dashboard &amp; live P&amp;L</h3>
+        <p>Weekly and monthly profit views, KPI cards and break-even tracking — updated as transactions land.</p>
+      </div>
+      
+      <div class="card card--module">
+        <span class="chip chip--core">Core</span>
+        <h3>Transactions &amp; ledger</h3>
+        <p>Every expense, transfer and income in one place. Manual entry, categories and full audit history.</p>
+      </div>
+      
+      <div class="card card--module">
+        <span class="chip chip--billing">Billing</span>
+        <h3>Contractor billing &amp; payments</h3>
+        <p>Contractors log timesheets, raise invoices and submit for payment — you approve from one queue.</p>
+      </div>
+      
+      <div class="card card--module">
+        <span class="chip chip--billing">Billing</span>
+        <h3>Contract work timesheets</h3>
+        <p>Track contractor hours by client and project. Import timesheets from CSV or Excel.</p>
+      </div>
+      
+      <div class="card card--module">
+        <span class="chip chip--billing">Billing</span>
+        <h3>Clients &amp; quotes</h3>
+        <p>Invoice your customers, send quotes and convert to invoices on acceptance. Branded PDF exports.</p>
+      </div>
+      
+      <div class="card card--module">
+        <span class="chip chip--portal">Portal</span>
+        <h3>Customer portal &amp; statements</h3>
+        <p>Customers sign in to view invoices, quotes, balances and download account statements.</p>
+      </div>
+      
+    </div>
+    <p style="margin-top:24px"><a href="/modules" style="color:var(--accent);font-size:14px;font-weight:500">View all 25 live modules and the roadmap →</a></p>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section__head">
+      <h2>From R275/pm.<br>Contractors are free.</h2>
+      <p>Pay for office seats and companies. Contractor portal users are unlimited on every plan. Prices ex VAT — Standard includes 3 companies vs one Xero organisation at R450/mo incl VAT.</p>
+    </div>
+
+    <div class="toggle" role="group" aria-label="Billing period">
+      <button type="button" id="btnMonthly" aria-pressed="true">Monthly</button>
+      <button type="button" id="btnAnnual" aria-pressed="false">Annual<span class="save">2 months free</span></button>
+    </div>
+
+    <div class="tiers" id="home-tiers"></div>
+    <p class="fine">R500 one-time setup on Basic, Standard &amp; Professional · POPIA-aligned · SA-hosted · cancel anytime</p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <h2>Get in touch</h2>
+        <p style="margin-top:12px">Ask about onboarding, pricing, or migrating from spreadsheets. We typically reply within one business day.</p>
+        <ul class="contact-points">
+          <li>Setup walkthrough for owners and bookkeepers</li>
+          <li>Contractor onboarding</li>
+          <li>Multi-company and group reporting</li>
+        </ul>
+        <p style="margin-top:16px;font-size:13px;color:var(--ink-3)"><strong style="color:var(--ink)">POPIA:</strong> We use your details only to respond to this inquiry. See our <a href="/privacy" style="color:var(--accent)">privacy policy</a>.</p>
+      </div>
+      <form class="contact-form" method="POST" action="https://bill-all.divineonline.solutions/contact">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="c-name">Your name *</label>
+            <input id="c-name" type="text" name="name" required maxlength="80" placeholder="Jane Owner">
+          </div>
+          <div class="form-field">
+            <label for="c-email">Email *</label>
+            <input id="c-email" type="email" name="email" required maxlength="120" placeholder="you@company.co.za">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="c-company">Company</label>
+            <input id="c-company" type="text" name="company" maxlength="120" placeholder="Your business name">
+          </div>
+          <div class="form-field">
+            <label for="c-phone">Phone</label>
+            <input id="c-phone" type="tel" name="phone" maxlength="30" placeholder="+27 …">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="c-subject">Subject</label>
+          <select id="c-subject" name="subject">
+            <option value="Pricing &amp; onboarding" selected>Pricing &amp; onboarding</option>
+            <option value="Basic plan setup">Basic plan setup</option>
+            <option value="Demo request">Demo request</option>
+            <option value="General inquiry">General inquiry</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="c-message">Message *</label>
+          <textarea id="c-message" name="message" rows="4" required maxlength="2000" placeholder="Tell us about your business…"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="popia_consent" value="yes" required>
+          <span>I consent to Divine Online Solutions processing my personal information to respond to this inquiry, in line with POPIA and the <a href="/privacy">privacy policy</a>.</span>
+        </label>
+        <button class="btn btn--primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+  
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__grid">
+        <div>
+          <a class="brand" href="/" style="margin-bottom:12px"><span class="brand__mark">B</span>Bill-All</a>
+          <p>Billing, books and clarity for South African business owners. Built by <a href="https://www.divineonline.solutions/" target="_blank" rel="noopener">Divine Online Solutions</a>, Cape Town.</p>
+        </div>
+        <div>
+          <h3>Trust &amp; hosting</h3>
+          <ul>
+            <li>Data hosted in South Africa</li>
+            <li>Daily encrypted backups</li>
+            <li>POPIA-aligned processing</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/modules">Modules</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/roadmap">Roadmap</a></li>
+            <li><a href="http://demo.bill-all.divineonline.solutions" target="_blank" rel="noopener noreferrer">Demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <ul>
+            <li><a href="/privacy">Privacy policy</a></li>
+            <li><a href="/terms">Terms of use</a></li>
+            <li><a href="/#contact">Get in touch</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot__bar">© 2026 Divine Online Solutions · Cape Town, South Africa</div>
+    </div>
+  </footer>
+  
+
+  
+<script>
+(function () {
+  var TICK = '<svg viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 8.8 10 3.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var MODULES = [{"core": true, "d": "Weekly and monthly profit views, KPI cards and break-even tracking \u2014 updated as transactions land.", "n": "Dashboard \u0026 live P\u0026L", "t": "core"}, {"core": true, "d": "Every expense, transfer and income in one place. Manual entry, categories and full audit history.", "n": "Transactions \u0026 ledger", "t": "core"}, {"core": true, "d": "Contractors log timesheets, raise invoices and submit for payment \u2014 you approve from one queue.", "n": "Contractor billing \u0026 payments", "t": "billing"}, {"core": false, "d": "Track contractor hours by client and project. Import timesheets from CSV or Excel.", "n": "Contract work timesheets", "t": "billing"}, {"core": true, "d": "Invoice your customers, send quotes and convert to invoices on acceptance. Branded PDF exports.", "n": "Clients \u0026 quotes", "t": "billing"}, {"core": false, "d": "Customers sign in to view invoices, quotes, balances and download account statements.", "n": "Customer portal \u0026 statements", "t": "portal"}, {"core": false, "d": "Self-service profile, bank details, documents, timesheets and invoice submission for field staff.", "n": "Contractor portal", "t": "portal"}, {"core": false, "d": "Connect IMAP \u2014 PDF invoices flagged for payment and assigned to income or expense categories.", "n": "Email inbox capture", "t": "core"}, {"core": false, "d": "Import bank CSVs and PDF statements instead of retyping. Batch tracking and import logs.", "n": "Bank \u0026 file imports", "t": "core"}, {"core": false, "d": "Switch companies in seconds, group consolidation and separate books per entity.", "n": "Multi-company", "t": "core"}, {"core": false, "d": "Weekly P\u0026L, 6- and 12-month trends, PDF exports and revenue calculator with break-even targets.", "n": "Reports \u0026 exports", "t": "reports"}, {"core": false, "d": "See which clients and ledger categories actually make money.", "n": "Profitability by client / project", "t": "reports"}, {"core": false, "d": "30/60/90-day projection using AR, fixed obligations and trailing cash trends.", "n": "Cash-flow forecasting", "t": "reports"}, {"core": false, "d": "Set monthly targets per category and track variance against live transactions.", "n": "Budgets vs actuals", "t": "reports"}, {"core": false, "d": "Weekly or monthly digest to the owner\u0027s inbox \u2014 P\u0026L summary on autopilot.", "n": "Scheduled email reports", "t": "reports"}, {"core": false, "d": "Full HR stack for site-based workforces (security PSIRA): employee file with SA ID, document uploads, qualification expiry, site allocation, mobile leave, e-sign from phone.", "n": "HRMS \u2014 Personeel department", "t": "admin"}, {"core": false, "d": "Employees, pay items, pay runs, payslips and EMP201 monthly PAYE, UIF and SDL totals.", "n": "Payroll \u2014 pay runs \u0026 SARS", "t": "admin"}, {"core": false, "d": "Full working-dog stack for security K9 operations: dog records, handler pairing via HRMS, training \u0026 certifications, medical reminders, site/kennel allocation, breeding and incidents.", "n": "K9 \u2014 Working dog management", "t": "admin"}, {"core": false, "d": "Campaigns, content calendar, lead CRM, email and social planning, brand assets, events/webinars and ROI analytics linked to Finance reports.", "n": "Marketing department", "t": "admin"}, {"core": false, "d": "Butcher costing system: central ingredient price list, meatblock recipes, batch economics, stock movements with weighted-average cost, and resale pack pricing.", "n": "Recipe Management \u2014 Butcher department", "t": "admin"}, {"core": false, "d": "Property register (areas, buildings, units), landlord and tenant links, prepaid/postpaid electrical and water meters, readings, and technician field jobs.", "n": "Meters department \u2014 Electrical \u0026 Water", "t": "admin"}, {"core": false, "d": "Viewer, bookkeeper, director and admin roles per company \u2014 granular access control.", "n": "Role-based permissions", "t": "admin"}, {"core": false, "d": "Fixed costs per company feed break-even and cash-flow forecasts automatically.", "n": "Monthly obligations", "t": "core"}, {"core": false, "d": "Every admin change to a contractor invoice is logged for year-end reviews.", "n": "Invoice audit trail", "t": "security"}, {"core": false, "d": "SA ID / passport numbers masked by default. Reveal with password when needed.", "n": "Protected ID numbers", "t": "security"}];
+  var TIERS = [{"all_modules": false, "audience": "Solo owner or bookkeeper \u2014 choose 5 modules at setup", "companies": 1, "contractors": "Unlimited", "highlight": false, "id": "basic", "modules_pick": 5, "monthly": 275, "name": "Basic", "seats": 1, "setup": 500, "tagline": "Start billing"}, {"all_modules": false, "audience": "Small teams \u2014 choose 12 modules at setup", "companies": 3, "contractors": "Unlimited", "highlight": true, "id": "standard", "intro_monthly": 299, "intro_months": 3, "modules_pick": 12, "monthly": 695, "name": "Standard", "seats": 3, "setup": 500, "tagline": "Best for 2\u20133 companies"}, {"all_modules": true, "audience": "All 25 live modules included \u2014 agencies and groups", "companies": 8, "contractors": "Unlimited", "highlight": false, "id": "professional", "modules_pick": null, "monthly": 1295, "name": "Professional", "seats": 8, "setup": 500, "tagline": "Full stack"}, {"all_modules": true, "audience": "50+ seats, custom integrations \u0026 onboarding", "companies": "Custom", "contractors": "Unlimited", "highlight": false, "id": "enterprise", "modules_pick": null, "monthly": null, "monthly_label": "Quoted", "name": "Enterprise", "seats": "Custom", "setup": null, "tagline": "Built around you"}];
+  var LIVE = 25;
+  var GET_STARTED = "https://bill-all.divineonline.solutions/get-started";
+  var CONTACT = "/" + '#contact';
+
+  var on = new Set();
+  MODULES.forEach(function (m, i) { if (m.core) on.add(i); });
+
+  var list = document.getElementById('switcher-list');
+  MODULES.forEach(function (m, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'mod' + (m.core ? ' mod--locked' : '');
+    b.setAttribute('aria-pressed', on.has(i));
+    if (m.core) b.setAttribute('aria-disabled', 'true');
+    b.innerHTML = '<span class="mod__box">' + TICK + '</span><span class="mod__name">' + m.n + '</span><span class="mod__tag">' + (m.core ? 'included' : m.t) + '</span>';
+    b.addEventListener('click', function () {
+      if (m.core) return;
+      on.has(i) ? on.delete(i) : on.add(i);
+      b.setAttribute('aria-pressed', on.has(i));
+      renderSwitcher();
+    });
+    list.appendChild(b);
+  });
+
+  function money(v) { return v.toLocaleString('en-ZA').replace(/,/g, ' '); }
+
+  function tierMonthly(id, fallback) {
+    for (var i = 0; i < TIERS.length; i++) {
+      if (TIERS[i].id === id && TIERS[i].monthly !== null) return TIERS[i].monthly;
+    }
+    return fallback;
+  }
+
+  function renderSwitcher() {
+    var c = on.size;
+    document.getElementById('switcher-count').textContent = c;
+    var tier = 'Basic', price = tierMonthly('basic', 275);
+    if (c > 12) { tier = 'Professional'; price = tierMonthly('professional', 1295); }
+    else if (c > 5) { tier = 'Standard'; price = tierMonthly('standard', 695); }
+    document.getElementById('switcher-tier').textContent = tier;
+    document.getElementById('switcher-price').textContent = money(price);
+  }
+  renderSwitcher();
+
+  var annual = false;
+  var tiersEl = document.getElementById('home-tiers');
+
+  function tierFeatures(t) {
+    var mods;
+    if (t.all_modules) mods = 'All ' + LIVE + ' live modules';
+    else if (t.modules_pick) mods = 'Any ' + t.modules_pick + ' of ' + LIVE + ' at setup';
+    else mods = 'Custom module mix';
+    return [
+      t.companies + ' ' + (t.companies === 1 ? 'company' : 'companies'),
+      t.seats + ' office ' + (t.seats === 1 ? 'seat' : 'seats'),
+      t.contractors + ' contractor users',
+      mods
+    ];
+  }
+
+  function renderTiers() {
+    tiersEl.innerHTML = '';
+    TIERS.forEach(function (t) {
+      var d = document.createElement('div');
+      d.className = 'tier' + (t.highlight ? ' tier--featured' : '');
+      var monthly = t.monthly;
+      var amt = monthly === null ? 'Quoted' : 'R ' + money(annual ? monthly * 10 : monthly);
+      var per = monthly === null ? 'Tailored to your group' : (annual ? 'per year, ex VAT' : 'per month, ex VAT');
+      var href = monthly === null ? CONTACT : GET_STARTED;
+      var btnClass = t.highlight ? 'btn btn--primary' : 'btn btn--ghost';
+      var feats = tierFeatures(t);
+      d.innerHTML =
+        (t.highlight ? '<span class="tier__flag">Most popular</span>' : '') +
+        '<p class="tier__name">' + t.name + '</p>' +
+        '<p class="tier__for">' + t.audience + '</p>' +
+        '<p class="tier__amt mono">' + amt + '</p>' +
+        '<p class="tier__per">' + per + '</p>' +
+        '<ul>' + feats.map(function (x) {
+          return '<li>' + TICK.replace(/#fff/g, 'currentColor') + '<span>' + x + '</span></li>';
+        }).join('') + '</ul>' +
+        '<a class="' + btnClass + '" href="' + href + '">' + (monthly === null ? 'Talk to us' : 'Start free trial') + '</a>';
+      tiersEl.appendChild(d);
+    });
+  }
+  renderTiers();
+
+  document.getElementById('btnMonthly').addEventListener('click', function () { setPeriod(false); });
+  document.getElementById('btnAnnual').addEventListener('click', function () { setPeriod(true); });
+  function setPeriod(a) {
+    annual = a;
+    document.getElementById('btnMonthly').setAttribute('aria-pressed', !a);
+    document.getElementById('btnAnnual').setAttribute('aria-pressed', a);
+    renderTiers();
+  }
+})();
+</script>
+
+</body>
+</html>
