@@ -514,6 +514,8 @@ ul { margin: 0; padding: 0; }
 .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--ink-2); line-height: 1.5; }
 .consent input { margin-top: 4px; flex-shrink: 0; }
 .consent a { color: var(--accent); text-decoration: underline; }
+.char-count { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); text-align: right; margin-top: 4px; }
+.form-footnote { font-size: 13px; color: var(--ink-3); margin: 0; }
 
 /* ---------- login hub ---------- */
 .login-hub { padding: 64px 0 80px; }
