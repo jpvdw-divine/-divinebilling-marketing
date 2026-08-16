@@ -8,7 +8,7 @@
   /* Ink */
   --ink:         #0D0D12;
   --ink-2:       #6E6E80;
-  --ink-3:       #8E8EA0;
+  --ink-3:       #6E6E80;
 
   /* Accent — violet */
   --accent:      #6D5AE6;
@@ -29,7 +29,7 @@
   --panel-bg:     #0D0D12;
   --panel-ink:    #FFFFFF;
   --panel-ink-2:  #9E9EAE;
-  --panel-ink-3:  #5A5A6A;
+  --panel-ink-3:  #9E9EAE;
   --panel-accent: #8E7BF0;
 
   /* Type */
@@ -479,7 +479,7 @@ ul { margin: 0; padding: 0; }
 }
 .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--ink-2); line-height: 1.5; }
 .consent input { margin-top: 4px; flex-shrink: 0; }
-.consent a { color: var(--accent); }
+.consent a { color: var(--accent); text-decoration: underline; }
 
 /* ---------- login hub ---------- */
 .login-hub { padding: 64px 0 80px; }
@@ -704,7 +704,7 @@ ul { margin: 0; padding: 0; }
   margin: 16px 0;
 }
 .ba-consent input { margin-top: 3px; flex-shrink: 0; }
-.ba-consent a { color: var(--accent); }
+.ba-consent a { color: var(--accent); text-decoration: underline; }
 .ba-contact-submit {
   width: 100%;
   margin-top: 8px;
