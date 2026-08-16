@@ -44,11 +44,11 @@
   --ink-2:       #6E6E80;
   --ink-3:       #6E6E80;
 
-  /* Accent — violet */
-  --accent:      #6D5AE6;
-  --accent-hover:#5B48D4;
-  --accent-bg:   #F0EEFE;
-  --accent-text: #3C3489;
+  /* Accent — DivineBilling teal → azure */
+  --accent:      #2F7BFF;
+  --accent-hover:#1E63E0;
+  --accent-bg:   #E8F2FF;
+  --accent-text: #1A4FA8;
 
   /* Lines */
   --line:        #EAEAF0;
@@ -64,7 +64,7 @@
   --panel-ink:    #FFFFFF;
   --panel-ink-2:  #9E9EAE;
   --panel-ink-3:  #9E9EAE;
-  --panel-accent: #8E7BF0;
+  --panel-accent: #7EB0FF;
 
   /* Type */
   --font:        'Inter', -apple-system, system-ui, sans-serif;
@@ -157,9 +157,39 @@ ul { margin: 0; padding: 0; }
 
 /* ---------- brand mark ---------- */
 .brand { display: flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 500; color: var(--ink); letter-spacing: -0.02em; }
+.brand__icon { width: 32px; height: 32px; display: block; flex-shrink: 0; }
+.brand__name { display: inline-flex; align-items: baseline; line-height: 1; }
+.brand__divine { color: #0B1F4D; font-weight: 700; }
+.brand__billing { color: #2F7BFF; font-weight: 500; }
 .brand__mark {
   width: 24px; height: 24px; border-radius: 7px; background: var(--accent);
   display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 500; flex-shrink: 0;
+}
+.hero__logo-video {
+  display: block;
+  width: min(240px, 70%);
+  height: auto;
+  margin: 0 0 22px;
+  background: transparent;
+}
+.hero__logo-still {
+  display: none;
+  width: min(180px, 55%);
+  height: auto;
+  margin: 0 0 22px;
+}
+.brand-film { padding: 8px 0 0; }
+.brand-film__in { display: flex; justify-content: center; }
+.brand-film video {
+  width: min(420px, 100%);
+  height: auto;
+  border-radius: var(--r-lg);
+  background: #fff;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__logo-video,
+  .brand-film video { display: none; }
+  .hero__logo-still { display: block; }
 }
 
 /* ---------- nav ---------- */
@@ -615,6 +645,8 @@ ul { margin: 0; padding: 0; }
 .foot li, .foot p { font-size: 13px; color: var(--panel-ink-2); line-height: 1.55; }
 .foot a:hover { color: var(--panel-ink); }
 .foot .brand { color: var(--panel-ink); }
+.foot .brand__divine { color: #fff; }
+.foot .brand__billing { color: #7EB0FF; }
 .foot__bar { border-top: 1px solid #24242E; margin-top: 40px; padding-top: 20px; font-size: 12px; color: var(--panel-ink-3); }
 
 /* ---------- sub-page compat (modules, pricing, get-started) ---------- */
