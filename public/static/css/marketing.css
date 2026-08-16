@@ -196,7 +196,7 @@ ul { margin: 0; padding: 0; }
 .switcher__head { padding: 16px 18px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
 .switcher__head p { font-size: 13px; font-weight: 500; color: var(--ink); }
 .switcher__count { margin-left: auto; font-size: 12px; color: var(--ink-3); }
-.switcher__list { max-height: 320px; overflow-y: auto; padding: 8px; }
+.switcher__list { min-height: 320px; max-height: 320px; overflow-y: auto; padding: 8px; }
 .mod {
   display: flex; align-items: center; gap: 10px; width: 100%; text-align: left;
   padding: 9px 12px; border: 0; background: transparent; border-radius: var(--r-sm);
