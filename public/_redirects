@@ -1,2 +1,4 @@
 # Cloudflare Pages redirects — https://developers.cloudflare.com/pages/configuration/redirects/
 /login  https://login.divinebilling.online/  301
+/login/ https://login.divinebilling.online/  301
+

@@ -1,6 +1,17 @@
 name = "divinebilling-marketing"
 compatibility_date = "2026-08-15"
 workers_dev = true
+main = "src/worker.js"
 
 [assets]
 directory = "./public"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+
+[[routes]]
+pattern = "divinebilling.online/*"
+zone_name = "divinebilling.online"
+
+[[routes]]
+pattern = "www.divinebilling.online/*"
+zone_name = "divinebilling.online"
