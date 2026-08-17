@@ -180,7 +180,7 @@ ul { margin: 0; padding: 0; }
   margin: 0;
 }
 .hero__film {
-  margin-top: 36px;
+  margin: 0 0 16px;
 }
 .brand-film { padding: 8px 0 0; }
 .brand-film__in { display: flex; justify-content: center; }
@@ -209,18 +209,18 @@ ul { margin: 0; padding: 0; }
 @media (max-width: 800px) { .nav__links { display: none; } }
 
 /* ---------- hero ---------- */
-.hero { padding: 88px 0 80px; }
+.hero { padding: 36px 0 80px; }
 .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .hero__copy { max-width: 34rem; }
-.hero__copy .eyebrow { margin-bottom: 20px; }
+.hero__copy .eyebrow { margin: 0 0 16px; }
 .hero__copy h1 { margin: 0; }
 .hero p.lede { font-size: 17px; color: var(--ink-2); margin: 20px 0 28px; max-width: 44ch; line-height: 1.65; }
 .hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero__note { font-size: 13px; color: var(--ink-3); margin-top: 18px; line-height: 1.55; }
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero { padding: 56px 0 48px; }
-  .hero__film { margin-top: 28px; }
+  .hero { padding: 24px 0 48px; }
+  .hero__film { margin: 0 0 14px; }
 }
 
 /* ---------- module switcher ---------- */
