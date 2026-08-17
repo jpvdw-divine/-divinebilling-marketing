@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="/static/img/divinebilling-mark.svg">
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/inter-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/jetbrains-mono-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.3">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.4">
 </head>
 <body>
   <nav class="nav">
@@ -49,20 +49,34 @@
       <span class="stat stat--live">27 live modules</span>
       <span class="stat stat--planned">10 on roadmap</span>
     </div>
+    <nav class="dept-jump" aria-label="Departments">
+      <a href="#finance">💰 Finance</a>
+      <a href="#hr">👥 HR</a>
+      <a href="#security">🛡️ Security</a>
+      <a href="#payroll">💸 Payroll</a>
+      <a href="#k9">🐕 K9</a>
+      <a href="#marketing">📣 Marketing</a>
+      <a href="#butcher">🥩 Butcher</a>
+      <a href="#pos">🛒 POS</a>
+      <a href="#meters">⚡ Meters</a>
+    </nav>
+    <p class="page-head__sub" style="margin-top:16px">Click a department to show its functions.</p>
   </div>
 </section>
 
 
-<section class="section section--tight">
+<section class="section section--tight dept-panel" id="finance">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-finance">
       <span class="dept-head__icon" aria-hidden="true">💰</span>
       <div>
         <h2 class="section-label dept-head__title">Finance</h2>
         <p class="dept-head__blurb">Books, billing, clients, reports and compliance — the core DivineBilling stack.</p>
       </div>
       <span class="dept-head__count">19 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-finance" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--core">Core</span>
@@ -163,22 +177,24 @@
         <p>Expense and payment sign-off thresholds before money moves.</p>
         <p class="card-footnote">Included with Finance</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="hr">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-hr">
       <span class="dept-head__icon" aria-hidden="true">👥</span>
       <div>
         <h2 class="section-label dept-head__title">HR · Personeel</h2>
         <p class="dept-head__blurb">Site-based workforce — PSIRA, employee files, leave, e-sign and self-service.</p>
       </div>
       <span class="dept-head__count">14 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-hr" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--core">Core</span>
@@ -262,22 +278,24 @@
         <p>Central searchable store: ID, PSIRA, CV, qualifications, contracts, warnings, performance reviews, medical certificates, leave forms — linked to employee file.</p>
         <p class="card-footnote">Included with Personeel (HRMS)</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="security">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-security">
       <span class="dept-head__icon" aria-hidden="true">🛡️</span>
       <div>
         <h2 class="section-label dept-head__title">Security</h2>
         <p class="dept-head__blurb">PSIRA site operations — posts, occurrence book, incidents, access control, linked to HR, K9 and Payroll.</p>
       </div>
       <span class="dept-head__count">13 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-security" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--admin">Security</span>
@@ -357,20 +375,23 @@
         <p class="card-footnote">Included with Security</p>
       </article>
     </div>
+    </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="payroll">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-payroll">
       <span class="dept-head__icon" aria-hidden="true">💸</span>
       <div>
         <h2 class="section-label dept-head__title">Payroll</h2>
         <p class="dept-head__blurb">Contractor billing, pay runs, payslips and SARS EMP201.</p>
       </div>
       <span class="dept-head__count">5 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-payroll" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--billing">Billing</span>
@@ -398,22 +419,24 @@
         <p>Auto-send PDF payslips to employees when a pay run is finalised.</p>
         <p class="card-footnote">Included with Payroll</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="k9">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-k9">
       <span class="dept-head__icon" aria-hidden="true">🐕</span>
       <div>
         <h2 class="section-label dept-head__title">K9</h2>
         <p class="dept-head__blurb">Working dogs — records, training, medical alerts, handler pairing and deployment readiness.</p>
       </div>
       <span class="dept-head__count">13 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-k9" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--admin">K9</span>
@@ -492,22 +515,24 @@
         <p>Daily stand-ups, weekly roll-up of seven days, and monthly summaries.</p>
         <p class="card-footnote">Included with K9</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="marketing">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-marketing">
       <span class="dept-head__icon" aria-hidden="true">📣</span>
       <div>
         <h2 class="section-label dept-head__title">Marketing</h2>
         <p class="dept-head__blurb">Campaigns, content, leads, email, social, brand assets, events and ROI analytics.</p>
       </div>
       <span class="dept-head__count">10 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-marketing" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--admin">Marketing</span>
@@ -568,22 +593,24 @@
         <p>Campaign performance, lead conversion and links to finance profitability reports.</p>
         <p class="card-footnote">Included with Marketing</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="butcher">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-butcher">
       <span class="dept-head__icon" aria-hidden="true">🥩</span>
       <div>
         <h2 class="section-label dept-head__title">Butcher</h2>
         <p class="dept-head__blurb">Recipe costing — ingredient prices, meatblock batches, stock and resale packs.</p>
       </div>
       <span class="dept-head__count">7 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-butcher" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--admin">Butcher</span>
@@ -626,22 +653,24 @@
         <p>Retail pack sizes, label cost and sell prices incl VAT per pack.</p>
         <p class="card-footnote">Included with Butcher</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="pos">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-pos">
       <span class="dept-head__icon" aria-hidden="true">🛒</span>
       <div>
         <h2 class="section-label dept-head__title">POS</h2>
         <p class="dept-head__blurb">Multi-store till — shops, catalogue, stock, VAT receipts, time clock, linked to HR, Payroll and Finance.</p>
       </div>
       <span class="dept-head__count">11 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-pos" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--admin">POS</span>
@@ -709,20 +738,23 @@
         <p class="card-footnote">Included with POS</p>
       </article>
     </div>
+    </div>
   </div>
 </section>
 
 
-<section class="section ">
+<section class="section dept-panel" id="meters">
   <div class="wrap">
-    <div class="dept-head">
+    <button type="button" class="dept-head dept-head--toggle" aria-expanded="false" aria-controls="dept-body-meters">
       <span class="dept-head__icon" aria-hidden="true">⚡</span>
       <div>
         <h2 class="section-label dept-head__title">Meters</h2>
         <p class="dept-head__blurb">Electrical &amp; water meters — property register, parties, readings and field jobs.</p>
       </div>
       <span class="dept-head__count">7 live</span>
-    </div>
+      <span class="dept-head__chevron" aria-hidden="true"></span>
+    </button>
+    <div class="dept-body" id="dept-body-meters" hidden>
     <div class="grid grid--3">
       <article class="card card--module">
         <span class="chip chip--admin">Meters</span>
@@ -765,7 +797,7 @@
         <p>Inspection, installation and fault jobs — assign technicians by date.</p>
         <p class="card-footnote">Included with Meters</p>
       </article>
-
+    </div>
     </div>
   </div>
 </section>
@@ -888,5 +920,74 @@
   
 
   
+<script>
+(function () {
+  var alias = { personeel: 'hr', dogs: 'k9', 'hr-personeel': 'hr' };
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.dept-panel'));
+  var jumps = Array.prototype.slice.call(document.querySelectorAll('.dept-jump a'));
+
+  function idFromHash() {
+    var raw = (location.hash || '').replace(/^#/, '');
+    return alias[raw] || raw;
+  }
+
+  function openPanel(id, scroll) {
+    panels.forEach(function (p) {
+      var on = !!id && p.id === id;
+      p.classList.toggle('is-open', on);
+      var btn = p.querySelector('.dept-head--toggle');
+      var body = p.querySelector('.dept-body');
+      if (btn) btn.setAttribute('aria-expanded', on ? 'true' : 'false');
+      if (body) body.hidden = !on;
+    });
+    jumps.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+    });
+    if (scroll && id) {
+      var el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  panels.forEach(function (p) {
+    var btn = p.querySelector('.dept-head--toggle');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var already = p.classList.contains('is-open');
+      if (already) {
+        openPanel(null, false);
+        history.replaceState(null, '', location.pathname + location.search);
+      } else {
+        openPanel(p.id, false);
+        history.replaceState(null, '', '#' + p.id);
+      }
+    });
+  });
+
+  jumps.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = (a.getAttribute('href') || '').replace(/^#/, '');
+      if (!document.getElementById(id)) return;
+      e.preventDefault();
+      var already = document.getElementById(id).classList.contains('is-open');
+      if (already) {
+        openPanel(null, false);
+        history.replaceState(null, '', location.pathname + location.search);
+      } else {
+        openPanel(id, true);
+        history.replaceState(null, '', '#' + id);
+      }
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    var id = idFromHash();
+    if (id && document.getElementById(id)) openPanel(id, true);
+  });
+
+  var start = idFromHash();
+  if (start && document.getElementById(start)) openPanel(start, true);
+})();
+</script>
 </body>
 </html>

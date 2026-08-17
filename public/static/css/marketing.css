@@ -296,6 +296,84 @@ ul { margin: 0; padding: 0; }
 .chip--status-planned { background: var(--surface-alt); color: var(--ink-3); }
 
 /* department sections (modules + roadmap) */
+html { scroll-padding-top: 76px; }
+
+.card--dept {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.card--dept .dept-card__icon { font-size: 1.6rem; line-height: 1; display: block; margin-bottom: 8px; }
+.card--dept .card-go {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.dept-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+.dept-jump a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  text-decoration: none;
+  background: var(--surface);
+}
+.dept-jump a:hover,
+.dept-jump a.is-active {
+  border-color: var(--accent);
+  color: var(--ink);
+  background: var(--accent-bg);
+}
+
+.dept-panel { scroll-margin-top: 76px; }
+.dept-head--toggle {
+  width: 100%;
+  margin: 0;
+  padding: 12px 4px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border-radius: var(--r-md);
+}
+.dept-head--toggle:hover { background: var(--surface-alt); }
+.dept-head--toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.dept-panel.is-open .dept-head--toggle { margin-bottom: 16px; }
+.dept-head__chevron {
+  margin-left: 8px;
+  align-self: center;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--ink-3);
+  border-bottom: 2px solid var(--ink-3);
+  transform: rotate(45deg);
+  transition: transform .15s ease;
+  flex-shrink: 0;
+}
+.dept-panel.is-open .dept-head__chevron {
+  transform: rotate(-135deg);
+  margin-top: 6px;
+}
+.dept-body { margin-top: 8px; }
+
 .dept-head {
   display: flex;
   align-items: flex-start;
@@ -303,6 +381,8 @@ ul { margin: 0; padding: 0; }
   margin-bottom: 24px;
   flex-wrap: wrap;
 }
+.dept-head.dept-head--toggle { margin-bottom: 0; }
+.dept-panel.is-open .dept-head.dept-head--toggle { margin-bottom: 16px; }
 .dept-head__icon { font-size: 2rem; line-height: 1; }
 .dept-head__title { margin-bottom: 4px; }
 .dept-head__blurb {

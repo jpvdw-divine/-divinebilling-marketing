@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="/static/img/divinebilling-mark.svg">
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/inter-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/jetbrains-mono-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.3">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.4">
 </head>
 <body>
   <nav class="nav">
@@ -60,7 +60,7 @@
     <div class="switcher">
       <div class="switcher__head">
         <p>Build your plan</p>
-        <span class="switcher__count"><span id="switcher-count" class="mono">4</span> of 25 modules</span>
+        <span class="switcher__count"><span id="switcher-count" class="mono">4</span> of 27 modules</span>
       </div>
       <div class="switcher__list" id="switcher-list"></div>
       <div class="switcher__foot">
@@ -89,46 +89,72 @@
   <div class="wrap">
     <div class="section__head">
       <h2>Switch on what you need.</h2>
-      <p>Modules that share one workspace — billing, books, contractors and clients. Start with the core and add as you grow. Nothing is re-typed.</p>
+      <p>Nine departments in one workspace. Click a department to open its functions on the modules page.</p>
     </div>
     <div class="grid grid--3">
-      
-      <div class="card card--module">
-        <span class="chip chip--core">Core</span>
-        <h3>Dashboard &amp; live P&amp;L</h3>
-        <p>Weekly and monthly profit views, KPI cards and break-even tracking — updated as transactions land.</p>
-      </div>
-      
-      <div class="card card--module">
-        <span class="chip chip--core">Core</span>
-        <h3>Transactions &amp; ledger</h3>
-        <p>Every expense, transfer and income in one place. Manual entry, categories and full audit history.</p>
-      </div>
-      
-      <div class="card card--module">
-        <span class="chip chip--billing">Billing</span>
-        <h3>Contractor billing &amp; payments</h3>
-        <p>Contractors log timesheets, raise invoices and submit for payment — you approve from one queue.</p>
-      </div>
-      
-      <div class="card card--module">
-        <span class="chip chip--billing">Billing</span>
-        <h3>Contract work timesheets</h3>
-        <p>Track contractor hours by client and project. Import timesheets from CSV or Excel.</p>
-      </div>
-      
-      <div class="card card--module">
-        <span class="chip chip--billing">Billing</span>
-        <h3>Clients &amp; quotes</h3>
-        <p>Invoice your customers, send quotes and convert to invoices on acceptance. Branded PDF exports.</p>
-      </div>
-      
-      <div class="card card--module">
-        <span class="chip chip--portal">Portal</span>
-        <h3>Customer portal &amp; statements</h3>
-        <p>Customers sign in to view invoices, quotes, balances and download account statements.</p>
-      </div>
-      
+      <a class="card card--module card--dept" href="/modules#finance">
+        <span class="dept-card__icon" aria-hidden="true">💰</span>
+        <span class="chip chip--core">Finance</span>
+        <h3>Finance</h3>
+        <p>Books, billing, clients, reports and compliance — the core DivineBilling stack.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#hr">
+        <span class="dept-card__icon" aria-hidden="true">👥</span>
+        <span class="chip chip--admin">HR</span>
+        <h3>HR · Personeel</h3>
+        <p>Site-based workforce — PSIRA, employee files, leave, e-sign and self-service.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#security">
+        <span class="dept-card__icon" aria-hidden="true">🛡️</span>
+        <span class="chip chip--admin">Security</span>
+        <h3>Security</h3>
+        <p>PSIRA site operations — posts, occurrence book, incidents, access control, linked to HR, K9 and Payroll.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#payroll">
+        <span class="dept-card__icon" aria-hidden="true">💸</span>
+        <span class="chip chip--billing">Payroll</span>
+        <h3>Payroll</h3>
+        <p>Contractor billing, pay runs, payslips and SARS EMP201.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#k9">
+        <span class="dept-card__icon" aria-hidden="true">🐕</span>
+        <span class="chip chip--admin">K9</span>
+        <h3>K9</h3>
+        <p>Working dogs — records, training, medical alerts, handler pairing and deployment readiness.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#marketing">
+        <span class="dept-card__icon" aria-hidden="true">📣</span>
+        <span class="chip chip--admin">Marketing</span>
+        <h3>Marketing</h3>
+        <p>Campaigns, content, leads, email, social, brand assets, events and ROI analytics.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#butcher">
+        <span class="dept-card__icon" aria-hidden="true">🥩</span>
+        <span class="chip chip--admin">Butcher</span>
+        <h3>Butcher</h3>
+        <p>Recipe costing — ingredient prices, meatblock batches, stock and resale packs.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#pos">
+        <span class="dept-card__icon" aria-hidden="true">🛒</span>
+        <span class="chip chip--admin">POS</span>
+        <h3>POS</h3>
+        <p>Multi-store till — shops, catalogue, stock, VAT receipts, time clock, linked to HR, Payroll and Finance.</p>
+        <p class="card-go">View functions →</p>
+      </a>
+      <a class="card card--module card--dept" href="/modules#meters">
+        <span class="dept-card__icon" aria-hidden="true">⚡</span>
+        <span class="chip chip--admin">Meters</span>
+        <h3>Meters</h3>
+        <p>Electrical &amp; water meters — property register, parties, readings and field jobs.</p>
+        <p class="card-go">View functions →</p>
+      </a>
     </div>
     <p style="margin-top:24px"><a href="/modules" style="color:var(--accent);font-size:14px;font-weight:500">View all 27 live modules and the roadmap →</a></p>
   </div>
