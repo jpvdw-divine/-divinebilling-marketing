@@ -1,4 +1,5 @@
 const LOGIN = "https://login.divinebilling.online";
+const DASH = "https://dash.divinebilling.online";
 const PLATFORM_PRICING = "https://platform.divinebilling.online/api/public-pricing";
 
 export default {
@@ -7,6 +8,24 @@ export default {
     const path = url.pathname.replace(/\/+$/, "") || "/";
     if (path === "/login") {
       return Response.redirect(`${LOGIN}/`, 301);
+    }
+    if (path === "/get-started/signup" && request.method === "POST") {
+      const headers = new Headers(request.headers);
+      headers.delete("host");
+      const upstream = await fetch(`${DASH}/get-started/signup`, {
+        method: "POST",
+        headers,
+        body: request.body,
+        redirect: "manual",
+      });
+      if (upstream.status >= 300 && upstream.status < 400) {
+        const loc = upstream.headers.get("Location") || "/get-started/signup";
+        const next = loc
+          .replace("https://dash.divinebilling.online", "https://www.divinebilling.online")
+          .replace("https://login.divinebilling.online", "https://www.divinebilling.online");
+        return Response.redirect(next, 302);
+      }
+      return upstream;
     }
     if (path === "/pricing.json") {
       try {
