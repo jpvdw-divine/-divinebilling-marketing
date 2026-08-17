@@ -8,7 +8,7 @@
   <link rel="icon" type="image/svg+xml" href="/static/img/divinebilling-mark.svg">
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/inter-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/jetbrains-mono-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.4">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.6">
 </head>
 <body>
   <nav class="nav">
@@ -42,11 +42,7 @@
   
 <header class="hero">
   <div class="wrap hero__grid">
-    <div>
-      <video class="hero__logo-video" autoplay muted loop playsinline poster="/static/img/divinebilling-logo.jpg" aria-label="DivineBilling logo">
-        <source src="/static/video/divinebilling-logo-moving.mp4" type="video/mp4">
-      </video>
-      <img class="hero__logo-still" src="/static/img/divinebilling-logo.jpg" alt="DivineBilling — Smart billing. Divine simplicity.">
+    <div class="hero__copy">
       <span class="eyebrow">Smart billing. Divine simplicity.</span>
       <h1>All your bills.<br>All in one place.</h1>
       <p class="lede">One clear view of cash flow, contractors, invoices and profit — without spreadsheets scattered across inboxes.</p>
@@ -55,6 +51,10 @@
         <a class="btn btn--ghost" href="https://demo.divinebilling.online" target="_blank" rel="noopener noreferrer">Try the live demo</a>
       </div>
       <p class="hero__note">From R99/pm ex VAT.<br>Contractors use the portal free, on every plan.</p>
+      <div class="hero__film" aria-hidden="true">
+        <img class="hero__logo-video" src="/static/video/divinebilling-no-website.gif" alt="">
+        <img class="hero__logo-still" src="/static/img/divinebilling-logo.jpg" alt="DivineBilling — Smart billing. Divine simplicity.">
+      </div>
     </div>
 
     <div class="switcher">
@@ -72,18 +72,11 @@
           <div class="amt mono">R <span id="switcher-price">250</span></div>
           <div class="per">per month, ex VAT</div>
         </div>
+        <a class="btn btn--primary switcher__order" href="https://login.divinebilling.online/get-started/signup">Order now</a>
       </div>
     </div>
   </div>
 </header>
-
-<section class="brand-film" aria-label="DivineBilling motion logo">
-  <div class="wrap brand-film__in">
-    <video autoplay muted loop playsinline poster="/static/img/divinebilling-logo.jpg">
-      <source src="/static/video/divinebilling-logo-motion.mp4" type="video/mp4">
-    </video>
-  </div>
-</section>
 
 <section class="section" id="modules">
   <div class="wrap">
