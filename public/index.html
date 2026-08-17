@@ -377,6 +377,30 @@
   }
   renderTiers();
 
+  fetch('/pricing.json', { headers: { Accept: 'application/json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (data) {
+      if (!data || !data.tiers) return;
+      var byId = {};
+      data.tiers.forEach(function (t) { byId[t.id] = t; });
+      TIERS.forEach(function (t) {
+        var live = byId[t.id];
+        if (!live) return;
+        if (live.setup != null) t.setup = live.setup;
+        if (live.monthly != null) t.monthly = live.monthly;
+        if (live.monthly_label) t.monthly_label = live.monthly_label;
+      });
+      if (data.from_monthly_display) {
+        document.querySelectorAll('.hero__note, .section h2').forEach(function (el) {
+          if (el && /R\d/.test(el.textContent || '')) {
+            el.innerHTML = el.innerHTML.replace(/R[\d\s]+/g, data.from_monthly_display);
+          }
+        });
+      }
+      renderTiers();
+    })
+    .catch(function () {});
+
   document.getElementById('btnMonthly').addEventListener('click', function () { setPeriod(false); });
   document.getElementById('btnAnnual').addEventListener('click', function () { setPeriod(true); });
   function setPeriod(a) {

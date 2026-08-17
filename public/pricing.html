@@ -854,6 +854,50 @@
     var picked = document.querySelector('.tier--picked');
     if (picked) picked.classList.add('tier--active');
   });
+
+  function applyLivePrices(data) {
+    if (!data || !data.tiers) return;
+    var byId = {};
+    data.tiers.forEach(function (t) { byId[t.id] = t; });
+    ['basic', 'standard', 'professional', 'enterprise'].forEach(function (id) {
+      var t = byId[id];
+      if (!t) return;
+      var card = document.querySelector('.tier[data-tier="' + id + '"]');
+      if (card) {
+        var setup = card.querySelector('.tier__setup');
+        if (setup && t.setup_display) setup.textContent = t.setup_display + ' setup';
+        var monthly = card.querySelector('.price-monthly');
+        if (monthly && t.monthly != null) {
+          monthly.innerHTML = t.monthly_display + '<span class="tier__unit">/ pm</span>';
+        }
+        var annual = card.querySelector('.price-annual');
+        if (annual && t.annual_display) {
+          annual.innerHTML = t.annual_display.replace('/yr', '') + '<span class="tier__unit">/ yr</span>';
+        }
+      }
+    });
+    function fillRow(label, field) {
+      var rows = document.querySelectorAll('.compare-table tbody tr');
+      rows.forEach(function (tr) {
+        if ((tr.cells[0].textContent || '').trim() !== label) return;
+        ['basic', 'standard', 'professional', 'enterprise'].forEach(function (id, i) {
+          var t = byId[id];
+          var span = tr.cells[i + 1] && tr.cells[i + 1].querySelector('.mono');
+          if (!span || !t) return;
+          if (field === 'setup') span.textContent = t.setup_display || 'Quoted';
+          if (field === 'monthly') span.textContent = t.monthly_display || 'Quoted';
+          if (field === 'annual') span.textContent = t.annual_display || 'Quoted';
+        });
+      });
+    }
+    fillRow('One-time setup', 'setup');
+    fillRow('Monthly (ex VAT)', 'monthly');
+    fillRow('Annual billing', 'annual');
+  }
+  fetch('/pricing.json', { headers: { Accept: 'application/json' } })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(applyLivePrices)
+    .catch(function () {});
 })();
 </script>
 
