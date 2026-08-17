@@ -41,14 +41,14 @@
 
   /* Ink */
   --ink:         #0D0D12;
-  --ink-2:       #6E6E80;
-  --ink-3:       #6E6E80;
+  --ink-2:       #4E4E60;
+  --ink-3:       #5A5A6E;
 
-  /* Accent — DivineBilling teal → azure */
-  --accent:      #2F7BFF;
-  --accent-hover:#1E63E0;
+  /* Accent — WCAG AA on white (≥4.5:1) */
+  --accent:      #0F4EA8;
+  --accent-hover:#0C3F88;
   --accent-bg:   #E8F2FF;
-  --accent-text: #1A4FA8;
+  --accent-text: #0F4EA8;
 
   /* Lines */
   --line:        #EAEAF0;
@@ -160,7 +160,7 @@ ul { margin: 0; padding: 0; }
 .brand__icon { width: 32px; height: 32px; display: block; flex-shrink: 0; }
 .brand__name { display: inline-flex; align-items: baseline; line-height: 1; }
 .brand__divine { color: #0B1F4D; font-weight: 700; }
-.brand__billing { color: #2F7BFF; font-weight: 500; }
+.brand__billing { color: var(--accent); font-weight: 500; }
 .brand__mark {
   width: 24px; height: 24px; border-radius: 7px; background: var(--accent);
   display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 500; flex-shrink: 0;
@@ -198,18 +198,17 @@ ul { margin: 0; padding: 0; }
 /* ---------- nav ---------- */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.85);
-  backdrop-filter: blur(12px);
+  background: #fff;
   border-bottom: 1px solid var(--line);
 }
 .nav__in { display: flex; align-items: center; gap: 28px; height: 60px; }
-.nav__links { display: flex; gap: 22px; font-size: 14px; color: var(--ink-2); }
+.nav__links { display: flex; gap: 22px; font-size: 14px; color: #3D3D50; }
 .nav__links a:hover, .nav__links a.is-active { color: var(--ink); }
 .nav__end { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 @media (max-width: 800px) { .nav__links { display: none; } }
 
 /* ---------- hero ---------- */
-.hero { padding: 36px 0 80px; }
+.hero { padding: 68px 0 80px; }
 .hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .hero__copy { max-width: 34rem; }
 .hero__copy .eyebrow { margin: 0 0 16px; }
@@ -219,7 +218,7 @@ ul { margin: 0; padding: 0; }
 .hero__note { font-size: 13px; color: var(--ink-3); margin-top: 18px; line-height: 1.55; }
 @media (max-width: 900px) {
   .hero__grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero { padding: 24px 0 48px; }
+  .hero { padding: 44px 0 48px; }
   .hero__film { margin: 0 0 14px; }
 }
 

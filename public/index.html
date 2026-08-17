@@ -2,13 +2,23 @@
 <html lang="en-ZA">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQPVEH6R2M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QQPVEH6R2M');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="DivineBilling — billing, books and clarity for SA business owners. By Divine Online Solutions.">
   <title>All your bills. All in one place. · DivineBilling</title>
   <link rel="icon" type="image/svg+xml" href="/static/img/divinebilling-mark.svg">
+  <link rel="preload" as="image" href="/static/img/divinebilling-logo-poster.jpg" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/inter-latin.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="/static/fonts/jetbrains-mono-latin.woff2" crossorigin>
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.7">
+  <link rel="preload" as="style" href="/static/css/marketing.css?v=2.9.9">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.9.9">
 </head>
 <body>
   <nav class="nav">
@@ -43,9 +53,11 @@
 <header class="hero">
   <div class="wrap hero__grid">
     <div class="hero__copy">
-      <div class="hero__film" aria-hidden="true">
-        <img class="hero__logo-video" src="/static/video/divinebilling-no-website-v2.gif" alt="">
-        <img class="hero__logo-still" src="/static/img/divinebilling-logo.jpg" alt="DivineBilling — Smart billing. Divine simplicity.">
+      <div class="hero__film">
+        <video class="hero__logo-video" autoplay muted loop playsinline preload="metadata" width="420" height="630" poster="/static/img/divinebilling-logo-poster.jpg" aria-label="DivineBilling logo">
+          <source src="/static/video/divinebilling-hero.mp4" type="video/mp4">
+        </video>
+        <img class="hero__logo-still" src="/static/img/divinebilling-logo-poster.jpg" width="420" height="630" alt="DivineBilling — Smart billing. Divine simplicity.">
       </div>
       <span class="eyebrow">Smart billing. Divine simplicity.</span>
       <h1>All your bills.<br>All in one place.</h1>
