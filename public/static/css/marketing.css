@@ -167,7 +167,7 @@ ul { margin: 0; padding: 0; }
 }
 .hero__logo-video {
   display: block;
-  width: min(240px, 72%);
+  width: min(300px, 90%);
   height: auto;
   margin: 0;
   background: transparent;
@@ -179,11 +179,9 @@ ul { margin: 0; padding: 0; }
 }
 .hero__logo-still {
   display: none;
-  width: min(192px, 58%);
+  width: min(300px, 90%);
   height: auto;
   margin: 0;
-  /* crop off the slogan baked into the bottom of the poster image */
-  clip-path: inset(0 0 3.9% 0);
 }
 .hero__film {
   margin: 0 0 16px;
@@ -215,7 +213,7 @@ ul { margin: 0; padding: 0; }
 
 /* ---------- hero ---------- */
 .hero { padding: 68px 0 80px; }
-.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.hero__grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: start; }
 .hero__copy { max-width: 34rem; }
 .hero__copy .eyebrow { margin: 0 0 16px; }
 .hero__copy h1 { margin: 0; }
@@ -234,6 +232,7 @@ ul { margin: 0; padding: 0; }
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   overflow: hidden;
+  max-width: 34rem;
 }
 .switcher__head { padding: 16px 18px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 10px; }
 .switcher__head p { font-size: 13px; font-weight: 500; color: var(--ink); }
