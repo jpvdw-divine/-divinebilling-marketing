@@ -213,7 +213,7 @@ ul { margin: 0; padding: 0; }
 
 /* ---------- hero ---------- */
 .hero { padding: 68px 0 80px; }
-.hero__grid { display: grid; grid-template-columns: 1fr; gap: 48px; align-items: start; }
+.hero__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .hero__copy { max-width: 34rem; }
 .hero__copy .eyebrow { margin: 0 0 16px; }
 .hero__copy h1 { margin: 0; }
