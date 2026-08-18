@@ -167,18 +167,23 @@ ul { margin: 0; padding: 0; }
 }
 .hero__logo-video {
   display: block;
-  width: min(200px, 60%);
+  width: min(240px, 72%);
   height: auto;
   margin: 0;
   background: transparent;
   border-radius: 0;
   mix-blend-mode: multiply;
+  /* crop off the "Smart billing. Divine simplicity." slogan baked into the
+     bottom of the source video, keeping just the icon + wordmark */
+  clip-path: inset(0 0 29.3% 0);
 }
 .hero__logo-still {
   display: none;
-  width: min(160px, 50%);
+  width: min(192px, 58%);
   height: auto;
   margin: 0;
+  /* crop off the slogan baked into the bottom of the poster image */
+  clip-path: inset(0 0 3.9% 0);
 }
 .hero__film {
   margin: 0 0 16px;
