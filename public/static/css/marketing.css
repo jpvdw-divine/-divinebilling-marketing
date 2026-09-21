@@ -608,59 +608,73 @@ a.stat:hover { border-color: var(--ink-3); }
   object-position: top left;
 }
 .product-tour { max-width: 1080px; }
-.product-tour__frame {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
+.product-proof {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.product-proof__film.hero__film {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 360 / 255;
+  margin: 0;
+  overflow: hidden;
+}
+.hero__logo-img,
+.hero__logo-video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 44%;
+}
+.hero__logo-video {
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+.hero__film.is-playing .hero__logo-img { visibility: hidden; }
+.hero__film.is-playing .hero__logo-video { opacity: 1; }
+.product-proof__shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.product-proof__shot {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
   overflow: hidden;
   background: #0F1117;
 }
-.product-tour__frame img {
+.product-proof__shot img {
   display: block;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top left;
 }
-.product-tour__thumbs {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scroll-snap-type: x mandatory;
-}
-.product-tour__thumb {
-  flex: 0 0 200px;
-  width: 200px;
-  padding: 0;
-  border: 2px solid var(--line);
-  border-radius: var(--r-md);
-  background: #0F1117;
-  cursor: pointer;
-  overflow: hidden;
-  scroll-snap-align: start;
-}
-.product-tour__thumb img {
-  display: block;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  object-position: top left;
-}
-.product-tour__thumb span {
+.product-proof__shot span {
   display: block;
   font-size: 11px;
   font-weight: 500;
   color: var(--ink-2);
   background: var(--surface);
-  padding: 4px 8px;
-  text-align: left;
+  padding: 6px 10px;
 }
-.product-tour__thumb.is-active { border-color: var(--accent); }
+.product-proof__shot:hover { border-color: var(--accent); }
 .product-tour__note { margin-top: 8px; font-size: 11px; }
+@media (max-width: 800px) {
+  .product-proof { grid-template-columns: 1fr; justify-items: center; }
+  .product-proof__shots { width: 100%; grid-template-columns: 1fr; }
+}
 .status-pill {
   display: inline-block;
   font-size: 11px;

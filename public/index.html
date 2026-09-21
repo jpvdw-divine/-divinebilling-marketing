@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.131">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.133">
 </head>
 <body>
   <nav class="nav">
@@ -117,52 +117,35 @@
       <h2 data-af="Die produk, nie ’n mockup nie.">The product, not a mockup.</h2>
       <p>Live demo stills. Open the demo to click through.</p>
     </div>
-    <div class="product-tour" data-product-tour>
-      <div class="product-tour__frame">
-        
-        <img src="/static/img/product/dashboard.png" alt="P&amp;L" width="200" height="200" loading="eager">
-        
-        <img src="/static/img/product/transactions.png" alt="Ledger" width="200" height="200" hidden loading="lazy">
-        
-        <img src="/static/img/product/clients.png" alt="Clients" width="200" height="200" hidden loading="lazy">
-        
-        <img src="/static/img/product/payroll.png" alt="Payroll" width="200" height="200" hidden loading="lazy">
-        
-        <img src="/static/img/product/pos-terminal.png" alt="POS" width="200" height="200" hidden loading="lazy">
-        
+    <div class="product-proof">
+      <div class="hero__film product-proof__film" aria-label="DivineBilling">
+        <img class="hero__logo-img" src="/static/img/divinebilling-logo.jpg" width="360" height="255" alt="DivineBilling">
+        <video class="hero__logo-video" muted loop playsinline preload="none">
+          <source src="/static/video/divinebilling-logo-move.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="product-tour__thumbs" role="tablist" aria-label="Product screens">
+      <div class="product-proof__shots">
         
-        <button type="button" class="product-tour__thumb is-active" aria-label="P&amp;L" data-tour-i="0">
-          <img src="/static/img/product/dashboard.png" alt="" width="200" height="200" loading="lazy">
+        <a class="product-proof__shot" href="https://demo.divinebilling.online/demo/launch" title="P&amp;L">
+          <img src="/static/img/product/dashboard.png" alt="P&amp;L" width="640" height="400" loading="eager">
           <span>P&amp;L</span>
-        </button>
+        </a>
         
-        <button type="button" class="product-tour__thumb" aria-label="Ledger" data-tour-i="1">
-          <img src="/static/img/product/transactions.png" alt="" width="200" height="200" loading="lazy">
-          <span>Ledger</span>
-        </button>
-        
-        <button type="button" class="product-tour__thumb" aria-label="Clients" data-tour-i="2">
-          <img src="/static/img/product/clients.png" alt="" width="200" height="200" loading="lazy">
+        <a class="product-proof__shot" href="https://demo.divinebilling.online/demo/launch" title="Clients">
+          <img src="/static/img/product/clients.png" alt="Clients" width="640" height="400" loading="lazy">
           <span>Clients</span>
-        </button>
+        </a>
         
-        <button type="button" class="product-tour__thumb" aria-label="Payroll" data-tour-i="3">
-          <img src="/static/img/product/payroll.png" alt="" width="200" height="200" loading="lazy">
-          <span>Payroll</span>
-        </button>
-        
-        <button type="button" class="product-tour__thumb" aria-label="POS" data-tour-i="4">
-          <img src="/static/img/product/pos-terminal.png" alt="" width="200" height="200" loading="lazy">
+        <a class="product-proof__shot" href="https://demo.divinebilling.online/demo/launch" title="POS">
+          <img src="/static/img/product/pos-terminal.png" alt="POS" width="640" height="400" loading="lazy">
           <span>POS</span>
-        </button>
+        </a>
         
       </div>
-      <p class="fine product-tour__note">Live demo · 18 Sep 2026</p>
-      <div class="hero__cta" style="margin-top:12px">
-        <a class="btn btn--sm btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Maak die lewendige demo oop">Open the live demo</a>
-      </div>
+    </div>
+    <p class="fine product-tour__note">Live demo · 18 Sep 2026</p>
+    <div class="hero__cta" style="margin-top:12px">
+      <a class="btn btn--sm btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Maak die lewendige demo oop">Open the live demo</a>
     </div>
   </div>
 </section>
@@ -533,6 +516,29 @@
         || window.matchMedia('(max-width: 800px)').matches
         || (conn && (conn.saveData || /2g/.test(conn.effectiveType || '')));
       if (!reduce) setInterval(function () { show(i + 1); }, 7000);
+    });
+    document.querySelectorAll('.hero__logo-video').forEach(function (video) {
+      var film = video.closest('.hero__film');
+      if (!film) return;
+      var conn = navigator.connection || navigator.mozConnection;
+      var allowMotion = !(
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        || window.matchMedia('(prefers-reduced-data: reduce)').matches
+        || window.matchMedia('(max-width: 800px)').matches
+        || (conn && (conn.saveData || /2g/.test(conn.effectiveType || '')))
+      );
+      if (!allowMotion) {
+        video.remove();
+        return;
+      }
+      var showMotion = function () {
+        if (video.readyState >= 2 && video.videoWidth) film.classList.add('is-playing');
+      };
+      video.addEventListener('playing', showMotion);
+      video.addEventListener('loadeddata', showMotion);
+      video.addEventListener('error', function () { film.classList.remove('is-playing'); });
+      var play = video.play();
+      if (play && play.catch) play.catch(function () { film.classList.remove('is-playing'); });
     });
     document.querySelectorAll('.nav__drop-btn').forEach(function (b) {
       b.addEventListener('click', function () {
