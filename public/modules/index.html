@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.127">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.131">
 </head>
 <body>
   <nav class="nav">
@@ -39,6 +39,8 @@
             <a href="/solutions/marketing" data-af="Bemarking">Marketing</a>
             
             <a href="/solutions/pos" data-af="POS">POS</a>
+            
+            <a href="/solutions/central" data-af="Sentrale beheer">Central control</a>
             
             <a href="/solutions/butcher" data-af="Slagter">Butcher</a>
             
@@ -78,44 +80,45 @@
     <h1 data-af="Twaalf departemente. Skakel aan wat jy nodig het.">Twelve departments. Switch on what you need.</h1>
     <p class="page-head__sub" data-af="Een werkspasie: Finansies in die kern, dan HR, Betaalstaat, Sekuriteit, K9, Verkope, Bemarking, POS, Slagter, Nuts, Boerdery en Studente. Begin met fakturering en voeg ’n departement by soos jy groei. Niks word hergetik nie.">One workspace: Finance at the core, then HR, Payroll, Security, K9, Sales, Marketing, POS, Butcher, Utility, Farming and Students. Start with billing and add a department as you grow. Nothing is re-typed.</p>
     <div class="stat-row">
-      <span class="stat">13 departments</span>
-      <span class="stat stat--live">32 live modules</span>
-      <span class="stat">125 department screens</span>
-      <span class="stat stat--planned">19 on roadmap</span>
+      <a class="stat" href="#dept-jump">13 departments</a>
+      <a class="stat stat--live" href="#live-modules">32 live modules</a>
+      <a class="stat" href="#live-modules">125 department screens</a>
+      <a class="stat stat--planned" href="#roadmap">19 on roadmap</a>
     </div>
   </div>
 </section>
 
-<nav class="dept-jump wrap" aria-label="Departments">
+<nav class="dept-jump wrap" id="dept-jump" aria-label="Departments">
   
-  <a class="dept-jump__link" href="#dept-finance" title="Books, billing, clients, reports and compliance — the core DivineBilling stack.">💰 <span data-af="Finansies">Finance</span></a>
+  <a class="dept-jump__link" href="/solutions/finance" title="Books, billing, clients, reports and compliance — the core DivineBilling stack.">💰 <span data-af="Finansies">Finance</span></a>
   
-  <a class="dept-jump__link" href="#dept-hr" title="Site-based workforce — PSIRA, employee files, leave, e-sign and self-service.">👥 <span data-af="HR · Personeel">HR · Personeel</span></a>
+  <a class="dept-jump__link" href="/solutions/hr" title="Site-based workforce — PSIRA, employee files, leave, e-sign and self-service.">👥 <span data-af="HR · Personeel">HR · Personeel</span></a>
   
-  <a class="dept-jump__link" href="#dept-security" title="PSIRA site operations — posts, occurrence book, incidents, access control, linked to HR, K9 and Payroll.">🛡️ <span data-af="Sekuriteit">Security</span></a>
+  <a class="dept-jump__link" href="/solutions/security" title="PSIRA site operations — posts, occurrence book, incidents, access control, linked to HR, K9 and Payroll.">🛡️ <span data-af="Sekuriteit">Security</span></a>
   
-  <a class="dept-jump__link" href="#dept-payroll" title="Contractor billing, pay runs, payslips and SARS EMP201.">💸 <span data-af="Betaalstaat">Payroll</span></a>
+  <a class="dept-jump__link" href="/solutions/payroll" title="Contractor billing, pay runs, payslips and SARS EMP201.">💸 <span data-af="Betaalstaat">Payroll</span></a>
   
-  <a class="dept-jump__link" href="#dept-dogs" title="Working dogs — records, training, medical alerts, handler pairing and deployment readiness.">🐕 <span data-af="K9">K9</span></a>
+  <a class="dept-jump__link" href="/solutions/k9" title="Working dogs — records, training, medical alerts, handler pairing and deployment readiness.">🐕 <span data-af="K9">K9</span></a>
   
-  <a class="dept-jump__link" href="#dept-marketing" title="Campaigns, content, leads, email, social, brand assets, events and ROI analytics.">📣 <span data-af="Bemarking">Marketing</span></a>
+  <a class="dept-jump__link" href="/solutions/marketing" title="Campaigns, content, leads, email, social, brand assets, events and ROI analytics.">📣 <span data-af="Bemarking">Marketing</span></a>
   
-  <a class="dept-jump__link" href="#dept-sales" title="CRM from lead-in to live account — inbox, e-sign proposals, VAT billing and a booking calendar.">🤝 <span data-af="Verkope">Sales</span></a>
+  <a class="dept-jump__link" href="/solutions/sales" title="CRM from lead-in to live account — inbox, e-sign proposals, VAT billing and a booking calendar.">🤝 <span data-af="Verkope">Sales</span></a>
   
-  <a class="dept-jump__link" href="#dept-butcher" title="Meat inventory and the POS till — warehouses, FEFO, transfers, yields and costing.">🥩 <span data-af="Slagter">Butcher</span></a>
+  <a class="dept-jump__link" href="/solutions/butcher" title="Meat inventory and the POS till — warehouses, FEFO, transfers, yields and costing.">🥩 <span data-af="Slagter">Butcher</span></a>
   
-  <a class="dept-jump__link" href="#dept-pos" title="Multi-store till — catch-weight sales, VAT receipts, stock orders, transfers and time clock.">🖥️ <span data-af="POS">POS</span></a>
+  <a class="dept-jump__link" href="/solutions/pos" title="Multi-store till — catch-weight sales, VAT receipts, stock orders, transfers and time clock.">🖥️ <span data-af="POS">POS</span></a>
   
-  <a class="dept-jump__link" href="#dept-central" title="Cloud inventory and ordering — all shops on one screen, then verify, confirm, sign off and submit.">🛰️ <span data-af="Sentrale beheer">Central control</span></a>
+  <a class="dept-jump__link" href="/solutions/central" title="Cloud inventory and ordering — all shops on one screen, then verify, confirm, sign off and submit.">🛰️ <span data-af="Sentrale beheer">Central control</span></a>
   
-  <a class="dept-jump__link" href="#dept-meters" title="Utility control — properties, readings, tariffs, billing, prepaid and a customer portal.">⚡ <span data-af="Nuts">Utility</span></a>
+  <a class="dept-jump__link" href="/solutions/utility" title="Utility control — properties, readings, tariffs, billing, prepaid and a customer portal.">⚡ <span data-af="Nuts">Utility</span></a>
   
-  <a class="dept-jump__link" href="#dept-farming" title="Chicken farm — flocks, feed, daily eggs, buy-in and sales, fertility and health.">🐔 <span data-af="Boerdery">Farming</span></a>
+  <a class="dept-jump__link" href="/solutions/farming" title="Chicken farm — flocks, feed, daily eggs, buy-in and sales, fertility and health.">🐔 <span data-af="Boerdery">Farming</span></a>
   
-  <a class="dept-jump__link" href="#dept-students" title="Learner file — identity, guardians, programmes, enrolment, attendance, results and fees.">🎓 <span data-af="Studente">Students</span></a>
+  <a class="dept-jump__link" href="/solutions/students" title="Learner file — identity, guardians, programmes, enrolment, attendance, results and fees.">🎓 <span data-af="Studente">Students</span></a>
   
 </nav>
 
+<div id="live-modules">
 
 <section class="section section--tight" id="dept-finance">
   <div class="wrap">
@@ -1518,8 +1521,9 @@
   </div>
 </section>
 
+</div>
 
-<section class="section">
+<section class="section" id="roadmap">
   <div class="wrap">
     <h2 class="section-label" data-af="Op die padkaart">On the roadmap</h2>
     <p class="section-note">Planned modules — <strong>Professional</strong> and <strong>Enterprise</strong> include new modules as they ship (Basic &amp; Standard can add early access at R149/mo per module).</p>
@@ -1712,6 +1716,8 @@
             
             <li><a href="/solutions/pos" data-af="POS">POS</a></li>
             
+            <li><a href="/solutions/central" data-af="Sentrale beheer">Central control</a></li>
+            
             <li><a href="/solutions/butcher" data-af="Slagter">Butcher</a></li>
             
             <li><a href="/solutions/utility" data-af="Nuts">Utility</a></li>
@@ -1803,5 +1809,32 @@
   })();
   </script>
   
+<script>
+(function () {
+  function openTarget(id) {
+    var el = document.getElementById(id);
+    if (!el) return false;
+    document.querySelectorAll('.dept-jump__link.is-active').forEach(function (a) {
+      a.classList.remove('is-active');
+    });
+    var link = document.querySelector('.dept-jump__link[href="#' + id + '"]');
+    if (link) link.classList.add('is-active');
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
+  }
+  document.querySelectorAll('.dept-jump__link, .stat-row a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var href = a.getAttribute('href') || '';
+      if (href.charAt(0) !== '#') return;
+      e.preventDefault();
+      if (openTarget(href.slice(1))) {
+        try { history.replaceState(null, '', href); } catch (err) {}
+      }
+    });
+  });
+  if (location.hash) openTarget(location.hash.replace('#', ''));
+})();
+</script>
+
 </body>
 </html>

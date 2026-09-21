@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.127">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.131">
 </head>
 <body>
   <nav class="nav">
@@ -39,6 +39,8 @@
             <a href="/solutions/marketing" data-af="Bemarking">Marketing</a>
             
             <a href="/solutions/pos" data-af="POS">POS</a>
+            
+            <a href="/solutions/central" data-af="Sentrale beheer">Central control</a>
             
             <a href="/solutions/butcher" data-af="Slagter">Butcher</a>
             
@@ -111,44 +113,55 @@
 
 <section class="section" id="product">
   <div class="wrap">
-    <div class="section__head">
+    <div class="section__head section__head--compact">
       <h2 data-af="Die produk, nie ’n mockup nie.">The product, not a mockup.</h2>
-      <p>Stills from the live demo tenant. Auto-advance is off on phones and when you ask the browser to save data. Open the demo to click through.</p>
+      <p>Live demo stills. Open the demo to click through.</p>
     </div>
     <div class="product-tour" data-product-tour>
       <div class="product-tour__frame">
         
-        <img src="/static/img/product/dashboard.png" alt="Live P&amp;L dashboard in the public DivineBilling demo tenant" width="1280" height="800" loading="eager">
+        <img src="/static/img/product/dashboard.png" alt="P&amp;L" width="200" height="200" loading="eager">
         
-        <img src="/static/img/product/transactions.png" alt="Transactions ledger in the public DivineBilling demo tenant" width="1280" height="800" hidden loading="lazy">
+        <img src="/static/img/product/transactions.png" alt="Ledger" width="200" height="200" hidden loading="lazy">
         
-        <img src="/static/img/product/clients.png" alt="Clients and quotes in the public DivineBilling demo tenant" width="1280" height="800" hidden loading="lazy">
+        <img src="/static/img/product/clients.png" alt="Clients" width="200" height="200" hidden loading="lazy">
         
-        <img src="/static/img/product/security-ob.png" alt="Digital occurrence book in the public DivineBilling demo tenant" width="1280" height="800" hidden loading="lazy">
+        <img src="/static/img/product/payroll.png" alt="Payroll" width="200" height="200" hidden loading="lazy">
         
-        <img src="/static/img/product/payroll.png" alt="Payroll in the public DivineBilling demo tenant" width="1280" height="800" hidden loading="lazy">
-        
-        <img src="/static/img/product/pos-terminal.png" alt="POS terminal in the public DivineBilling demo tenant" width="1280" height="800" hidden loading="lazy">
+        <img src="/static/img/product/pos-terminal.png" alt="POS" width="200" height="200" hidden loading="lazy">
         
       </div>
-      <div class="product-tour__dots" role="tablist" aria-label="Product screens">
+      <div class="product-tour__thumbs" role="tablist" aria-label="Product screens">
         
-        <button type="button" class="product-tour__dot is-active" aria-label="Show screen 1" data-tour-i="0"></button>
+        <button type="button" class="product-tour__thumb is-active" aria-label="P&amp;L" data-tour-i="0">
+          <img src="/static/img/product/dashboard.png" alt="" width="200" height="200" loading="lazy">
+          <span>P&amp;L</span>
+        </button>
         
-        <button type="button" class="product-tour__dot" aria-label="Show screen 2" data-tour-i="1"></button>
+        <button type="button" class="product-tour__thumb" aria-label="Ledger" data-tour-i="1">
+          <img src="/static/img/product/transactions.png" alt="" width="200" height="200" loading="lazy">
+          <span>Ledger</span>
+        </button>
         
-        <button type="button" class="product-tour__dot" aria-label="Show screen 3" data-tour-i="2"></button>
+        <button type="button" class="product-tour__thumb" aria-label="Clients" data-tour-i="2">
+          <img src="/static/img/product/clients.png" alt="" width="200" height="200" loading="lazy">
+          <span>Clients</span>
+        </button>
         
-        <button type="button" class="product-tour__dot" aria-label="Show screen 4" data-tour-i="3"></button>
+        <button type="button" class="product-tour__thumb" aria-label="Payroll" data-tour-i="3">
+          <img src="/static/img/product/payroll.png" alt="" width="200" height="200" loading="lazy">
+          <span>Payroll</span>
+        </button>
         
-        <button type="button" class="product-tour__dot" aria-label="Show screen 5" data-tour-i="4"></button>
-        
-        <button type="button" class="product-tour__dot" aria-label="Show screen 6" data-tour-i="5"></button>
+        <button type="button" class="product-tour__thumb" aria-label="POS" data-tour-i="4">
+          <img src="/static/img/product/pos-terminal.png" alt="" width="200" height="200" loading="lazy">
+          <span>POS</span>
+        </button>
         
       </div>
-      <p class="fine">Live demo tenant · captured 18 Sep 2026 · not a narrated video yet</p>
-      <div class="hero__cta" style="margin-top:16px">
-        <a class="btn btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Maak die lewendige demo oop">Open the live demo</a>
+      <p class="fine product-tour__note">Live demo · 18 Sep 2026</p>
+      <div class="hero__cta" style="margin-top:12px">
+        <a class="btn btn--sm btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Maak die lewendige demo oop">Open the live demo</a>
       </div>
     </div>
   </div>
@@ -258,6 +271,12 @@
         <span class="chip chip--billing">POS</span>
         <h3 data-af="POS">POS</h3>
         <p>Multi-store till on the Butcher cooler.</p>
+      </a>
+      
+      <a class="card card--module" href="/solutions/central">
+        <span class="chip chip--admin">Central control</span>
+        <h3 data-af="Sentrale beheer">Central control</h3>
+        <p>Warehouse stock, shop orders, FEFO pick and dispatch.</p>
       </a>
       
       <a class="card card--module" href="/solutions/butcher">
@@ -431,6 +450,8 @@
             <li><a href="/solutions/marketing" data-af="Bemarking">Marketing</a></li>
             
             <li><a href="/solutions/pos" data-af="POS">POS</a></li>
+            
+            <li><a href="/solutions/central" data-af="Sentrale beheer">Central control</a></li>
             
             <li><a href="/solutions/butcher" data-af="Slagter">Butcher</a></li>
             

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="School and college learner file — identity, guardians, programmes, enrolment, attendance, results, fees and notes.">
-  <title>Students · DivineBilling</title>
+  <meta name="description" content="Cloud inventory and ordering for multi-shop groups — live shop stock, overnight restock, warehouse FEFO pick and dispatch to every till.">
+  <title>Central control · DivineBilling</title>
   <link rel="icon" type="image/svg+xml" href="/static/img/divinebilling-mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
       
       
       <div class="nav__links">
-        <div class="nav__drop is-active">
+        <div class="nav__drop">
           <button type="button" class="nav__drop-btn" aria-expanded="false" data-af="Oplossings">Solutions</button>
           <div class="nav__drop-menu nav__drop-menu--wide">
             <a href="/solutions" data-af="Alle departemente">All departments</a>
@@ -40,7 +40,7 @@
             
             <a href="/solutions/pos" data-af="POS">POS</a>
             
-            <a href="/solutions/central" data-af="Sentrale beheer">Central control</a>
+            <a href="/solutions/central" class="is-active" data-af="Sentrale beheer">Central control</a>
             
             <a href="/solutions/butcher" data-af="Slagter">Butcher</a>
             
@@ -48,7 +48,7 @@
             
             <a href="/solutions/farming" data-af="Boerdery">Farming</a>
             
-            <a href="/solutions/students" class="is-active" data-af="Studente">Students</a>
+            <a href="/solutions/students" data-af="Studente">Students</a>
             
             <a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a>
             
@@ -80,14 +80,14 @@
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow" data-af="Studente · Skool &amp; kollege">Students · School &amp; college</span>
-    <h1 data-af="Die leerderlêer, fooie en resultate in een SIS.">The learner file, fees and results in one SIS.</h1>
-    <p class="lede" data-af="Studentelêer, voogde, programme, klasse, inskrywing, bywoning, resultate, fooie en notas. Skakel per maatskappy aan onder Setup → Modules.">Student file, guardians, programmes, classes, enrolment, attendance, results, fees and notes. Assign per company under Setup → Modules.</p>
+    <span class="eyebrow" data-af="Pakhuis · Sentrale beheer">Warehouse · Central control</span>
+    <h1 data-af="Een pakhuis. Elke winkel. Bestellings wat FEFO uitgaan en op die till land.">One warehouse. Every shop. Orders that leave FEFO and land on the till.</h1>
+    <p class="lede" data-af="’n Hub sien voorraad oor gekoppelde POS-winkels, verifieer oornag-aanvulling, tel pakhuislotte FEFO en stuur af na elke winkel.">A hub sees stock across linked POS shops, verifies overnight restock, picks warehouse batches FEFO, and dispatches into each store.</p>
     
-    <p class="trust-strip">Learner file — identity, guardians, programmes, enrolment, attendance, results and fees.</p>
+    <p class="trust-strip">Cloud inventory and ordering — all shops on one screen, then verify, confirm, sign off and submit.</p>
     
     <div class="hero__cta">
-      <a class="btn btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Sien die studente-demo">See the students demo</a>
+      <a class="btn btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Sien Sentrale beheer">See Central control</a>
       
       <a class="btn btn--ghost" href="https://www.divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
       
@@ -99,7 +99,7 @@
 
 <section class="section section--tight">
   <div class="wrap">
-    <p class="built-for">Small schools, colleges and training centres that already bill fees and need a learner file — not a full DHET SIS.</p>
+    <p class="built-for">Multi-shop food retailers that replenish from one warehouse — not a generic WMS for 3PLs.</p>
   </div>
 </section>
 
@@ -109,11 +109,11 @@
       <h2 data-af="Die probleem">The problem</h2>
       <ul class="contact-points">
         
-        <li>Enrolment in Excel, fees in the books, results in a markbook.</li>
+        <li>Nineteen shops WhatsApp the factory what they think they need.</li>
         
-        <li>Guardians cannot see a single student record.</li>
+        <li>Warehouse picks old stock first — or the wrong shop gets the last batch.</li>
         
-        <li>Attendance is paper.</li>
+        <li>Inter-shop transfers hide that the warehouse still has product.</li>
         
       </ul>
     </div>
@@ -121,11 +121,11 @@
       <h2 data-af="Hoe dit werk">How it works</h2>
       <ol class="steps">
         
-        <li>Open the student file and guardians.</li>
+        <li>Link each POS shop to the hub.</li>
         
-        <li>Enrol on programmes and classes.</li>
+        <li>Shops confirm and send restock; the hub verifies, signs off and submits.</li>
         
-        <li>Track attendance, results and fees next to Finance.</li>
+        <li>Warehouse picks FEFO, packs the route, delivers into shop stock.</li>
         
       </ol>
     </div>
@@ -142,61 +142,21 @@
       <article class="feature">
         
         <div class="shot shot--photo">
-          <img src="/static/img/product/students-dashboard.png" alt="Students dashboard in the public DivineBilling demo tenant" width="1280" height="800" loading="lazy">
+          <img src="/static/img/product/butcher-dashboard.png" alt="Butcher inventory dashboard in the public DivineBilling demo tenant" width="1280" height="800" loading="lazy">
         </div>
         
-        <h3>Students department — learner file</h3>
-        <p>School and college SIS: student file, guardians, programmes, classes, enrolment, attendance, results, fees and notes. Assign per company under Setup → Modules.</p>
+        <h3>Central control — inventory &amp; ordering</h3>
+        <p>One live view of linked shops: stock alerts, morning restock lists, then receive, verify, confirm, sign off and submit orders to production.</p>
       </article>
       
       <article class="feature">
         
         <div class="shot shot--photo">
-          <img src="/static/img/product/clients.png" alt="Clients and quotes" width="1280" height="800" loading="lazy">
+          <img src="/static/img/product/pos-terminal.png" alt="POS terminal" width="1280" height="800" loading="lazy">
         </div>
         
-        <h3>Dashboard</h3>
-        <p>Headcount, new enrolments, outstanding fees, attendance today and results due.</p>
-      </article>
-      
-      <article class="feature">
-        
-        <div class="shot shot--photo">
-          <img src="/static/img/product/dashboard.png" alt="Live P&amp;L dashboard" width="1280" height="800" loading="lazy">
-        </div>
-        
-        <h3>Students</h3>
-        <p>Full student file: identity, contacts, medical, campus, status and student number.</p>
-      </article>
-      
-      <article class="feature">
-        
-        <div class="shot shot--photo">
-          <img src="/static/img/product/transactions.png" alt="Transactions ledger" width="1280" height="800" loading="lazy">
-        </div>
-        
-        <h3>Guardians &amp; next of kin</h3>
-        <p>Parents, sponsors and emergency contacts linked to each student.</p>
-      </article>
-      
-      <article class="feature">
-        
-        <div class="shot shot--photo">
-          <img src="/static/img/product/students-dashboard.png" alt="Students dashboard in the public DivineBilling demo tenant" width="1280" height="800" loading="lazy">
-        </div>
-        
-        <h3>Programmes</h3>
-        <p>Courses, grades, learnerships and NQF programmes with duration and fees.</p>
-      </article>
-      
-      <article class="feature">
-        
-        <div class="shot shot--photo">
-          <img src="/static/img/product/clients.png" alt="Clients and quotes" width="1280" height="800" loading="lazy">
-        </div>
-        
-        <h3>Classes &amp; groups</h3>
-        <p>Year groups, campuses and class teachers for the academic year.</p>
+        <h3>Morning control</h3>
+        <p>Warehouse sitting, committed, in-transit, shop alerts, and what production dries tomorrow.</p>
       </article>
       
       <article class="feature">
@@ -205,8 +165,8 @@
           <img src="/static/img/product/dashboard.png" alt="Live P&amp;L dashboard" width="1280" height="800" loading="lazy">
         </div>
         
-        <h3>Enrolment</h3>
-        <p>Place a student on a programme and class — start, end and enrolment status.</p>
+        <h3>Warehouse</h3>
+        <p>Finished goods, packaging and spices. Receive, QC, min/max, 7–10 day cover alerts.</p>
       </article>
       
       <article class="feature">
@@ -215,8 +175,48 @@
           <img src="/static/img/product/transactions.png" alt="Transactions ledger" width="1280" height="800" loading="lazy">
         </div>
         
-        <h3>Attendance</h3>
-        <p>Daily present, absent, late and excused marks per class.</p>
+        <h3>Shop stock</h3>
+        <p>Live stock in every linked shop. Red = below reorder, yellow = 3–5 days cover.</p>
+      </article>
+      
+      <article class="feature">
+        
+        <div class="shot shot--photo">
+          <img src="/static/img/product/clients.png" alt="Clients and quotes" width="1280" height="800" loading="lazy">
+        </div>
+        
+        <h3>Shop orders</h3>
+        <p>Overnight restock from 19 shops. Over-need needs warehouse manager approval.</p>
+      </article>
+      
+      <article class="feature">
+        
+        <div class="shot shot--photo">
+          <img src="/static/img/product/butcher-dashboard.png" alt="Butcher inventory dashboard in the public DivineBilling demo tenant" width="1280" height="800" loading="lazy">
+        </div>
+        
+        <h3>Pick list</h3>
+        <p>06:00 consolidated pick by route. FEFO batch codes on every line.</p>
+      </article>
+      
+      <article class="feature">
+        
+        <div class="shot shot--photo">
+          <img src="/static/img/product/pos-terminal.png" alt="POS terminal" width="1280" height="800" loading="lazy">
+        </div>
+        
+        <h3>Dispatch</h3>
+        <p>Pack, vans leave, deliver to shops. On-time and complete-order score.</p>
+      </article>
+      
+      <article class="feature">
+        
+        <div class="shot shot--photo">
+          <img src="/static/img/product/dashboard.png" alt="Live P&amp;L dashboard" width="1280" height="800" loading="lazy">
+        </div>
+        
+        <h3>Production priority</h3>
+        <p>Dry only what we can sell plus a 10–14 day warehouse buffer.</p>
       </article>
       
     </div>
@@ -229,19 +229,19 @@
       <h2 data-af="Gebou vir Suid-Afrika">Built for South Africa</h2>
       <ul class="contact-points">
         
-        <li>Learner file with identity and guardians</li>
+        <li>Works with POS restock lists</li>
         
-        <li>Fees alongside DivineBilling books</li>
+        <li>FEFO by best-before then production date</li>
         
-        <li>Attendance and results</li>
+        <li>Over-need needs warehouse manager approval</li>
         
-        <li>Per-company module switch</li>
+        <li>Write-offs need a photo</li>
         
       </ul>
     </div>
     <div>
       <h2 data-af="Hoe dit inskakel">How it fits</h2>
-      <p>Fees belong with Finance. This is not claimed as a national EMIS submission tool.</p>
+      <p>Central sits next to POS and Butcher. Shops send orders from POS; the warehouse is the source of truth for finished goods.</p>
     </div>
   </div>
 </section>
@@ -264,13 +264,18 @@
     <div class="faq">
       
       <details class="feature">
-        <summary>Is this for public schools?</summary>
-        <p>It is a learner file for schools and colleges you operate as a business. Government EMIS submission is not included.</p>
+        <summary>Do shops still use POS?</summary>
+        <p>Yes — tills stay on POS. Central is the hub that receives those restock lists.</p>
       </details>
       
       <details class="feature">
-        <summary>Can parents log in?</summary>
-        <p>The student file and fees sit in the office workspace. A full parent app is not claimed here.</p>
+        <summary>Can shops transfer stock to each other?</summary>
+        <p>Not while the warehouse still has that product, unless you grant a same-day waiver.</p>
+      </details>
+      
+      <details class="feature">
+        <summary>Is this a tablet counting app?</summary>
+        <p>Not in this cut — counts and write-offs are in the browser department.</p>
       </details>
       
     </div>
@@ -280,9 +285,9 @@
 <section class="section section--wash">
   <div class="wrap">
     <h2 data-af="Bewys, nie beloftes nie">See it, then decide</h2>
-    <p class="lede" style="margin-top:12px">Enable Students on the demo company to walk the learner file.</p>
+    <p class="lede" style="margin-top:12px">Enable Central on the company, link POS shops, then send a restock list from a store.</p>
     <div class="hero__cta" style="margin-top:20px">
-      <a class="btn btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Sien die studente-demo">See the students demo</a>
+      <a class="btn btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Sien Sentrale beheer">See Central control</a>
       <a class="btn btn--ghost" href="https://www.divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
     </div>
     <p class="hero__note">Free trial · No card required · Cancel anytime</p>
