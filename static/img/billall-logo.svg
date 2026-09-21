@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Bill-All">
+  <defs>
+    <linearGradient id="ba-g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17B26A"/>
+      <stop offset="100%" stop-color="#0E9F6E"/>
+    </linearGradient>
+    <linearGradient id="ba-n" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#132B4D"/>
+      <stop offset="100%" stop-color="#0B1B33"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="url(#ba-n)"/>
+  <g transform="translate(24 22)">
+    <rect x="0" y="8" width="52" height="64" rx="8" fill="#fff" opacity=".12"/>
+    <rect x="8" y="0" width="52" height="64" rx="8" fill="#fff" opacity=".22"/>
+    <rect x="16" y="-6" width="52" height="64" rx="8" fill="url(#ba-g)"/>
+    <path d="M34 18h16v4H34zm0 10h22v4H34zm0 10h18v4H34z" fill="#fff" opacity=".95"/>
+    <circle cx="30" cy="52" r="10" fill="#0B1B33" opacity=".25"/>
+    <text x="30" y="56" text-anchor="middle" font-family="Segoe UI, system-ui, sans-serif" font-size="11" font-weight="800" fill="#fff">R</text>
+  </g>
+</svg>

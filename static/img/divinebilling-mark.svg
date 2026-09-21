@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="DivineBilling">
+  <defs>
+    <linearGradient id="db-g" x1="12%" y1="50%" x2="92%" y2="50%">
+      <stop offset="0%" stop-color="#2ECFC2"/>
+      <stop offset="100%" stop-color="#2F7BFF"/>
+    </linearGradient>
+  </defs>
+  <path d="M28 86 A46 46 0 0 1 96 40" fill="none" stroke="url(#db-g)" stroke-width="5.5" stroke-linecap="round"/>
+  <circle cx="98" cy="48" r="4.2" fill="#2F7BFF"/>
+  <circle cx="104" cy="60" r="3.1" fill="#2F7BFF"/>
+  <circle cx="106.5" cy="71" r="2.1" fill="#2F7BFF"/>
+  <path fill="url(#db-g)" d="M34.5 92c-11.2 0-20.5-8.4-20.5-19.8 0-9.6 7-17.6 16.4-19.4 3.2-14.2 16.4-24.4 31.6-24.4 13.4 0 25 8 29.6 19.8 12.2.6 21.9 10.4 21.9 22.6 0 12.6-10.4 22.8-23.2 22.8H34.5z"/>
+  <path d="M48 68.5 58.2 78.5 82 52.5" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
