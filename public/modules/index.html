@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.156">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.168">
 </head>
 <body>
   <nav class="nav">
@@ -50,6 +50,8 @@
             
             <a href="/solutions/students" data-af="Studente">Students</a>
             
+            <a href="/solutions/voting" data-af="Stem OS">Voting OS</a>
+            
             <a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a>
             
           </div>
@@ -80,9 +82,9 @@
     <h1 data-af="Twaalf departemente. Skakel aan wat jy nodig het.">Twelve departments. Switch on what you need.</h1>
     <p class="page-head__sub" data-af="Een werkspasie: Finansies in die kern, dan HR, Betaalstaat, Sekuriteit, K9, Verkope, Bemarking, POS, Slagter, Nuts, Boerdery en Studente. Begin met fakturering en voeg ’n departement by soos jy groei. Niks word hergetik nie.">One workspace: Finance at the core, then HR, Payroll, Security, K9, Sales, Marketing, POS, Butcher, Utility, Farming and Students. Start with billing and add a department as you grow. Nothing is re-typed.</p>
     <div class="stat-row">
-      <a class="stat" href="#dept-jump">13 departments</a>
-      <a class="stat stat--live" href="#live-modules">32 live modules</a>
-      <a class="stat" href="#live-modules">125 department screens</a>
+      <a class="stat" href="#dept-jump">14 departments</a>
+      <a class="stat stat--live" href="#live-modules">34 live modules</a>
+      <a class="stat" href="#live-modules">137 department screens</a>
       <a class="stat stat--planned" href="#roadmap">19 on roadmap</a>
     </div>
   </div>
@@ -108,13 +110,15 @@
   
   <a class="dept-jump__link" href="/solutions/pos" title="Multi-store till — catch-weight sales, VAT receipts, stock orders, transfers and time clock.">🖥️ <span data-af="POS">POS</span></a>
   
-  <a class="dept-jump__link" href="/solutions/central" title="Cloud inventory and ordering — all shops on one screen, then verify, confirm, sign off and submit.">🛰️ <span data-af="Sentrale beheer">Central control</span></a>
+  <a class="dept-jump__link" href="/solutions/central" title="Cloud inventory and ordering — shops submit, Central confirms, then submits to the warehouse.">🛰️ <span data-af="Sentrale beheer">Central control</span></a>
   
   <a class="dept-jump__link" href="/solutions/utility" title="Utility control — properties, readings, tariffs, billing, prepaid and a customer portal.">⚡ <span data-af="Nuts">Utility</span></a>
   
   <a class="dept-jump__link" href="/solutions/farming" title="Chicken farm — flocks, feed, daily eggs, buy-in and sales, fertility and health.">🐔 <span data-af="Boerdery">Farming</span></a>
   
   <a class="dept-jump__link" href="/solutions/students" title="Learner file — identity, guardians, programmes, enrolment, attendance, results and fees.">🎓 <span data-af="Studente">Students</span></a>
+  
+  <a class="dept-jump__link" href="/solutions/voting" title="Party canvassing, consented outreach and a white-label or party-branded workspace. Sold on its own.">🗳️ <span data-af="Stem OS">Voting OS</span></a>
   
 </nav>
 
@@ -133,7 +137,7 @@
         <p class="card-footnote" style="margin-top:8px"><a href="/solutions/finance" style="color:var(--accent)" data-af="Departementbladsy →">Department page →</a></p>
       </div>
       <span class="dept-head__stats">
-        <span class="dept-head__count">15 modules</span>
+        <span class="dept-head__count">16 modules</span>
         
       </span>
     </div>
@@ -227,6 +231,12 @@
         <span class="chip chip--security">Security</span>
         <h3>Protected ID numbers</h3>
         <p>SA ID / passport numbers masked by default. Reveal with password when needed.</p>
+      </article>
+      
+      <article class="card card--module">
+        <span class="chip chip--core">Core</span>
+        <h3>Assistant V2.0</h3>
+        <p>Chat on the public site and inside every office. It explains each live module, answers pricing, and logs a lead, an issue, or a bug on the support desk.</p>
       </article>
       
       
@@ -1035,7 +1045,7 @@
       <article class="card card--module card--submodule">
         <span class="chip chip--admin">POS screen</span>
         <h3>Stock orders</h3>
-        <p>Net restock lists. Confirm, then send — linked Central hubs receive, verify, sign off and submit.</p>
+        <p>Net restock lists. Submit locks the order and moves it into history. Linked Central hubs confirm, then submit.</p>
         <p class="card-footnote">Included with POS</p>
       </article>
       
@@ -1084,7 +1094,7 @@
       <span class="dept-head__icon" aria-hidden="true">🛰️</span>
       <div>
         <h2 class="section-label dept-head__title" data-af="Sentrale beheer">Central control</h2>
-        <p class="dept-head__blurb" data-af="Wolkvoorraad en bestellings — alle winkels op een skerm, dan verifieer, bevestig, teken af en dien in.">Cloud inventory and ordering — all shops on one screen, then verify, confirm, sign off and submit.</p>
+        <p class="dept-head__blurb" data-af="Wolkvoorraad en bestellings — winkels dien in, Sentraal bevestig, dan dien dit by die pakhuis in.">Cloud inventory and ordering — shops submit, Central confirms, then submits to the warehouse.</p>
         
         <p class="dept-head__highlights">Central control — inventory &amp; ordering · Morning control · Warehouse · Shop stock · Shop orders · Pick list · Dispatch · Production priority</p>
         
@@ -1102,7 +1112,7 @@
       <article class="card card--module">
         <span class="chip chip--admin">Central</span>
         <h3>Central control — inventory &amp; ordering</h3>
-        <p>One live view of linked shops: stock alerts, morning restock lists, then receive, verify, confirm, sign off and submit orders to production.</p>
+        <p>One live view of linked shops: stock alerts, morning restock lists, then receive shop orders, confirm them and submit to the warehouse.</p>
       </article>
       
       
@@ -1521,6 +1531,122 @@
   </div>
 </section>
 
+<section class="section " id="dept-voting">
+  <div class="wrap">
+    <div class="dept-head">
+      <span class="dept-head__icon" aria-hidden="true">🗳️</span>
+      <div>
+        <h2 class="section-label dept-head__title" data-af="Stem OS">Voting OS</h2>
+        <p class="dept-head__blurb" data-af="Party-kanvassering, toegestemde uitreik en ’n wit-etiket of party-handelsmerk. Op sy eie te koop.">Party canvassing, consented outreach and a white-label or party-branded workspace. Sold on its own.</p>
+        
+        <p class="dept-head__highlights">Voting OS — party canvassing · Dashboard · Contacts &amp; CRM · Canvassing · Bulk import · Wards &amp; voting districts · Caller list · Outreach</p>
+        
+        <p class="card-footnote" style="margin-top:8px"><a href="/solutions/voting" style="color:var(--accent)" data-af="Departementbladsy →">Department page →</a></p>
+      </div>
+      <span class="dept-head__stats">
+        <span class="dept-head__count">1 module</span>
+        
+        <span class="dept-head__count">12 screens</span>
+        
+      </span>
+    </div>
+    <div class="grid grid--3">
+      
+      <article class="card card--module">
+        <span class="chip chip--admin">Voting OS</span>
+        <h3>Voting OS — party canvassing</h3>
+        <p>Standalone campaign workspace: consented contacts, door canvassing, ward coverage, WhatsApp/call/email gates, volunteers and a party white-label. Buy this department on its own.</p>
+      </article>
+      
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Dashboard</h3>
+        <p>Coverage, sentiment and outreach by ward. Live feedback sits on its own screen.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Contacts &amp; CRM</h3>
+        <p>Search by ward, sentiment and consent. History, tasks and data-subject actions on each person.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Canvassing</h3>
+        <p>Door form with per-channel consent. The phone queues a visit when there is no signal and syncs it later.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Bulk import</h3>
+        <p>CSV upload requires a consent source. Unverified imports stay out of automated sends.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Wards &amp; voting districts</h3>
+        <p>Wards, voting districts and the street assigned to each canvasser for the week.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Caller list</h3>
+        <p>Undecided contacts first. A sentiment shift updates the dashboard the same day.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Outreach</h3>
+        <p>WhatsApp, call lists and email. Every send checks channel consent and the suppression list.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Volunteers &amp; events</h3>
+        <p>Canvassers, callers and event attendance, separate from the voter list.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Feedback</h3>
+        <p>Newest ward reactions first — positive, negative or neutral, with a topic.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Consent audit</h3>
+        <p>Who captured consent, when, and which script. Export-ready for a POPIA query.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Party brand</h3>
+        <p>Party name and colours, or a white-label shell. Election day is set here and locks campaigning on that date.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+      <article class="card card--module card--submodule">
+        <span class="chip chip--admin">Voting OS screen</span>
+        <h3>Campaign runbook</h3>
+        <p>Week-by-week plan to 4 November 2026, roles, risks and the numbers to watch.</p>
+        <p class="card-footnote">Included with Voting OS</p>
+      </article>
+      
+    </div>
+  </div>
+</section>
+
 </div>
 
 <section class="section" id="roadmap">
@@ -1726,6 +1852,8 @@
             
             <li><a href="/solutions/students" data-af="Studente">Students</a></li>
             
+            <li><a href="/solutions/voting" data-af="Stem OS">Voting OS</a></li>
+            
             <li><a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a></li>
             
           </ul>
@@ -1755,6 +1883,44 @@
 
   <div class="sticky-cta" aria-label="Start free trial">
     <a class="btn btn--primary" href="https://www.divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
+  </div>
+
+  <div class="db-chat" id="db-pub-chat" data-api="https://platform.divinebilling.online/api/public/support/chat">
+    <button type="button" class="db-chat__toggle" aria-expanded="false" data-af="Vra V2.0">Assistant V2.0</button>
+    <div class="db-chat__panel" role="dialog" aria-label="Ask DivineBilling">
+      <div class="db-chat__head">
+        <div>
+          <strong>Assistant V2.0</strong>
+          <p data-af="Modules, pryse, demo — of ’n opvolg">Every module, pricing, or a follow-up</p>
+        </div>
+        <button type="button" class="db-chat__close" aria-label="Close">×</button>
+      </div>
+      <div class="db-chat__thread" aria-live="polite"></div>
+      <div class="db-chat__chips">
+        <button type="button" data-ask="What modules do you have, and what does each one do?">All modules</button>
+        <button type="button" data-ask="Which modules fit a security company?">Security</button>
+        <button type="button" data-ask="How much is pricing for 3 companies?">Pricing</button>
+        <button type="button" data-lead="Book a demo">Book a demo</button>
+        <button type="button" data-lead="Get a quote">Get a quote</button>
+      </div>
+      <div class="db-chat__tools">
+        <button type="button" class="db-chat__follow-btn" data-af="Vra die span om op te volg">Ask the team to follow up</button>
+      </div>
+      <form class="db-chat__follow" hidden>
+        <input name="name" type="text" autocomplete="name" placeholder="Name">
+        <input name="email" type="email" autocomplete="email" placeholder="Email" required>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional)">
+        <input name="company" type="text" autocomplete="organization" placeholder="Company">
+        <input name="interest" type="text" placeholder="Module or department (optional)">
+        <textarea name="note" rows="2" placeholder="What should we follow up on?"></textarea>
+        <button type="submit" data-af="Stuur">Send to the team</button>
+      </form>
+      <form class="db-chat__form">
+        <label class="visually-hidden" for="db-chat-input" style="position:absolute;left:-9999px">Message</label>
+        <textarea class="db-chat__input" id="db-chat-input" rows="1" placeholder="Ask a question…" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -1831,6 +1997,7 @@
     });
   })();
   </script>
+  <script src="/static/js/public-chat.js?v=2.10.168"></script>
   
 <script>
 (function () {

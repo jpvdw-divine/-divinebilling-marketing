@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.156">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.168">
 </head>
 <body>
   <nav class="nav">
@@ -49,6 +49,8 @@
             <a href="/solutions/farming" data-af="Boerdery">Farming</a>
             
             <a href="/solutions/students" data-af="Studente">Students</a>
+            
+            <a href="/solutions/voting" data-af="Stem OS">Voting OS</a>
             
             <a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a>
             
@@ -92,7 +94,7 @@
     <div class="switcher">
       <div class="switcher__head">
         <p data-af="Bou jou plan">Build your plan</p>
-        <span class="switcher__count"><span id="switcher-count" class="mono">5</span> of 32 modules</span>
+        <span class="switcher__count"><span id="switcher-count" class="mono">6</span> of 34 modules</span>
       </div>
       <div class="switcher__list" id="switcher-list"></div>
       <div class="switcher__foot">
@@ -196,7 +198,7 @@
       </div>
       
     </div>
-    <p style="margin-top:24px"><a href="/modules" style="color:var(--accent);font-size:14px;font-weight:500" data-af="Sien al 32 lewendige modules →">View all 32 live modules and the roadmap →</a></p>
+    <p style="margin-top:24px"><a href="/modules" style="color:var(--accent);font-size:14px;font-weight:500" data-af="Sien al 34 lewendige modules →">View all 34 live modules and the roadmap →</a></p>
   </div>
 </section>
 
@@ -284,6 +286,12 @@
         <span class="chip chip--portal">Students</span>
         <h3 data-af="Studente">Students</h3>
         <p>Learner file, attendance, results and fees.</p>
+      </a>
+      
+      <a class="card card--module" href="/solutions/voting">
+        <span class="chip chip--admin">Voting OS</span>
+        <h3 data-af="Stem OS">Voting OS</h3>
+        <p>Party canvassing on its own, with party colours or a white-label shell.</p>
       </a>
       
       <a class="card card--module" href="/for-bookkeepers">
@@ -444,6 +452,8 @@
             
             <li><a href="/solutions/students" data-af="Studente">Students</a></li>
             
+            <li><a href="/solutions/voting" data-af="Stem OS">Voting OS</a></li>
+            
             <li><a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a></li>
             
           </ul>
@@ -473,6 +483,44 @@
 
   <div class="sticky-cta" aria-label="Start free trial">
     <a class="btn btn--primary" href="https://www.divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
+  </div>
+
+  <div class="db-chat" id="db-pub-chat" data-api="https://platform.divinebilling.online/api/public/support/chat">
+    <button type="button" class="db-chat__toggle" aria-expanded="false" data-af="Vra V2.0">Assistant V2.0</button>
+    <div class="db-chat__panel" role="dialog" aria-label="Ask DivineBilling">
+      <div class="db-chat__head">
+        <div>
+          <strong>Assistant V2.0</strong>
+          <p data-af="Modules, pryse, demo — of ’n opvolg">Every module, pricing, or a follow-up</p>
+        </div>
+        <button type="button" class="db-chat__close" aria-label="Close">×</button>
+      </div>
+      <div class="db-chat__thread" aria-live="polite"></div>
+      <div class="db-chat__chips">
+        <button type="button" data-ask="What modules do you have, and what does each one do?">All modules</button>
+        <button type="button" data-ask="Which modules fit a security company?">Security</button>
+        <button type="button" data-ask="How much is pricing for 3 companies?">Pricing</button>
+        <button type="button" data-lead="Book a demo">Book a demo</button>
+        <button type="button" data-lead="Get a quote">Get a quote</button>
+      </div>
+      <div class="db-chat__tools">
+        <button type="button" class="db-chat__follow-btn" data-af="Vra die span om op te volg">Ask the team to follow up</button>
+      </div>
+      <form class="db-chat__follow" hidden>
+        <input name="name" type="text" autocomplete="name" placeholder="Name">
+        <input name="email" type="email" autocomplete="email" placeholder="Email" required>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional)">
+        <input name="company" type="text" autocomplete="organization" placeholder="Company">
+        <input name="interest" type="text" placeholder="Module or department (optional)">
+        <textarea name="note" rows="2" placeholder="What should we follow up on?"></textarea>
+        <button type="submit" data-af="Stuur">Send to the team</button>
+      </form>
+      <form class="db-chat__form">
+        <label class="visually-hidden" for="db-chat-input" style="position:absolute;left:-9999px">Message</label>
+        <textarea class="db-chat__input" id="db-chat-input" rows="1" placeholder="Ask a question…" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -549,13 +597,18 @@
     });
   })();
   </script>
+  <script src="/static/js/public-chat.js?v=2.10.168"></script>
   
 <script>
 (function () {
   var TICK = '<svg viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 8.8 10 3.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  var MODULES = [{"core": true, "d": "Weekly and monthly profit views, KPI cards and break-even tracking \u2014 updated as transactions land.", "n": "Dashboard \u0026 live P\u0026L", "t": "core"}, {"core": true, "d": "Every expense, transfer and income in one place. Manual entry, categories and full audit history.", "n": "Transactions \u0026 ledger", "t": "core"}, {"core": true, "d": "Contractors log timesheets, raise invoices and submit for payment \u2014 you approve from one queue.", "n": "Contractor billing \u0026 payments", "t": "billing"}, {"core": false, "d": "Track contractor hours by client and project. Import timesheets from CSV or Excel.", "n": "Contract work timesheets", "t": "billing"}, {"core": true, "d": "Invoice your customers, send quotes and convert to invoices on acceptance. Branded PDF exports.", "n": "Clients \u0026 quotes", "t": "billing"}, {"core": true, "d": "Customers sign in to view invoices, quotes, balances and download account statements.", "n": "Customer portal \u0026 statements", "t": "portal"}, {"core": false, "d": "Self-service profile, bank details, documents, timesheets and invoice submission for field staff.", "n": "Contractor portal", "t": "portal"}, {"core": false, "d": "Connect IMAP \u2014 PDF invoices flagged for payment and assigned to income or expense categories.", "n": "Email inbox capture", "t": "core"}, {"core": false, "d": "Import bank CSVs and PDF statements instead of retyping. Batch tracking and import logs.", "n": "Bank \u0026 file imports", "t": "core"}, {"core": false, "d": "Switch companies in seconds, group consolidation and separate books per entity.", "n": "Multi-company", "t": "core"}, {"core": false, "d": "Weekly P\u0026L, 6- and 12-month trends, PDF exports and revenue calculator with break-even targets.", "n": "Reports \u0026 exports", "t": "reports"}, {"core": false, "d": "See which clients and ledger categories actually make money.", "n": "Profitability by client / project", "t": "reports"}, {"core": false, "d": "30/60/90-day projection using AR, fixed obligations and trailing cash trends.", "n": "Cash-flow forecasting", "t": "reports"}, {"core": false, "d": "Set monthly targets per category and track variance against live transactions.", "n": "Budgets vs actuals", "t": "reports"}, {"core": false, "d": "Weekly or monthly digest to the owner\u0027s inbox \u2014 P\u0026L summary on autopilot.", "n": "Scheduled email reports", "t": "reports"}, {"core": false, "d": "Full HR stack for site-based workforces (security PSIRA): employee file with SA ID, document uploads, qualification expiry, site allocation, mobile leave, e-sign from phone.", "n": "HRMS \u2014 Personeel department", "t": "admin"}, {"core": false, "d": "Employees, pay items, pay runs, payslips and EMP201 monthly PAYE, UIF and SDL totals.", "n": "Payroll \u2014 pay runs \u0026 SARS", "t": "admin"}, {"core": false, "d": "Site security stack: organogram, officers linked to HR, post orders, occurrence book, incidents, access control, equipment, training and roster \u2014 connected to Payroll and K9.", "n": "Security department \u2014 PSIRA operations", "t": "admin"}, {"core": false, "d": "Full working-dog stack: records, handlers, training, medical, sites, and K9 billing \u2014 dogs and guards per site invoiced to the linked client, with VAT on quotes and invoices.", "n": "K9 \u2014 Working dog management", "t": "admin"}, {"core": false, "d": "Campaigns, content calendar, lead CRM, email and social planning, brand assets, events/webinars and ROI analytics linked to Finance reports.", "n": "Marketing department", "t": "admin"}, {"core": false, "d": "Monthly client-facing website reports: WordPress core/plugin health from your own reporting agent plugin, Google Analytics traffic, PageSpeed performance, and known vulnerabilities \u2014 built and sent by Marketing.", "n": "Client Reports \u2014 website health \u0026 traffic", "t": "admin"}, {"core": false, "d": "Fixed process: Lead in \u2192 Qualified \u2192 Discovery \u2192 Proposal \u2192 Negotiation \u2192 Closed won \u2192 Handoff \u2192 Live. CRM, inbox, e-sign proposals, VAT billing and calendar.", "n": "Sales \u2014 lead to live account", "t": "core"}, {"core": false, "d": "Multi-shop meat inventory plus the POS till: shared shops and SKUs, FEFO batches, directed transfers, catch-weight sales, yields and costing.", "n": "Recipe Management \u2014 Butcher department", "t": "admin"}, {"core": false, "d": "Shop terminals on the same cooler as Butcher \u2014 catalogue, catch-weight kg, 15% VAT receipts, transfers, time clock; staff from HR, takings posted to Finance.", "n": "POS \u2014 multi-store till", "t": "admin"}, {"core": false, "d": "One live view of linked shops: stock alerts, morning restock lists, then receive, verify, confirm, sign off and submit orders to production.", "n": "Central control \u2014 inventory \u0026 ordering", "t": "admin"}, {"core": false, "d": "Utility control room: body corporates, meter register, reading cycles, municipal bills, tariffs, billing, prepaid monitoring, field jobs, and a customer portal.", "n": "Utility department \u2014 Electrical \u0026 Water", "t": "admin"}, {"core": false, "d": "Chicken operations: flocks (age, breed, status), houses, feed, daily egg collection, eggs bought in and sold, fertility/hatch records, vaccinations and mortality history.", "n": "Farming department \u2014 Chicken farm", "t": "admin"}, {"core": false, "d": "School and college SIS: student file, guardians, programmes, classes, enrolment, attendance, results, fees and notes. Assign per company under Setup \u2192 Modules.", "n": "Students department \u2014 learner file", "t": "admin"}, {"core": false, "d": "Viewer, bookkeeper, director and admin roles per company \u2014 granular access control.", "n": "Role-based permissions", "t": "admin"}, {"core": false, "d": "Fixed costs per company feed break-even and cash-flow forecasts automatically.", "n": "Monthly obligations", "t": "core"}, {"core": false, "d": "Every admin change to a contractor invoice is logged for year-end reviews.", "n": "Invoice audit trail", "t": "security"}, {"core": false, "d": "SA ID / passport numbers masked by default. Reveal with password when needed.", "n": "Protected ID numbers", "t": "security"}];
-  var TIERS = [{"all_modules": false, "audience": "Solo owner \u2014 core billing included, plus any 5 optional modules", "companies": 1, "contractors": "Unlimited", "highlight": false, "id": "basic", "modules_pick": 5, "monthly": 99, "name": "Basic", "seats": 1, "setup": null, "setup_label": "Waived", "tagline": "Start billing"}, {"all_modules": false, "audience": "Small teams \u2014 core billing plus any 12 optional modules", "companies": 3, "contractors": "Unlimited", "highlight": true, "id": "standard", "intro_monthly": 299, "intro_months": 3, "modules_pick": 12, "monthly": 695, "name": "Standard", "seats": 3, "setup": 250, "tagline": "Best for 2\u20133 companies"}, {"all_modules": true, "audience": "All 32 live modules included \u2014 agencies and groups", "companies": 8, "contractors": "Unlimited", "highlight": false, "id": "professional", "modules_pick": null, "monthly": 1295, "name": "Professional", "seats": 8, "setup": 250, "tagline": "Full stack"}, {"all_modules": true, "audience": "50+ seats, custom integrations \u0026 onboarding", "companies": "Custom", "contractors": "Unlimited", "highlight": false, "id": "enterprise", "modules_pick": null, "monthly": null, "monthly_label": "Quoted", "name": "Enterprise", "seats": "Custom", "setup": null, "tagline": "Built around you"}];
-  var LIVE = 32;
+  var MODULES = [{"core": true, "d": "Chat on the public site and inside every office. It explains each live module, answers pricing, and logs a lead, an issue, or a bug on the support desk.", "n": "Assistant V2.0", "t": "core"}, {"core": true, "d": "Invoice your customers, send quotes and convert to invoices on acceptance. Branded PDF exports.", "n": "Clients \u0026 quotes", "t": "billing"}, {"core": true, "d": "Contractors log timesheets, raise invoices and submit for payment \u2014 you approve from one queue.", "n": "Contractor billing \u0026 payments", "t": "billing"}, {"core": true, "d": "Customers sign in to view invoices, quotes, balances and download account statements.", "n": "Customer portal \u0026 statements", "t": "portal"}, {"core": true, "d": "Weekly and monthly profit views, KPI cards and break-even tracking \u2014 updated as transactions land.", "n": "Dashboard \u0026 live P\u0026L", "t": "core"}, {"core": true, "d": "Every expense, transfer and income in one place. Manual entry, categories and full audit history.", "n": "Transactions \u0026 ledger", "t": "core"}, {"core": false, "d": "Import bank CSVs and PDF statements instead of retyping. Batch tracking and import logs.", "n": "Bank \u0026 file imports", "t": "core"}, {"core": false, "d": "Set monthly targets per category and track variance against live transactions.", "n": "Budgets vs actuals", "t": "reports"}, {"core": false, "d": "30/60/90-day projection using AR, fixed obligations and trailing cash trends.", "n": "Cash-flow forecasting", "t": "reports"}, {"core": false, "d": "One live view of linked shops: stock alerts, morning restock lists, then receive shop orders, confirm them and submit to the warehouse.", "n": "Central control \u2014 inventory \u0026 ordering", "t": "admin"}, {"core": false, "d": "Monthly client-facing website reports: WordPress core/plugin health from your own reporting agent plugin, Google Analytics traffic, PageSpeed performance, and known vulnerabilities \u2014 built and sent by Marketing.", "n": "Client Reports \u2014 website health \u0026 traffic", "t": "admin"}, {"core": false, "d": "Track contractor hours by client and project. Import timesheets from CSV or Excel.", "n": "Contract work timesheets", "t": "billing"}, {"core": false, "d": "Self-service profile, bank details, documents, timesheets and invoice submission for field staff.", "n": "Contractor portal", "t": "portal"}, {"core": false, "d": "Connect IMAP \u2014 PDF invoices flagged for payment and assigned to income or expense categories.", "n": "Email inbox capture", "t": "core"}, {"core": false, "d": "Chicken operations: flocks (age, breed, status), houses, feed, daily egg collection, eggs bought in and sold, fertility/hatch records, vaccinations and mortality history.", "n": "Farming department \u2014 Chicken farm", "t": "admin"}, {"core": false, "d": "Full HR stack for site-based workforces (security PSIRA): employee file with SA ID, document uploads, qualification expiry, site allocation, mobile leave, e-sign from phone.", "n": "HRMS \u2014 Personeel department", "t": "admin"}, {"core": false, "d": "Every admin change to a contractor invoice is logged for year-end reviews.", "n": "Invoice audit trail", "t": "security"}, {"core": false, "d": "Full working-dog stack: records, handlers, training, medical, sites, and K9 billing \u2014 dogs and guards per site invoiced to the linked client, with VAT on quotes and invoices.", "n": "K9 \u2014 Working dog management", "t": "admin"}, {"core": false, "d": "Campaigns, content calendar, lead CRM, email and social planning, brand assets, events/webinars and ROI analytics linked to Finance reports.", "n": "Marketing department", "t": "admin"}, {"core": false, "d": "Fixed costs per company feed break-even and cash-flow forecasts automatically.", "n": "Monthly obligations", "t": "core"}, {"core": false, "d": "Switch companies in seconds, group consolidation and separate books per entity.", "n": "Multi-company", "t": "core"}, {"core": false, "d": "Employees, pay items, pay runs, payslips and EMP201 monthly PAYE, UIF and SDL totals.", "n": "Payroll \u2014 pay runs \u0026 SARS", "t": "admin"}, {"core": false, "d": "Shop terminals on the same cooler as Butcher \u2014 catalogue, catch-weight kg, 15% VAT receipts, transfers, time clock; staff from HR, takings posted to Finance.", "n": "POS \u2014 multi-store till", "t": "admin"}, {"core": false, "d": "See which clients and ledger categories actually make money.", "n": "Profitability by client / project", "t": "reports"}, {"core": false, "d": "SA ID / passport numbers masked by default. Reveal with password when needed.", "n": "Protected ID numbers", "t": "security"}, {"core": false, "d": "Multi-shop meat inventory plus the POS till: shared shops and SKUs, FEFO batches, directed transfers, catch-weight sales, yields and costing.", "n": "Recipe Management \u2014 Butcher department", "t": "admin"}, {"core": false, "d": "Weekly P\u0026L, 6- and 12-month trends, PDF exports and revenue calculator with break-even targets.", "n": "Reports \u0026 exports", "t": "reports"}, {"core": false, "d": "Viewer, bookkeeper, director and admin roles per company \u2014 granular access control.", "n": "Role-based permissions", "t": "admin"}, {"core": false, "d": "Fixed process: Lead in \u2192 Qualified \u2192 Discovery \u2192 Proposal \u2192 Negotiation \u2192 Closed won \u2192 Handoff \u2192 Live. CRM, inbox, e-sign proposals, VAT billing and calendar.", "n": "Sales \u2014 lead to live account", "t": "core"}, {"core": false, "d": "Weekly or monthly digest to the owner\u0027s inbox \u2014 P\u0026L summary on autopilot.", "n": "Scheduled email reports", "t": "reports"}, {"core": false, "d": "Site security stack: organogram, officers linked to HR, post orders, occurrence book, incidents, access control, equipment, training and roster \u2014 connected to Payroll and K9.", "n": "Security department \u2014 PSIRA operations", "t": "admin"}, {"core": false, "d": "School and college SIS: student file, guardians, programmes, classes, enrolment, attendance, results, fees and notes. Assign per company under Setup \u2192 Modules.", "n": "Students department \u2014 learner file", "t": "admin"}, {"core": false, "d": "Utility control room: body corporates, meter register, reading cycles, municipal bills, tariffs, billing, prepaid monitoring, field jobs, and a customer portal.", "n": "Utility department \u2014 Electrical \u0026 Water", "t": "admin"}, {"core": false, "d": "Standalone campaign workspace: consented contacts, door canvassing, ward coverage, WhatsApp/call/email gates, volunteers and a party white-label. Buy this department on its own.", "n": "Voting OS \u2014 party canvassing", "t": "admin"}];
+  MODULES.sort(function (a, b) {
+    if (a.core === b.core) return a.n < b.n ? -1 : (a.n > b.n ? 1 : 0);
+    return a.core ? -1 : 1;
+  });
+  var TIERS = [{"all_modules": false, "audience": "Solo owner \u2014 core billing included, plus any 5 optional modules", "companies": 1, "contractors": "Unlimited", "highlight": false, "id": "basic", "modules_pick": 5, "monthly": 99, "name": "Basic", "seats": 1, "setup": null, "setup_label": "Waived", "tagline": "Start billing"}, {"all_modules": false, "audience": "Small teams \u2014 core billing plus any 12 optional modules", "companies": 3, "contractors": "Unlimited", "highlight": true, "id": "standard", "intro_monthly": 299, "intro_months": 3, "modules_pick": 12, "monthly": 695, "name": "Standard", "seats": 3, "setup": 250, "tagline": "Best for 2\u20133 companies"}, {"all_modules": true, "audience": "All 34 live modules included \u2014 agencies and groups", "companies": 8, "contractors": "Unlimited", "highlight": false, "id": "professional", "modules_pick": null, "monthly": 1295, "name": "Professional", "seats": 8, "setup": 250, "tagline": "Full stack"}, {"all_modules": true, "audience": "50+ seats, custom integrations \u0026 onboarding", "companies": "Custom", "contractors": "Unlimited", "highlight": false, "id": "enterprise", "modules_pick": null, "monthly": null, "monthly_label": "Quoted", "name": "Enterprise", "seats": "Custom", "setup": null, "tagline": "Built around you"}, {"all_modules": false, "audience": "Political parties and candidates. Voting OS only, with party colours or a white-label shell. No Finance stack.", "companies": 1, "contractors": "\u2014", "highlight": false, "id": "voting_os", "modules_pick": null, "monthly": 790, "name": "Voting OS", "seats": 8, "setup": null, "setup_label": "Waived", "standalone": true, "standalone_modules": ["voting"], "tagline": "One party workspace"}];
+  var LIVE = 34;
   var GET_STARTED = "https://www.divinebilling.online/get-started";
   var CONTACT = "/" + '#contact';
 

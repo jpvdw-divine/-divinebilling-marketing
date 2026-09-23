@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.156">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.168">
 </head>
 <body>
   <nav class="nav">
@@ -49,6 +49,8 @@
             <a href="/solutions/farming" data-af="Boerdery">Farming</a>
             
             <a href="/solutions/students" data-af="Studente">Students</a>
+            
+            <a href="/solutions/voting" data-af="Stem OS">Voting OS</a>
             
             <a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a>
             
@@ -157,7 +159,7 @@
           <li><strong>8</strong> companies</li>
           <li><strong>8</strong> office seats</li>
           <li><strong>Unlimited</strong> contractor users</li>
-          <li>All 32 live modules</li>
+          <li>All 34 live modules</li>
         </ul>
         
         <a class="btn btn--ghost" href="https://www.divinebilling.online/get-started/signup">Start free trial</a>
@@ -178,10 +180,33 @@
           <li><strong>Custom</strong> companies</li>
           <li><strong>Custom</strong> office seats</li>
           <li><strong>Unlimited</strong> contractor users</li>
-          <li>All 32 live modules</li>
+          <li>All 34 live modules</li>
         </ul>
         
         <a class="btn btn--ghost" href="/#contact">Talk to us</a>
+        
+      </article>
+      
+      <article class="tier tier--pickable" data-tier="voting_os" tabindex="0">
+        
+        
+        <p class="tier__name">Voting OS</p>
+        <p class="tier__tagline">One party workspace</p>
+        
+        <p class="tier__amt mono">
+          
+            <span class="price-monthly">R790<span class="tier__unit">/ pm</span></span>
+            <span class="price-annual" hidden>R7 900<span class="tier__unit">/ yr</span></span>
+          
+        </p>
+        <ul class="tier__features">
+          <li><strong>1</strong> company</li>
+          <li><strong>8</strong> office seats</li>
+          <li><strong>—</strong> contractor users</li>
+          <li>Voting OS only — party brand or white-label, no Finance stack</li>
+        </ul>
+        
+        <a class="btn btn--ghost" href="/solutions/voting">See Voting OS</a>
         
       </article>
       
@@ -358,17 +383,17 @@
             
             <td>
               
-              <span class="mono">Any 5 of 32</span>
+              <span class="mono">Any 5 of 34</span>
             </td>
             
             <td>
               
-              <span class="mono">Any 12 of 32</span>
+              <span class="mono">Any 12 of 34</span>
             </td>
             
             <td>
               
-              <span class="mono">All 32 live</span>
+              <span class="mono">All 34 live</span>
             </td>
             
             <td>
@@ -822,6 +847,12 @@
       </article>
       
       <article class="card card--addon">
+        <div class="addon-price mono">from R790<span>/mo</span></div>
+        <h3>Voting OS only</h3>
+        <p>Party canvassing workspace on its own, with party colours or a white-label shell.</p>
+      </article>
+      
+      <article class="card card--addon">
         <div class="addon-price mono">R250<span> once</span></div>
         <h3>Onboarding &amp; data import</h3>
         <p>We configure modules, companies and import opening balances.</p>
@@ -904,6 +935,8 @@
             
             <li><a href="/solutions/students" data-af="Studente">Students</a></li>
             
+            <li><a href="/solutions/voting" data-af="Stem OS">Voting OS</a></li>
+            
             <li><a href="/for-bookkeepers" data-af="Boekhouers">Bookkeepers</a></li>
             
           </ul>
@@ -933,6 +966,44 @@
 
   <div class="sticky-cta" aria-label="Start free trial">
     <a class="btn btn--primary" href="https://www.divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
+  </div>
+
+  <div class="db-chat" id="db-pub-chat" data-api="https://platform.divinebilling.online/api/public/support/chat">
+    <button type="button" class="db-chat__toggle" aria-expanded="false" data-af="Vra V2.0">Assistant V2.0</button>
+    <div class="db-chat__panel" role="dialog" aria-label="Ask DivineBilling">
+      <div class="db-chat__head">
+        <div>
+          <strong>Assistant V2.0</strong>
+          <p data-af="Modules, pryse, demo — of ’n opvolg">Every module, pricing, or a follow-up</p>
+        </div>
+        <button type="button" class="db-chat__close" aria-label="Close">×</button>
+      </div>
+      <div class="db-chat__thread" aria-live="polite"></div>
+      <div class="db-chat__chips">
+        <button type="button" data-ask="What modules do you have, and what does each one do?">All modules</button>
+        <button type="button" data-ask="Which modules fit a security company?">Security</button>
+        <button type="button" data-ask="How much is pricing for 3 companies?">Pricing</button>
+        <button type="button" data-lead="Book a demo">Book a demo</button>
+        <button type="button" data-lead="Get a quote">Get a quote</button>
+      </div>
+      <div class="db-chat__tools">
+        <button type="button" class="db-chat__follow-btn" data-af="Vra die span om op te volg">Ask the team to follow up</button>
+      </div>
+      <form class="db-chat__follow" hidden>
+        <input name="name" type="text" autocomplete="name" placeholder="Name">
+        <input name="email" type="email" autocomplete="email" placeholder="Email" required>
+        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional)">
+        <input name="company" type="text" autocomplete="organization" placeholder="Company">
+        <input name="interest" type="text" placeholder="Module or department (optional)">
+        <textarea name="note" rows="2" placeholder="What should we follow up on?"></textarea>
+        <button type="submit" data-af="Stuur">Send to the team</button>
+      </form>
+      <form class="db-chat__form">
+        <label class="visually-hidden" for="db-chat-input" style="position:absolute;left:-9999px">Message</label>
+        <textarea class="db-chat__input" id="db-chat-input" rows="1" placeholder="Ask a question…" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -1009,6 +1080,7 @@
     });
   })();
   </script>
+  <script src="/static/js/public-chat.js?v=2.10.168"></script>
   
 <script>
 (function () {
