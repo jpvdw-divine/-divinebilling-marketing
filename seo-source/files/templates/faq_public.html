@@ -1,0 +1,37 @@
+{% extends "landing_base.html" %}
+{% block page_title %}FAQ — and how we compare with Xero, Sage, QuickBooks{% endblock %}
+{% block meta_description %}Straight answers about DivineBilling: pricing in rand, free contractors, multi-company books, SARS payroll, PSIRA security, SA hosting — and how it compares with Xero, Sage, QuickBooks and Wave.{% endblock %}
+{% block structured_data %}{{ faq_ld }}{{ seo_breadcrumb_jsonld(('FAQ', '/faq')) }}{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="wrap page-head__in">
+    <span class="eyebrow">FAQ</span>
+    <h1>Straight answers about DivineBilling</h1>
+    <p class="page-head__sub">What it is, what it costs, and when Xero, Sage, QuickBooks or Wave is the better fit. DivineBilling prices are live from our <a href="{{ url_for('public_pricing') }}">pricing</a> page, in rand and ex VAT unless noted.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="faq-lead">
+      <p>Xero, Sage, QuickBooks and Wave are good at books. DivineBilling is better when the books are only half the job — contractors in the field, more than one company, payroll for SARS, a till, a meter, a site, a flock.</p>
+    </div>
+    <div class="faq-list">
+      {% for heading, items in faq_groups %}
+      <h2>{{ heading }}</h2>
+      {% for question, answer in items %}
+      <details{% if loop.first and heading == faq_groups[0][0] %} open{% endif %}>
+        <summary>{{ question }}</summary>
+        <p>{{ answer|safe }}</p>
+      </details>
+      {% endfor %}
+      {% endfor %}
+    </div>
+    <p class="fine" style="max-width:720px;margin:20px auto 0">Competitor prices were checked on each vendor’s South African or global site on 20 August 2026 and may have changed since.</p>
+    <div class="hero__cta" style="max-width:720px;margin:28px auto 0">
+      <a class="btn btn--primary" href="{{ get_started_url }}" data-af="Begin gratis proeftydperk">Start free trial</a>
+      <a class="btn btn--ghost" href="{{ demo_launch_url }}" data-af="Probeer die lewendige demo">Try the live demo</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

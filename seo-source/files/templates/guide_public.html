@@ -1,0 +1,67 @@
+{% extends "landing_base.html" %}
+{% block page_title %}{{ guide.seo_title }}{% endblock %}
+{% block meta_description %}{{ guide.meta }}{% endblock %}
+{% block structured_data %}{{ guide_ld }}{% endblock %}
+{% block content %}
+<article class="guide">
+  <header class="page-head">
+    <div class="wrap page-head__in">
+      <span class="eyebrow"><a href="{{ url_for('public_guides') }}">Guides</a></span>
+      <h1>{{ guide.title }}</h1>
+      <p class="page-head__sub">By Divine Online Solutions, Cape Town · Last reviewed <time datetime="{{ guide.reviewed }}">{{ guide.reviewed }}</time></p>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="wrap guide__body">
+      <aside class="guide__takeaways" aria-labelledby="takeaways">
+        <h2 id="takeaways">Key takeaways</h2>
+        <ul>
+          {% for t in guide.takeaways %}
+          <li>{{ t }}</li>
+          {% endfor %}
+        </ul>
+      </aside>
+
+      {% for heading, html in guide.sections %}
+      <h2>{{ heading }}</h2>
+      {{ html|safe }}
+      {% endfor %}
+
+      <h2>Frequently asked questions</h2>
+      <div class="faq-list guide__faq">
+        {% for q, a in guide.faqs %}
+        <details>
+          <summary>{{ q }}</summary>
+          <p>{{ a }}</p>
+        </details>
+        {% endfor %}
+      </div>
+
+      <h2>Sources</h2>
+      <ul class="guide__sources">
+        {% for label, url in guide.sources %}
+        <li><a href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a></li>
+        {% endfor %}
+      </ul>
+      <p class="fine">This guide is general information, not tax or legal advice. Rules and rates change — check the sources above or ask your accountant before acting.</p>
+
+      <div class="guide__product">
+        <h2>How DivineBilling helps</h2>
+        <p>{{ guide.product }}</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="{{ demo_launch_url }}" data-af="Probeer die lewendige demo">Try the live demo</a>
+          <a class="btn btn--ghost" href="{{ url_for('public_solutions_page', slug=guide.dept) }}">See the {{ guide.dept|capitalize }} department</a>
+        </div>
+      </div>
+
+      <h2>More guides</h2>
+      <ul class="guide__sources">
+        {% for g in related %}
+        <li><a href="{{ url_for('public_guide', slug=g.slug) }}">{{ g.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+</article>
+{% endblock %}

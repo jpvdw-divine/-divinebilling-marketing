@@ -1,0 +1,272 @@
+diff --git a/files/freeze_marketing_public.py b/files/freeze_marketing_public.py
+index 2d48a9f..ede865a 100644
+--- a/files/freeze_marketing_public.py
++++ b/files/freeze_marketing_public.py
+@@ -121,6 +121,26 @@ def _vertical(key):
+     )
+ 
+ 
++import seo_site  # noqa: E402
++
++seo_site.register_template_globals(app)
++
++
++@app.route('/faq')
++def public_faq():
++    return seo_site.render_faq(_page_ctx)
++
++
++@app.route('/guides')
++def public_guides():
++    return seo_site.render_guides_index(_page_ctx)
++
++
++@app.route('/guides/<slug>')
++def public_guide(slug):
++    return seo_site.render_guide(_page_ctx, slug)
++
++
+ @app.route('/status.json')
+ def public_status_json():
+     from flask import jsonify
+@@ -360,7 +380,12 @@ def main():
+         ('/for-bookkeepers', 'for-bookkeepers/index.html'),
+         ('/status', 'status/index.html'),
+         ('/solutions', 'solutions/index.html'),
++        ('/faq', 'faq/index.html'),
++        ('/guides', 'guides/index.html'),
+     ]
++    from guides_content import GUIDES
++    for g in GUIDES:
++        routes.append(('/guides/' + g['slug'], 'guides/%s/index.html' % g['slug']))
+     slugs = (
+         'finance', 'hr', 'payroll', 'security', 'k9', 'sales', 'marketing',
+         'pos', 'butcher', 'central', 'utility', 'farming', 'students', 'bookkeepers', 'voting',
+@@ -375,6 +400,10 @@ def main():
+                 raise SystemExit('Failed %s -> HTTP %s' % (path, resp.status_code))
+             _write(dest, resp.get_data(as_text=True))
+             print('wrote', dest, 'HTTP', resp.status_code)
++        _write('robots.txt', seo_site.robots_body())
++        _write('sitemap.xml', seo_site.sitemap_body())
++        with app.test_request_context('/llms.txt'):
++            _write('llms.txt', seo_site.llms_body())
+     _copy_static()
+     with open(os.path.join(OUT, '_headers'), 'w', encoding='utf-8', newline='\n') as fh:
+         fh.write('/*\n  X-Content-Type-Options: nosniff\n\n')
+diff --git a/files/static/css/marketing.css b/files/static/css/marketing.css
+index fbb8c89..5ff3cc1 100644
+--- a/files/static/css/marketing.css
++++ b/files/static/css/marketing.css
+@@ -1015,3 +1015,41 @@ a.stat:hover { border-color: var(--ink-3); }
+ @media (max-width: 800px) {
+   .db-chat { right: 12px; bottom: 78px; }
+ }
++
++/* FAQ + quotable fact blocks (SEO / AI answers) */
++.faq-lead { max-width: 720px; margin: 0 auto 28px; }
++.faq-lead p { color: var(--ink-2); font-size: 17px; line-height: 1.65; }
++.faq-list { max-width: 720px; margin: 0 auto; border-top: 1px solid var(--line); }
++.faq-list details { border-bottom: 1px solid var(--line); }
++.faq-list summary { cursor: pointer; list-style: none; padding: 18px 0; font-size: 16px; font-weight: 500; color: var(--ink); }
++.faq-list summary::-webkit-details-marker { display: none; }
++.faq-list summary::after { content: "+"; float: right; color: var(--ink-3); font-weight: 400; }
++.faq-list details[open] summary::after { content: "–"; }
++.faq-list details p { margin: 0 0 20px; color: var(--ink-2); line-height: 1.65; }
++.faq-list h2 { font-size: 20px; margin: 32px 0 4px; }
++.facts { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: 0; max-width: 860px; margin: 20px 0 0; border-top: 1px solid var(--line); }
++.facts dt, .facts dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); }
++.facts dt { font-weight: 500; color: var(--ink); padding-right: 16px; }
++.facts dd { color: var(--ink-2); }
++@media (max-width: 640px) {
++  .facts { grid-template-columns: 1fr; }
++  .facts dt { border-bottom: 0; padding-bottom: 0; }
++}
++.entity-note { margin-top: 10px; font-size: 12px; color: var(--ink-3); }
++
++/* Guides */
++.guide__body { max-width: 760px; }
++.guide__body h2 { font-size: 22px; margin: 36px 0 12px; }
++.guide__body p, .guide__body li { color: var(--ink-2); line-height: 1.7; font-size: 16px; }
++.guide__body p + p { margin-top: 12px; }
++.guide__body ul, .guide__body ol { padding-left: 22px; margin: 8px 0 0; }
++.guide__body li + li { margin-top: 6px; }
++.guide__body a { color: var(--accent); text-decoration: underline; }
++.guide__body .btn { text-decoration: none; }
++.guide__body .btn--primary { color: #fff; }
++.guide__takeaways { background: var(--surface-alt); border: 1px solid var(--line); border-radius: var(--r-md, 12px); padding: 20px 24px; }
++.guide__takeaways h2 { margin-top: 0; font-size: 18px; }
++.guide__faq { margin: 0; max-width: none; }
++.guide__product { margin-top: 36px; padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--r-md, 12px); }
++.guide__product h2 { margin-top: 0; }
++.page-head .eyebrow a { color: inherit; }
+diff --git a/files/templates/get_started_signup.html b/files/templates/get_started_signup.html
+index 5078510..e0b3e40 100644
+--- a/files/templates/get_started_signup.html
++++ b/files/templates/get_started_signup.html
+@@ -1,5 +1,6 @@
+ {% extends "landing_base.html" %}
+ {% block page_title %}Sign up{% endblock %}
++{% block robots %}noindex,follow{% endblock %}
+ {% block meta_description %}Sign up for DivineBilling — tell us about your business and we'll recommend the right plan.{% endblock %}
+ {% block content %}
+ <section class="ba-getstarted-hero">
+diff --git a/files/templates/home_demo.html b/files/templates/home_demo.html
+index 94af2fe..f2d857d 100644
+--- a/files/templates/home_demo.html
++++ b/files/templates/home_demo.html
+@@ -1,4 +1,5 @@
+ {% extends "landing_base.html" %}
++{% block robots %}noindex,nofollow{% endblock %}
+ {% block page_title %}Demo{% endblock %}
+ {% block meta_description %}Bill-All demo — try the sandbox with sample data. Auto-clears every {{ demo.reset_minutes }} minutes.{% endblock %}
+ 
+diff --git a/files/templates/privacy_public.html b/files/templates/privacy_public.html
+index 6247df3..efeb2e5 100644
+--- a/files/templates/privacy_public.html
++++ b/files/templates/privacy_public.html
+@@ -1,29 +1,29 @@
+ {% extends "landing_base.html" %}
+ {% block page_title %}Privacy policy{% endblock %}
+-{% block meta_description %}Bill-All privacy policy — how Divine Online Solutions processes personal information under POPIA.{% endblock %}
++{% block meta_description %}DivineBilling privacy policy — how Divine Online Solutions processes personal information under POPIA.{% endblock %}
+ {% block content %}
+ <section class="page-head">
+   <div class="wrap page-head__in">
+     <span class="eyebrow">Legal</span>
+     <h1>Privacy policy</h1>
+-    <p class="page-head__sub">How Divine Online Solutions (Bill-All) processes personal information under the Protection of Personal Information Act (POPIA).</p>
++    <p class="page-head__sub">How Divine Online Solutions (DivineBilling) processes personal information under the Protection of Personal Information Act (POPIA).</p>
+   </div>
+ </section>
+ <section class="section section--tight">
+   <div class="wrap">
+     <div class="legal-prose">
+       <h2>Who we are</h2>
+-      <p>Bill-All is operated by Divine Online Solutions, Cape Town, South Africa. For privacy enquiries: <a href="mailto:info@divineonlinesolutions.com">info@divineonlinesolutions.com</a>.</p>
++      <p>DivineBilling is operated by Divine Online Solutions, Cape Town, South Africa. For privacy enquiries: <a href="mailto:info@divineonlinesolutions.com">info@divineonlinesolutions.com</a>.</p>
+ 
+       <h2>What we collect</h2>
+       <ul>
+         <li><strong>Contact form:</strong> name, email, company, phone and message — to respond to your inquiry.</li>
+         <li><strong>Account data:</strong> usernames, roles and activity logs for authorised users of your workspace.</li>
+-        <li><strong>Business data:</strong> invoices, transactions and documents you enter or import into Bill-All.</li>
++        <li><strong>Business data:</strong> invoices, transactions and documents you enter or import into DivineBilling.</li>
+       </ul>
+ 
+       <h2>Why we process it</h2>
+-      <p>We process personal information to provide the Bill-All service, respond to sales and support requests, maintain security, and meet legal obligations. We do not sell your data.</p>
++      <p>We process personal information to provide the DivineBilling service, respond to sales and support requests, maintain security, and meet legal obligations. We do not sell your data.</p>
+ 
+       <h2>Retention</h2>
+       <ul>
+diff --git a/files/templates/status_public.html b/files/templates/status_public.html
+index 36609c7..dccce77 100644
+--- a/files/templates/status_public.html
++++ b/files/templates/status_public.html
+@@ -1,5 +1,6 @@
+ {% extends "landing_base.html" %}
+ {% block page_title %}Status{% endblock %}
++{% block robots %}noindex,follow{% endblock %}
+ {% block meta_description %}DivineBilling public status — live reachability of the marketing site, demo and app. Not an SLA.{% endblock %}
+ {% block content %}
+ <section class="page-head">
+diff --git a/files/templates/terms_public.html b/files/templates/terms_public.html
+index dd3f0ab..48570ad 100644
+--- a/files/templates/terms_public.html
++++ b/files/templates/terms_public.html
+@@ -1,19 +1,19 @@
+ {% extends "landing_base.html" %}
+ {% block page_title %}Terms of use{% endblock %}
+-{% block meta_description %}Bill-All terms of use — subscription, acceptable use and liability.{% endblock %}
++{% block meta_description %}DivineBilling terms of use — subscription, acceptable use and liability.{% endblock %}
+ {% block content %}
+ <section class="page-head">
+   <div class="wrap page-head__in">
+     <span class="eyebrow">Legal</span>
+     <h1>Terms of use</h1>
+-    <p class="page-head__sub">Terms governing use of the Bill-All service provided by Divine Online Solutions.</p>
++    <p class="page-head__sub">Terms governing use of the DivineBilling service provided by Divine Online Solutions.</p>
+   </div>
+ </section>
+ <section class="section section--tight">
+   <div class="wrap">
+     <div class="legal-prose">
+       <h2>Service</h2>
+-      <p>Bill-All is a cloud billing and bookkeeping application. Access is provided on a subscription basis as described on our <a href="{{ url_for('public_pricing') }}">pricing page</a>.</p>
++      <p>DivineBilling is a cloud billing and bookkeeping application. Access is provided on a subscription basis as described on our <a href="{{ url_for('public_pricing') }}">pricing page</a>.</p>
+ 
+       <h2>Your responsibilities</h2>
+       <ul>
+@@ -24,7 +24,7 @@
+       </ul>
+ 
+       <h2>Acceptable use</h2>
+-      <p>You may not attempt to breach security, overload the service, or use Bill-All for unlawful purposes. We may suspend access for material breach.</p>
++      <p>You may not attempt to breach security, overload the service, or use DivineBilling for unlawful purposes. We may suspend access for material breach.</p>
+ 
+       <h2>Data &amp; availability</h2>
+       <p>We maintain daily backups and host in South Africa. While we aim for high availability, the service is provided without guaranteed uptime unless agreed in writing for Enterprise customers.</p>
+@@ -33,7 +33,7 @@
+       <p>Prices are ex VAT unless stated. Setup fees and monthly/annual billing apply as selected. Cancellation stops future billing; export your data before closure if required.</p>
+ 
+       <h2>Liability</h2>
+-      <p>Bill-All is a tool to assist your records — not a substitute for professional accounting or tax advice. Divine Online Solutions is not liable for decisions made solely on application output without independent verification, except where liability cannot be excluded by law.</p>
++      <p>DivineBilling is a tool to assist your records — not a substitute for professional accounting or tax advice. Divine Online Solutions is not liable for decisions made solely on application output without independent verification, except where liability cannot be excluded by law.</p>
+ 
+       <h2>Contact</h2>
+       <p>Questions: <a href="mailto:info@divineonlinesolutions.com">info@divineonlinesolutions.com</a> · <a href="https://www.divineonline.solutions/" target="_blank" rel="noopener">divineonline.solutions</a></p>
+diff --git a/tools/freeze_marketing_public.py b/tools/freeze_marketing_public.py
+index 2d48a9f..ede865a 100644
+--- a/tools/freeze_marketing_public.py
++++ b/tools/freeze_marketing_public.py
+@@ -121,6 +121,26 @@ def _vertical(key):
+     )
+ 
+ 
++import seo_site  # noqa: E402
++
++seo_site.register_template_globals(app)
++
++
++@app.route('/faq')
++def public_faq():
++    return seo_site.render_faq(_page_ctx)
++
++
++@app.route('/guides')
++def public_guides():
++    return seo_site.render_guides_index(_page_ctx)
++
++
++@app.route('/guides/<slug>')
++def public_guide(slug):
++    return seo_site.render_guide(_page_ctx, slug)
++
++
+ @app.route('/status.json')
+ def public_status_json():
+     from flask import jsonify
+@@ -360,7 +380,12 @@ def main():
+         ('/for-bookkeepers', 'for-bookkeepers/index.html'),
+         ('/status', 'status/index.html'),
+         ('/solutions', 'solutions/index.html'),
++        ('/faq', 'faq/index.html'),
++        ('/guides', 'guides/index.html'),
+     ]
++    from guides_content import GUIDES
++    for g in GUIDES:
++        routes.append(('/guides/' + g['slug'], 'guides/%s/index.html' % g['slug']))
+     slugs = (
+         'finance', 'hr', 'payroll', 'security', 'k9', 'sales', 'marketing',
+         'pos', 'butcher', 'central', 'utility', 'farming', 'students', 'bookkeepers', 'voting',
+@@ -375,6 +400,10 @@ def main():
+                 raise SystemExit('Failed %s -> HTTP %s' % (path, resp.status_code))
+             _write(dest, resp.get_data(as_text=True))
+             print('wrote', dest, 'HTTP', resp.status_code)
++        _write('robots.txt', seo_site.robots_body())
++        _write('sitemap.xml', seo_site.sitemap_body())
++        with app.test_request_context('/llms.txt'):
++            _write('llms.txt', seo_site.llms_body())
+     _copy_static()
+     with open(os.path.join(OUT, '_headers'), 'w', encoding='utf-8', newline='\n') as fh:
+         fh.write('/*\n  X-Content-Type-Options: nosniff\n\n')

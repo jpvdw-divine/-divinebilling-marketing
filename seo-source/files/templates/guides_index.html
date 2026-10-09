@@ -1,0 +1,28 @@
+{% extends "landing_base.html" %}
+{% block page_title %}Guides for South African businesses{% endblock %}
+{% block meta_description %}Plain-language guides for South African SMEs: EMP201 and payroll, VAT tax invoices and the 2026 thresholds, paying contractors, and running a PSIRA security company.{% endblock %}
+{% block structured_data %}{{ seo_breadcrumb_jsonld(('Guides', '/guides')) }}{% endblock %}
+{% block content %}
+<section class="page-head">
+  <div class="wrap page-head__in">
+    <span class="eyebrow" data-af="Gidse">Guides</span>
+    <h1>Guides for South African businesses</h1>
+    <p class="page-head__sub">Payroll, VAT, contractors and compliance — written for owners and bookkeepers, checked against SARS and PSIRA, and dated so you know when we last reviewed them.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="grid grid--2">
+      {% for g in guides %}
+      <a class="card card--module" href="{{ url_for('public_guide', slug=g.slug) }}">
+        <span class="chip chip--core">Reviewed {{ g.reviewed }}</span>
+        <h3>{{ g.title }}</h3>
+        <p>{{ g.summary }}</p>
+        <p class="card-go">Read the guide →</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
