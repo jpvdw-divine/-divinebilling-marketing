@@ -14,6 +14,7 @@ Only `public/` is deployed (see `wrangler.toml`), so nothing in this folder reac
 | `files/guides_content.py` | Text of the four SA guides |
 | `files/templates/faq_public.html`, `guides_index.html`, `guide_public.html` | FAQ and guide page templates |
 | `tests/test_seo_site.py` | Tests for the above |
+| `core-template-edits.patch` | SEO head tags (canonical, robots, Open Graph, JSON-LD), FAQ/Guides nav links and the entity footer line in `landing_base.html`; keyword titles and breadcrumbs in `home`, `modules_public`, `pricing_public`, `solutions_index` and `solutions_vertical`; the homepage "at a glance" facts block |
 | `divinebilling-changes.patch` | Edits to existing DivineBilling files: SEO tags in the public page templates, `marketing.css` (FAQ and guide styles), and the freeze tool (`files/` and `tools/freeze_marketing_public.py`) so it also writes `/faq`, `/guides/*`, `robots.txt`, `sitemap.xml` and `llms.txt` |
 
 ## Regenerating the pages
@@ -21,7 +22,8 @@ Only `public/` is deployed (see `wrangler.toml`), so nothing in this folder reac
 The pages are rendered by the DivineBilling app and frozen into `public/`. To rebuild them:
 
 1. In a DivineBilling checkout, copy `files/` and `tests/` from here over the repo, then
-   `git apply seo-source/divinebilling-changes.patch` (it applied cleanly to DivineBilling v2.10.350).
+   `git apply seo-source/divinebilling-changes.patch` (it applied cleanly to DivineBilling v2.10.350),
+   then `git apply seo-source/core-template-edits.patch` — without it the pages have no canonical, Open Graph or JSON-LD tags.
 2. Wire the routes into `files/app.py`:
    - after `register_marketing_site(app)`: `from seo_site import register_seo` and `register_seo(app)`;
    - `robots_txt()` and `sitemap_xml()` return `seo_site.robots_body()` / `seo_site.sitemap_body()`;

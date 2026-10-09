@@ -1,0 +1,143 @@
+diff --git a/files/templates/home.html b/files/templates/home.html
+index 37e4c58..2dc3e09 100644
+--- a/files/templates/home.html
++++ b/files/templates/home.html
+@@ -1,6 +1,6 @@
+ {% extends "landing_base.html" %}
+-{% block page_title %}Billing, books and a free contractor portal{% endblock %}
+-{% block meta_description %}DivineBilling — billing, books, a free contractor portal and multi-company consolidation for South African SMBs. From R99/pm. Try the live demo in one click.{% endblock %}
++{% block page_title %}Billing software for SA businesses — free contractor portal{% endblock %}
++{% block meta_description %}DivineBilling — billing, books, a free contractor portal and multi-company consolidation for South African SMEs. SA-hosted, POPIA-aligned. From {{ pricing_from_monthly|format_zar }}/pm. Try the live demo in one click.{% endblock %}
+ {% block content %}
+ <header class="hero">
+   <div class="wrap hero__grid">
+@@ -65,7 +65,7 @@
+   <div class="wrap">
+     <div class="section__head">
+       <h2 data-af="…en modules vir elke departement.">…and a department for how you actually work.</h2>
+-      <p>Finance is the core. Open the department that matches your business — or <a href="{{ url_for('public_solutions_index') }}">see all twelve</a>.</p>
++      <p>Finance is the core. Open the department that matches your business — or <a href="{{ url_for('public_solutions_index') }}">see them all</a>.</p>
+     </div>
+     <div class="grid grid--3">
+       {% for s in marketing_solutions|default([]) %}
+@@ -96,6 +96,20 @@
+   </div>
+ </section>
+ 
++<section class="section" id="at-a-glance">
++  <div class="wrap">
++    <h2 data-af="DivineBilling in een oogopslag">DivineBilling at a glance</h2>
++    <p class="lede" style="margin-top:12px">DivineBilling is cloud billing and business-management software for South African SMEs, built by Divine Online Solutions in Cape Town.</p>
++    <dl class="facts">
++      {% for label, value in seo_brand_facts() %}
++      <dt>{{ label }}</dt>
++      <dd>{{ value }}</dd>
++      {% endfor %}
++    </dl>
++    <p style="margin-top:20px"><a href="{{ url_for('public_faq') }}" style="color:var(--accent);font-size:14px;font-weight:500">Straight answers, and how we compare with Xero, Sage and QuickBooks →</a></p>
++  </div>
++</section>
++
+ <section class="section section--wash" id="proof">
+   <div class="wrap">
+     <h2 data-af="Bewys wat jy kan toets">Proof you can check</h2>
+diff --git a/files/templates/landing_base.html b/files/templates/landing_base.html
+index fb40cf7..1617706 100644
+--- a/files/templates/landing_base.html
++++ b/files/templates/landing_base.html
+@@ -5,6 +5,20 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="{% block meta_description %}DivineBilling — billing, books, a free contractor portal and multi-company consolidation for SA SMBs. By Divine Online Solutions.{% endblock %}">
+   <title>{% block page_title %}DivineBilling{% endblock %} · DivineBilling</title>
++  {% set seo_url = seo_canonical() %}
++  <link rel="canonical" href="{{ seo_url }}">
++  <meta name="robots" content="{% block robots %}index,follow,max-image-preview:large,max-snippet:-1{% endblock %}">
++  <meta property="og:type" content="website">
++  <meta property="og:site_name" content="DivineBilling">
++  <meta property="og:locale" content="en_ZA">
++  <meta property="og:url" content="{{ seo_url }}">
++  <meta property="og:title" content="{{ self.page_title() }} · DivineBilling">
++  <meta property="og:description" content="{{ self.meta_description() }}">
++  <meta property="og:image" content="{{ seo_site_url() }}/static/img/divinebilling-logo-lockup.png">
++  <meta name="twitter:card" content="summary_large_image">
++  <link rel="alternate" type="text/markdown" title="DivineBilling for AI assistants" href="{{ seo_site_url() }}/llms.txt">
++  {{ seo_site_jsonld() }}
++  {% block structured_data %}{% endblock %}
+   <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='img/divinebilling-mark.svg') }}">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@ -30,6 +44,8 @@
+         </div>
+         <a href="{{ url_for('public_modules') }}"{% if active_page == 'modules' %} class="is-active"{% endif %} data-af="Modules">Modules</a>
+         <a href="{{ url_for('public_pricing') }}"{% if active_page == 'pricing' %} class="is-active"{% endif %} data-af="Pryse">Pricing</a>
++        <a href="{{ url_for('public_guides') }}"{% if active_page == 'guides' %} class="is-active"{% endif %} data-af="Gidse">Guides</a>
++        <a href="{{ url_for('public_faq') }}"{% if active_page == 'faq' %} class="is-active"{% endif %} data-af="Vrae">FAQ</a>
+         <a href="{{ demo_launch_url }}" data-af="Demo">Demo</a>
+       </div>
+       {% endblock %}
+@@ -62,6 +78,7 @@
+         <div>
+           <a class="brand" href="{{ url_for('home') }}" style="margin-bottom:12px"><span class="brand__mark"><img src="{{ url_for('static', filename='img/divinebilling-mark.svg') }}" width="24" height="24" alt=""></span>DivineBilling</a>
+           <p data-af="Fakturering, boeke en ’n gratis kontrakteursportaal vir Suid-Afrikaanse eienaars. Gebou deur Divine Online Solutions, Kaapstad.">Billing, books and a free contractor portal for South African business owners. Built by <a href="https://www.divineonline.solutions/" target="_blank" rel="noopener">Divine Online Solutions</a>, Cape Town.</p>
++          <p class="entity-note" data-af="DivineBilling is Suid-Afrikaanse besigheidsagteware — nie ’n mediese faktureringsdiens nie.">DivineBilling is South African business software — not a medical billing service.</p>
+         </div>
+         <div>
+           <h3 data-af="Vertroue &amp; hosting">Trust &amp; hosting</h3>
+@@ -86,6 +103,8 @@
+           <ul>
+             <li><a href="{{ url_for('public_modules') }}" data-af="Modules">Modules</a></li>
+             <li><a href="{{ url_for('public_pricing') }}" data-af="Pryse">Pricing</a></li>
++            <li><a href="{{ url_for('public_guides') }}" data-af="Gidse">Guides</a></li>
++            <li><a href="{{ url_for('public_faq') }}" data-af="Vrae">FAQ</a></li>
+             <li><a href="{{ url_for('public_roadmap') }}" data-af="Padkaart">Roadmap</a></li>
+             <li><a href="{{ demo_launch_url }}" data-af="Demo">Demo</a></li>
+           </ul>
+diff --git a/files/templates/modules_public.html b/files/templates/modules_public.html
+index 40a8a0f..7b6287b 100644
+--- a/files/templates/modules_public.html
++++ b/files/templates/modules_public.html
+@@ -1,5 +1,6 @@
+ {% extends "landing_base.html" %}
+-{% block page_title %}Modules{% endblock %}
++{% block page_title %}Modules: billing, HR, payroll, POS & more{% endblock %}
++{% block structured_data %}{{ seo_breadcrumb_jsonld(('Modules', '/modules')) }}{% endblock %}
+ {% block meta_description %}DivineBilling modules by department — Finance, HR, Payroll, Security, K9, Sales, Marketing, POS, Butcher, Utility, Farming and Students.{% endblock %}
+ {% block content %}
+ <section class="page-head">
+diff --git a/files/templates/pricing_public.html b/files/templates/pricing_public.html
+index 5cb293f..d6ba28a 100644
+--- a/files/templates/pricing_public.html
++++ b/files/templates/pricing_public.html
+@@ -1,5 +1,6 @@
+ {% extends "landing_base.html" %}
+-{% block page_title %}Pricing{% endblock %}
++{% block page_title %}Pricing in rand — contractors always free{% endblock %}
++{% block structured_data %}{{ seo_breadcrumb_jsonld(('Pricing', '/pricing')) }}{% endblock %}
+ {% block meta_description %}DivineBilling pricing — from R99/pm ex VAT. Core billing on every plan; contractors free. Standard R695/pm with a R299×3-month intro.{% endblock %}
+ {% block content %}
+ <section class="page-head">
+diff --git a/files/templates/solutions_index.html b/files/templates/solutions_index.html
+index 3a15eed..ec21f07 100644
+--- a/files/templates/solutions_index.html
++++ b/files/templates/solutions_index.html
+@@ -1,5 +1,6 @@
+ {% extends "landing_base.html" %}
+-{% block page_title %}Solutions{% endblock %}
++{% block page_title %}Business software by department{% endblock %}
++{% block structured_data %}{{ seo_breadcrumb_jsonld(('Solutions', '/solutions')) }}{% endblock %}
+ {% block meta_description %}DivineBilling departments — Finance, HR, Payroll, Security, K9, Sales, Marketing, POS, Butcher, Utility, Farming and Students. Switch on what you need.{% endblock %}
+ {% block content %}
+ <section class="page-head">
+diff --git a/files/templates/solutions_vertical.html b/files/templates/solutions_vertical.html
+index 1755c96..ac33755 100644
+--- a/files/templates/solutions_vertical.html
++++ b/files/templates/solutions_vertical.html
+@@ -1,6 +1,7 @@
+ {% extends "landing_base.html" %}
+-{% block page_title %}{{ page.title }}{% endblock %}
++{% block page_title %}{{ seo_vertical_title(page) }}{% endblock %}
+ {% block meta_description %}{{ page.meta }}{% endblock %}
++{% block structured_data %}{% if page.active_page == 'bookkeepers' %}{{ seo_breadcrumb_jsonld(('For bookkeepers', request.path)) }}{% else %}{{ seo_breadcrumb_jsonld(('Solutions', '/solutions'), (page.title, request.path)) }}{% endif %}{% endblock %}
+ {% block content %}
+ {% set demo_href = demo_launch_url %}
+ {% set trial_href = get_started_url %}
