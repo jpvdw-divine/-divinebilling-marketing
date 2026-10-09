@@ -6,6 +6,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
+    // One canonical host for search engines: fold the apex onto www.
+    if (url.hostname === "divinebilling.online" && (request.method === "GET" || request.method === "HEAD")) {
+      url.hostname = "www.divinebilling.online";
+      return Response.redirect(url.toString(), 301);
+    }
     if (path === "/login") {
       return Response.redirect(`${LOGIN}/`, 301);
     }
@@ -32,9 +37,13 @@ export default {
         const upstream = await fetch(PLATFORM_PRICING, {
           headers: { Accept: "application/json" },
         });
+        if (!upstream.ok) {
+          // Platform 404/500 pages are HTML; never pass them off as JSON.
+          throw new Error(`pricing upstream ${upstream.status}`);
+        }
         const body = await upstream.text();
         return new Response(body, {
-          status: upstream.ok ? 200 : upstream.status,
+          status: 200,
           headers: {
             "Content-Type": "application/json; charset=utf-8",
             "Cache-Control": "public, max-age=60",

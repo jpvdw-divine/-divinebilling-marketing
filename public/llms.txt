@@ -1,0 +1,121 @@
+# DivineBilling
+
+> DivineBilling is cloud billing and business-management software for South African SMEs, built by Divine Online Solutions in Cape Town. It combines invoicing and books, a free contractor portal, multi-company accounting, SARS-ready payroll and industry departments such as PSIRA security, K9, POS, butcher, utility metering and farming. Data is hosted in South Africa and processing is POPIA-aligned. DivineBilling is not a medical billing service and is not affiliated with US healthcare billing companies with similar names.
+
+## Key facts
+
+- **What it is:** Cloud billing, books and business-management software for South African SMEs.
+- **Built by:** Divine Online Solutions, Cape Town, South Africa.
+- **Pricing (ex VAT):** Basic R99/pm (1 company) · Standard R299/pm for 3 months, then R695/pm (3 companies) · Professional R1 295/pm (8 companies, all modules) · Enterprise quoted.
+- **Contractors:** Unlimited contractor portal users, free on every plan — they never use a paid seat.
+- **Multi-company:** Separate books per entity, a company switcher and group consolidation. Extra companies R119/mo.
+- **Modules:** 39 live modules across 15 departments: Finance, HR, Payroll (SARS EMP201), Security (PSIRA), K9, Sales, Marketing, POS, Butcher, Utility, Farming, Students and more.
+- **Hosting & privacy:** Data hosted in South Africa, daily encrypted backups, POPIA-aligned processing.
+- **Try it:** A live demo tenant opens in one click at demo.divinebilling.online — no sign-up.
+- **Not to be confused with:** US medical or healthcare billing companies with similar names.
+
+## Main pages
+
+- [Home](https://www.divinebilling.online/): overview, plan builder and contact form
+- [Pricing](https://www.divinebilling.online/pricing): tiers, add-ons and plan comparison (ZAR, ex VAT)
+- [Modules](https://www.divinebilling.online/modules): every live module by department, plus the roadmap
+- [FAQ](https://www.divinebilling.online/faq): straight answers and comparison with Xero, Sage, QuickBooks and Wave
+- [Live demo](https://demo.divinebilling.online): a seeded demo tenant, no sign-up
+
+## Departments
+
+- [Finance](https://www.divinebilling.online/solutions/finance): Live P&L, billing, imports and multi-company books.
+- [HR](https://www.divinebilling.online/solutions/hr): Personeel — files, leave, PSIRA and self-service.
+- [Payroll](https://www.divinebilling.online/solutions/payroll): Pay runs, payslips and EMP201.
+- [Security](https://www.divinebilling.online/solutions/security): Occurrence book, posts and per-site invoices.
+- [K9](https://www.divinebilling.online/solutions/k9): Working dogs, handlers and site billing.
+- [Sales](https://www.divinebilling.online/solutions/sales): Lead to live account, e-sign and VAT billing.
+- [Marketing](https://www.divinebilling.online/solutions/marketing): Campaigns, leads and client website reports.
+- [POS](https://www.divinebilling.online/solutions/pos): Multi-store till on the Butcher cooler.
+- [Central control](https://www.divinebilling.online/solutions/central): Warehouse stock, shop orders, FEFO pick and dispatch.
+- [Butcher](https://www.divinebilling.online/solutions/butcher): FEFO meat, yields and catch-weight.
+- [Utility](https://www.divinebilling.online/solutions/utility): Meters, tariffs, prepaid and a resident portal.
+- [Farming](https://www.divinebilling.online/solutions/farming): Feed, eggs and profit per flock.
+- [Students](https://www.divinebilling.online/solutions/students): Learner file, attendance, results and fees.
+- [Voting OS](https://www.divinebilling.online/solutions/voting): Party canvassing on its own, with party colours or a white-label shell.
+- [Bookkeepers](https://www.divinebilling.online/for-bookkeepers): Many client companies, one login. Contractors free.
+
+## Guides for South African businesses
+
+- [EMP201 explained: monthly PAYE, UIF and SDL for South African employers](https://www.divinebilling.online/guides/emp201-paye-uif-sdl): The monthly employer return: what it contains, when it is due and how to stay reconciled. (reviewed 2026-10-09)
+- [What a valid tax invoice needs in South Africa (2026)](https://www.divinebilling.online/guides/vat-tax-invoice-requirements): Full vs abridged tax invoices, the 21-day rule and the new VAT registration thresholds. (reviewed 2026-10-09)
+- [Paying contractors in South Africa: invoices, PAYE risk and VAT](https://www.divinebilling.online/guides/contractor-invoicing-south-africa): How to keep contractors genuinely independent, invoice them correctly and pay them safely. (reviewed 2026-10-09)
+- [Running a PSIRA-registered security company: guards, sites, the OB and billing](https://www.divinebilling.online/guides/psira-security-company-operations): PSIRA compliance and daily operations for SA guarding companies, from grades to per-site invoices. (reviewed 2026-10-09)
+
+## Questions and answers
+
+### What is DivineBilling?
+
+DivineBilling is cloud billing and business-management software for South African SMEs, built by Divine Online Solutions in Cape Town. It combines invoicing and books, a free contractor portal, multi-company accounting, SARS-ready payroll and industry departments such as PSIRA security, K9, POS, butcher, utility metering and farming. Data is hosted in South Africa and processing is POPIA-aligned. Try the live demo to see the real product.
+
+### Is DivineBilling a medical billing company?
+
+No. DivineBilling is not a medical billing service and is not affiliated with US healthcare billing companies with similar names. DivineBilling is general business software for South African companies: invoicing, books, contractors, payroll and industry operations.
+
+### Who makes DivineBilling?
+
+DivineBilling is built and operated by Divine Online Solutions, a software company in Cape Town, South Africa. Divine Online Solutions runs its own billing, contractors and multi-company books on the same product. Contact: info@divineonlinesolutions.com.
+
+### How much does DivineBilling cost?
+
+Basic is R99/pm for one company, Standard is R695/pm for three companies (intro R299/pm for the first 3 months), Professional is R1 295/pm for 8 companies with every live module, and Enterprise is quoted. Prices are ex VAT; annual billing gives 12 months for the price of 10. See pricing.
+
+### Do contractors pay for a seat?
+
+No. Contractors use the contractor portal free on every plan — unlimited users. They log timesheets, upload documents and submit invoices; you approve them from one queue. You pay only for office seats and companies.
+
+### Where is my data hosted? Is it POPIA compliant?
+
+Data is hosted in South Africa with daily encrypted backups. Processing is aligned with the Protection of Personal Information Act (POPIA), and SA ID and passport numbers are masked by default. See the privacy policy.
+
+### Can I run several companies in one login?
+
+Yes. Each company keeps separate books; you switch between them in seconds and can consolidate a group. Standard includes 3 companies, Professional 8; extra companies are R119/mo.
+
+### Does it handle South African payroll and SARS EMP201?
+
+Yes. The Payroll department runs pay runs and payslips and totals PAYE, UIF and SDL for the monthly EMP201.
+
+### Is there software for PSIRA-registered security companies?
+
+Yes. The Security department covers post orders, a digital occurrence book, incidents, access control and rosters, linked to HR (PSIRA grades and expiry), K9 and Payroll, with per-site invoicing.
+
+### Is DivineBilling suitable for bookkeepers and accountants?
+
+Yes. Bookkeepers manage many client companies from one login, and clients and contractors use their portals free. See DivineBilling for bookkeepers.
+
+### Can I try it before I pay?
+
+Yes. The live demo opens a seeded tenant in one click with no sign-up, and paid plans start with a free trial — no card required. All modules are listed on the modules page.
+
+### Why DivineBilling instead of Xero?
+
+Xero is an excellent ledger. Its Starter plan was R450/mo incl VAT for one organisation (checked 20 August 2026), so three entities need three subscriptions (about R1 350) before payroll and apps. DivineBilling Standard is R695/pm ex VAT (about R799 incl VAT) for three companies, with office seats, unlimited contractor users and industry modules included.
+
+### Why DivineBilling instead of Sage?
+
+Sage Accounting Start was from R240 incl VAT, with growth sold as extras — users R75, each extra company R410, inventory R415 (checked 20 August 2026). DivineBilling bundles POS, HR, payroll and industry departments in one product; an extra company or office seat is R119/mo.
+
+### Why DivineBilling instead of QuickBooks?
+
+QuickBooks is a US product with a South African landing page; billing is often in USD and Simple Start covers one user. It has no PSIRA roster, prepaid metering or free field portal. DivineBilling bills in rand, hosts in South Africa and never charges a seat per contractor.
+
+### Why DivineBilling instead of Wave?
+
+Wave is built for North American invoicing; Pro was US$19 per business and payroll is US/Canada only (checked 20 August 2026). It is not built around SARS, POPIA or rand billing.
+
+### What do Xero, Sage and QuickBooks still do better?
+
+Xero and Sage have automated South African bank feeds and are what many accountants already use; DivineBilling imports bank CSV and PDF statements instead. If you run one trading entity with no field staff and your practice lives in Xero or Sage, stay there. DivineBilling fits when the operation — contractors, sites, tills, meters, flocks — is the hard part.
+
+## Company
+
+- Divine Online Solutions, Cape Town, South Africa — https://www.divineonline.solutions/
+- Contact: info@divineonlinesolutions.com
+- [Privacy policy](https://www.divinebilling.online/privacy)
+- [Terms of use](https://www.divinebilling.online/terms)

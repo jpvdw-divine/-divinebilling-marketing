@@ -1015,3 +1015,41 @@ a.stat:hover { border-color: var(--ink-3); }
 @media (max-width: 800px) {
   .db-chat { right: 12px; bottom: 78px; }
 }
+
+/* FAQ + quotable fact blocks (SEO / AI answers) */
+.faq-lead { max-width: 720px; margin: 0 auto 28px; }
+.faq-lead p { color: var(--ink-2); font-size: 17px; line-height: 1.65; }
+.faq-list { max-width: 720px; margin: 0 auto; border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary { cursor: pointer; list-style: none; padding: 18px 0; font-size: 16px; font-weight: 500; color: var(--ink); }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; float: right; color: var(--ink-3); font-weight: 400; }
+.faq-list details[open] summary::after { content: "–"; }
+.faq-list details p { margin: 0 0 20px; color: var(--ink-2); line-height: 1.65; }
+.faq-list h2 { font-size: 20px; margin: 32px 0 4px; }
+.facts { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: 0; max-width: 860px; margin: 20px 0 0; border-top: 1px solid var(--line); }
+.facts dt, .facts dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.facts dt { font-weight: 500; color: var(--ink); padding-right: 16px; }
+.facts dd { color: var(--ink-2); }
+@media (max-width: 640px) {
+  .facts { grid-template-columns: 1fr; }
+  .facts dt { border-bottom: 0; padding-bottom: 0; }
+}
+.entity-note { margin-top: 10px; font-size: 12px; color: var(--ink-3); }
+
+/* Guides */
+.guide__body { max-width: 760px; }
+.guide__body h2 { font-size: 22px; margin: 36px 0 12px; }
+.guide__body p, .guide__body li { color: var(--ink-2); line-height: 1.7; font-size: 16px; }
+.guide__body p + p { margin-top: 12px; }
+.guide__body ul, .guide__body ol { padding-left: 22px; margin: 8px 0 0; }
+.guide__body li + li { margin-top: 6px; }
+.guide__body a { color: var(--accent); text-decoration: underline; }
+.guide__body .btn { text-decoration: none; }
+.guide__body .btn--primary { color: #fff; }
+.guide__takeaways { background: var(--surface-alt); border: 1px solid var(--line); border-radius: var(--r-md, 12px); padding: 20px 24px; }
+.guide__takeaways h2 { margin-top: 0; font-size: 18px; }
+.guide__faq { margin: 0; max-width: none; }
+.guide__product { margin-top: 36px; padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--r-md, 12px); }
+.guide__product h2 { margin-top: 0; }
+.page-head .eyebrow a { color: inherit; }
