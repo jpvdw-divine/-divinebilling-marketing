@@ -1,6 +1,8 @@
 const LOGIN = "https://login.divinebilling.online";
 const DASH = "https://dash.divinebilling.online";
 const PLATFORM_PRICING = "https://platform.divinebilling.online/api/public-pricing";
+const WWW = "https://www.divinebilling.online";
+const FORM_POSTS = ["/get-started/signup", "/contact", "/become-a-reseller"];
 
 export default {
   async fetch(request, env) {
@@ -8,27 +10,27 @@ export default {
     const path = url.pathname.replace(/\/+$/, "") || "/";
     // One canonical host for search engines: fold the apex onto www.
     if (url.hostname === "divinebilling.online" && (request.method === "GET" || request.method === "HEAD")) {
-      url.hostname = "www.divinebilling.online";
+      url.hostname = new URL(WWW).hostname;
       return Response.redirect(url.toString(), 301);
     }
     if (path === "/login") {
       return Response.redirect(`${LOGIN}/`, 301);
     }
-    if (path === "/get-started/signup" && request.method === "POST") {
+    // Marketing forms post to www; the app on Dash handles them.
+    if (FORM_POSTS.includes(path) && request.method === "POST") {
       const headers = new Headers(request.headers);
       headers.delete("host");
-      const upstream = await fetch(`${DASH}/get-started/signup`, {
+      const upstream = await fetch(`${DASH}${path}`, {
         method: "POST",
         headers,
         body: request.body,
         redirect: "manual",
       });
       if (upstream.status >= 300 && upstream.status < 400) {
-        const loc = upstream.headers.get("Location") || "/get-started/signup";
-        const next = loc
-          .replace("https://dash.divinebilling.online", "https://www.divinebilling.online")
-          .replace("https://login.divinebilling.online", "https://www.divinebilling.online");
-        return Response.redirect(next, 302);
+        const loc = (upstream.headers.get("Location") || path)
+          .replace("https://dash.divinebilling.online", WWW)
+          .replace("https://login.divinebilling.online", WWW);
+        return Response.redirect(new URL(loc, WWW).toString(), 302);
       }
       return upstream;
     }
