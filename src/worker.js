@@ -84,6 +84,9 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
+    if (path === "/status" || path === "/af/status") {
+      return Response.redirect("https://monitor.divinebilling.one/public/Platform", 301);
+    }
     // One canonical host for search engines: fold the apex onto www.
     if (url.hostname === "divinebilling.online" && (request.method === "GET" || request.method === "HEAD")) {
       url.hostname = new URL(WWW).hostname;
