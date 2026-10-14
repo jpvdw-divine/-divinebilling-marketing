@@ -7,7 +7,8 @@
     },
     "/contact": {
       title: "Thank you",
-      text: "Your message was sent. We typically reply within one business day."
+      text: "Your message was sent. We typically reply within one business day.",
+      next: "https://divinebilling.online/"
     },
     "/get-started/signup": {
       title: "Thank you",
