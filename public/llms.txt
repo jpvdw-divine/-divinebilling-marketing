@@ -20,6 +20,7 @@
 - [Pricing](https://www.divinebilling.online/pricing): tiers, add-ons and plan comparison (ZAR, ex VAT)
 - [Modules](https://www.divinebilling.online/modules): every live module by department, plus the roadmap
 - [FAQ](https://www.divinebilling.online/faq): straight answers and comparison with Xero, Sage, QuickBooks and Wave
+- [Compare](https://www.divinebilling.online/compare): DivineBilling vs Wave, Sage, Xero and QuickBooks
 - [Live demo](https://demo.divinebilling.online): a seeded demo tenant, no sign-up
 
 ## Departments
