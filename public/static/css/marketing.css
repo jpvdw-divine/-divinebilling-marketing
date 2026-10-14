@@ -474,6 +474,14 @@ a.stat:hover { border-color: var(--ink-3); }
   display: grid;
   gap: 14px;
 }
+.form-thanks {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 28px 24px;
+}
+.form-thanks h2 { margin: 0 0 8px; }
+.form-thanks p { margin: 0; color: var(--ink-2); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; } }
 .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
