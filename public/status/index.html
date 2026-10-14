@@ -110,15 +110,64 @@
 <section class="page-head">
   <div class="wrap page-head__in">
     <span class="eyebrow" data-af="Status">Status</span>
-    <h1 data-af="Platformstatus">Platform status</h1>
-    <p class="page-head__sub" data-af="Regstreekse monitering van die DivineBilling-platform.">Live monitoring of the DivineBilling platform.</p>
+    <h1 id="status-heading" data-af="Alle stelsels werk.">All systems operational.</h1>
+    <p class="page-head__sub" id="status-note">Live status from the platform monitor. This is not an SLA and we do not publish an uptime percentage.</p>
+    <p class="hero__note" id="status-checked"></p>
   </div>
 </section>
 <section class="section section--tight">
   <div class="wrap">
-    <iframe title="DivineBilling platform status" src="https://monitor.divinebilling.one/public/Platform" style="width:100%;height:80vh;border:0;border-radius:16px;background:#fff"></iframe>
+    <div class="grid grid--3" id="status-cards"></div>
   </div>
 </section>
+<script>
+(function () {
+  function text(id, value) {
+    var node = document.getElementById(id);
+    if (node) node.textContent = value;
+  }
+  fetch('/status.json', { headers: { Accept: 'application/json' } })
+    .then(function (resp) { return resp.json(); })
+    .then(function (status) {
+      var heading = document.getElementById('status-heading');
+      if (heading) {
+        heading.textContent = status.ok ? 'All systems operational.' : 'Some systems need attention.';
+        heading.setAttribute('data-af', status.ok ? 'Alle stelsels werk.' : 'Party stelsels het aandag nodig.');
+      }
+      text('status-note', status.note || '');
+      text('status-checked', status.checked_at ? ('Checked ' + status.checked_at) : '');
+      var grid = document.getElementById('status-cards');
+      if (!grid) return;
+      grid.textContent = '';
+      (status.checks || []).forEach(function (check) {
+        var article = document.createElement('article');
+        article.className = 'feature';
+        var pill = document.createElement('p');
+        pill.className = 'status-pill status-pill--' + (check.ok ? 'up' : 'down');
+        pill.textContent = check.label || '';
+        var title = document.createElement('h3');
+        title.textContent = check.name || '';
+        var detail = document.createElement('p');
+        detail.textContent = check.detail || '';
+        article.appendChild(pill);
+        article.appendChild(title);
+        article.appendChild(detail);
+        if (check.url) {
+          var note = document.createElement('p');
+          note.className = 'card-footnote';
+          note.textContent = check.url;
+          article.appendChild(note);
+        }
+        grid.appendChild(article);
+      });
+    })
+    .catch(function () {
+      var heading = document.getElementById('status-heading');
+      if (heading) heading.textContent = 'Some systems need attention.';
+      text('status-note', 'The platform monitor could not be read just now.');
+    });
+})();
+</script>
 
 
 <footer class="foot">
