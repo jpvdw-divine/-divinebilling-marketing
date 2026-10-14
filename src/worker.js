@@ -1,5 +1,4 @@
 const LOGIN = "https://login.divinebilling.online";
-const DASH = "https://dash.divinebilling.online";
 const PLATFORM_PRICING = "https://platform.divinebilling.online/api/public-pricing";
 const WWW = "https://www.divinebilling.online";
 const FORM_POSTS = ["/get-started/signup", "/contact", "/become-a-reseller"];
@@ -16,11 +15,13 @@ export default {
     if (path === "/login") {
       return Response.redirect(`${LOGIN}/`, 301);
     }
-    // Marketing forms post to www; the app on Dash handles them.
+    // Marketing forms post to www. dash.divinebilling.online answers with an
+    // nginx redirect and drops the body, so these go to the login host, which
+    // forwards them onto the DivineOnline books.
     if (FORM_POSTS.includes(path) && request.method === "POST") {
       const headers = new Headers(request.headers);
       headers.delete("host");
-      const upstream = await fetch(`${DASH}${path}`, {
+      const upstream = await fetch(`${LOGIN}${path}`, {
         method: "POST",
         headers,
         body: request.body,
