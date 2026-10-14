@@ -2,7 +2,8 @@
   var COPY = {
     "/become-a-reseller": {
       title: "Thank you",
-      text: "We received your reseller application and will reply within 24 hours."
+      text: "We received your reseller application and will reply within 24 hours.",
+      next: "https://divinebilling.online/"
     },
     "/contact": {
       title: "Thank you",
@@ -10,7 +11,8 @@
     },
     "/get-started/signup": {
       title: "Thank you",
-      text: "Your sign-up request was sent. We typically reply within one business day."
+      text: "Your sign-up was received. We typically reply within one business day.",
+      next: "https://divinebilling.online/"
     }
   };
 
@@ -37,6 +39,9 @@
     form.hidden = true;
     form.parentNode.insertBefore(box, form);
     if (box.scrollIntoView) box.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (copy.next) {
+      setTimeout(function () { window.location.href = copy.next; }, 6000);
+    }
   }
 
   document.querySelectorAll("form[method='POST'], form[method='post']").forEach(function (form) {
