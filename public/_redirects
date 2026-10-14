@@ -1,6 +1,2 @@
 /login  https://login.divinebilling.online/  301
 /login/ https://login.divinebilling.online/  301
-/status  https://monitor.divinebilling.one/public/Platform  301
-/status/ https://monitor.divinebilling.one/public/Platform  301
-/af/status  https://monitor.divinebilling.one/public/Platform  301
-/af/status/ https://monitor.divinebilling.one/public/Platform  301

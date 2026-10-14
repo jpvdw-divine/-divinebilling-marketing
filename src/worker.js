@@ -16,9 +16,6 @@ export default {
     if (path === "/login") {
       return Response.redirect(`${LOGIN}/`, 301);
     }
-    if (path === "/status" || path === "/af/status") {
-      return Response.redirect("https://monitor.divinebilling.one/public/Platform", 301);
-    }
     // Marketing forms post to www; the app on Dash handles them.
     if (FORM_POSTS.includes(path) && request.method === "POST") {
       const headers = new Headers(request.headers);
