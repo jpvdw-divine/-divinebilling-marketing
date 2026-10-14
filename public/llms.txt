@@ -16,37 +16,37 @@
 
 ## Main pages
 
-- [Home](https://www.divinebilling.online/): overview, plan builder and contact form
-- [Pricing](https://www.divinebilling.online/pricing): tiers, add-ons and plan comparison (ZAR, ex VAT)
-- [Modules](https://www.divinebilling.online/modules): every live module by department, plus the roadmap
-- [FAQ](https://www.divinebilling.online/faq): straight answers and comparison with Xero, Sage, QuickBooks and Wave
-- [Compare](https://www.divinebilling.online/compare): DivineBilling vs Wave, Sage, Xero and QuickBooks
+- [Home](https://divinebilling.online/): overview, plan builder and contact form
+- [Pricing](https://divinebilling.online/pricing): tiers, add-ons and plan comparison (ZAR, ex VAT)
+- [Modules](https://divinebilling.online/modules): every live module by department, plus the roadmap
+- [FAQ](https://divinebilling.online/faq): straight answers and comparison with Xero, Sage, QuickBooks and Wave
+- [Compare](https://divinebilling.online/compare): DivineBilling vs Wave, Sage, Xero and QuickBooks
 - [Live demo](https://demo.divinebilling.online): a seeded demo tenant, no sign-up
 
 ## Departments
 
-- [Finance](https://www.divinebilling.online/solutions/finance): Live P&L, billing, imports and multi-company books.
-- [HR](https://www.divinebilling.online/solutions/hr): Personeel — files, leave, PSIRA and self-service.
-- [Payroll](https://www.divinebilling.online/solutions/payroll): Pay runs, payslips and EMP201.
-- [Security](https://www.divinebilling.online/solutions/security): Occurrence book, posts and per-site invoices.
-- [K9](https://www.divinebilling.online/solutions/k9): Working dogs, handlers and site billing.
-- [Sales](https://www.divinebilling.online/solutions/sales): Lead to live account, e-sign and VAT billing.
-- [Marketing](https://www.divinebilling.online/solutions/marketing): Campaigns, leads and client website reports.
-- [POS](https://www.divinebilling.online/solutions/pos): Multi-store till on the Butcher cooler.
-- [Central control](https://www.divinebilling.online/solutions/central): Warehouse stock, shop orders, FEFO pick and dispatch.
-- [Butcher](https://www.divinebilling.online/solutions/butcher): FEFO meat, yields and catch-weight.
-- [Utility](https://www.divinebilling.online/solutions/utility): Meters, tariffs, prepaid and a resident portal.
-- [Farming](https://www.divinebilling.online/solutions/farming): Feed, eggs and profit per flock.
-- [Students](https://www.divinebilling.online/solutions/students): Learner file, attendance, results and fees.
-- [Voting OS](https://www.divinebilling.online/solutions/voting): Party canvassing on its own, with party colours or a white-label shell.
-- [Bookkeepers](https://www.divinebilling.online/for-bookkeepers): Many client companies, one login. Contractors free.
+- [Finance](https://divinebilling.online/solutions/finance): Live P&L, billing, imports and multi-company books.
+- [HR](https://divinebilling.online/solutions/hr): Personeel — files, leave, PSIRA and self-service.
+- [Payroll](https://divinebilling.online/solutions/payroll): Pay runs, payslips and EMP201.
+- [Security](https://divinebilling.online/solutions/security): Occurrence book, posts and per-site invoices.
+- [K9](https://divinebilling.online/solutions/k9): Working dogs, handlers and site billing.
+- [Sales](https://divinebilling.online/solutions/sales): Lead to live account, e-sign and VAT billing.
+- [Marketing](https://divinebilling.online/solutions/marketing): Campaigns, leads and client website reports.
+- [POS](https://divinebilling.online/solutions/pos): Multi-store till on the Butcher cooler.
+- [Central control](https://divinebilling.online/solutions/central): Warehouse stock, shop orders, FEFO pick and dispatch.
+- [Butcher](https://divinebilling.online/solutions/butcher): FEFO meat, yields and catch-weight.
+- [Utility](https://divinebilling.online/solutions/utility): Meters, tariffs, prepaid and a resident portal.
+- [Farming](https://divinebilling.online/solutions/farming): Feed, eggs and profit per flock.
+- [Students](https://divinebilling.online/solutions/students): Learner file, attendance, results and fees.
+- [Voting OS](https://divinebilling.online/solutions/voting): Party canvassing on its own, with party colours or a white-label shell.
+- [Bookkeepers](https://divinebilling.online/for-bookkeepers): Many client companies, one login. Contractors free.
 
 ## Guides for South African businesses
 
-- [EMP201 explained: monthly PAYE, UIF and SDL for South African employers](https://www.divinebilling.online/guides/emp201-paye-uif-sdl): The monthly employer return: what it contains, when it is due and how to stay reconciled. (reviewed 2026-10-09)
-- [What a valid tax invoice needs in South Africa (2026)](https://www.divinebilling.online/guides/vat-tax-invoice-requirements): Full vs abridged tax invoices, the 21-day rule and the new VAT registration thresholds. (reviewed 2026-10-09)
-- [Paying contractors in South Africa: invoices, PAYE risk and VAT](https://www.divinebilling.online/guides/contractor-invoicing-south-africa): How to keep contractors genuinely independent, invoice them correctly and pay them safely. (reviewed 2026-10-09)
-- [Running a PSIRA-registered security company: guards, sites, the OB and billing](https://www.divinebilling.online/guides/psira-security-company-operations): PSIRA compliance and daily operations for SA guarding companies, from grades to per-site invoices. (reviewed 2026-10-09)
+- [EMP201 explained: monthly PAYE, UIF and SDL for South African employers](https://divinebilling.online/guides/emp201-paye-uif-sdl): The monthly employer return: what it contains, when it is due and how to stay reconciled. (reviewed 2026-10-09)
+- [What a valid tax invoice needs in South Africa (2026)](https://divinebilling.online/guides/vat-tax-invoice-requirements): Full vs abridged tax invoices, the 21-day rule and the new VAT registration thresholds. (reviewed 2026-10-09)
+- [Paying contractors in South Africa: invoices, PAYE risk and VAT](https://divinebilling.online/guides/contractor-invoicing-south-africa): How to keep contractors genuinely independent, invoice them correctly and pay them safely. (reviewed 2026-10-09)
+- [Running a PSIRA-registered security company: guards, sites, the OB and billing](https://divinebilling.online/guides/psira-security-company-operations): PSIRA compliance and daily operations for SA guarding companies, from grades to per-site invoices. (reviewed 2026-10-09)
 
 ## Questions and answers
 
@@ -118,5 +118,5 @@ Xero and Sage have automated South African bank feeds and are what many accounta
 
 - Divine Online Solutions, Cape Town, South Africa — https://www.divineonline.solutions/
 - Contact: info@divineonlinesolutions.com
-- [Privacy policy](https://www.divinebilling.online/privacy)
-- [Terms of use](https://www.divinebilling.online/terms)
+- [Privacy policy](https://divinebilling.online/privacy)
+- [Terms of use](https://divinebilling.online/terms)

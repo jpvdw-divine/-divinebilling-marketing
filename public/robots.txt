@@ -36,4 +36,4 @@ Disallow: /get-started/signup
 Disallow: /status.json
 Disallow: /api/
 
-Sitemap: https://www.divinebilling.online/sitemap.xml
+Sitemap: https://divinebilling.online/sitemap.xml
