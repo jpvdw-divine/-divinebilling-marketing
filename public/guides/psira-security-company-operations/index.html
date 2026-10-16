@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.339">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.465">
 </head>
 <body>
   <nav class="nav">
@@ -34,9 +34,9 @@
       
       <div class="nav__links">
         <div class="nav__drop">
-          <button type="button" class="nav__drop-btn" aria-expanded="false" data-af="Oplossings">Solutions</button>
+          <button type="button" class="nav__drop-btn" aria-expanded="false" data-af="Bedrywe">Industries</button>
           <div class="nav__drop-menu nav__drop-menu--wide">
-            <a href="/solutions" data-af="Alle departemente">All departments</a>
+            <a href="/solutions" data-af="Alle bedrywe">All industries</a>
             
             <a href="/solutions/finance" data-af="Finansies">Finance</a>
             
@@ -77,16 +77,32 @@
         <a href="/compare" data-af="Vergelyk">Compare</a>
         <a href="/#contact" data-af="Kontak">Contact</a>
         <a href="/become-a-reseller" data-af="Herverkoper">Reseller</a>
-        <a href="https://demo.divinebilling.online/demo/launch" data-af="Demo">Demo</a>
       </div>
       
       
       <div class="nav__end">
         <button type="button" class="lang-toggle" id="lang-toggle" aria-pressed="false">AF</button>
-        <a class="btn btn--sm btn--ghost" href="https://login.divinebilling.online/" data-af="Teken in">Log in</a>
-        <a class="btn btn--sm btn--dark" href="https://divinebilling.online/get-started" data-af="Begin">Get started</a>
+        <a class="btn btn--sm btn--ghost nav__login" href="https://login.divinebilling.online/" data-af="Teken in">Log in</a>
+        <a class="btn btn--sm btn--primary nav__trial" href="https://divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
       </div>
       
+    </div>
+    <div class="nav__mobile" id="nav-mobile" hidden>
+      <div class="wrap">
+        <a href="/solutions" data-af="Bedrywe">Industries</a>
+        <a href="/modules" data-af="Modules">Modules</a>
+        <a href="/pricing" data-af="Pryse">Pricing</a>
+        <a href="/faq" data-af="Vrae">FAQ</a>
+        <a href="/compare" data-af="Vergelyk">Compare</a>
+        <a href="https://demo.divinebilling.online/demo/launch" data-af="Lewendige demo">Live demo</a>
+        <a href="/#contact" data-af="Kontak">Contact</a>
+        <div class="nav__mobile-end">
+          <a class="btn btn--ghost" href="https://login.divinebilling.online/" data-af="Teken in">Log in</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -280,7 +296,9 @@
           </ul>
         </div>
       </div>
-      <div class="foot__bar">© 2026 Divine Online Solutions · Cape Town, South Africa</div>
+      <div class="foot__bar">
+        <span>© 2026 Divine Online Solutions · Cape Town, South Africa</span>
+      </div>
     </div>
   </footer>
   
@@ -290,7 +308,10 @@
   </div>
 
   <div class="db-chat" id="db-pub-chat" data-api="https://platform.divinebilling.online/api/public/support/chat">
-    <button type="button" class="db-chat__toggle" aria-expanded="false" data-af="Vra V2.0">Assistant V2.0</button>
+    <button type="button" class="db-chat__toggle" aria-expanded="false" aria-label="Ask a question">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4.5h12a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V6A1.5 1.5 0 0 1 4 4.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="db-chat__label" data-af="Vra ’n vraag">Ask a question</span>
+    </button>
     <div class="db-chat__panel" role="dialog" aria-label="Ask DivineBilling">
       <div class="db-chat__head">
         <div>
@@ -392,6 +413,15 @@
       var play = video.play();
       if (play && play.catch) play.catch(function () { film.classList.remove('is-playing'); });
     });
+    var burger = document.querySelector('.nav__burger');
+    var mobileNav = document.getElementById('nav-mobile');
+    if (burger && mobileNav) {
+      burger.addEventListener('click', function () {
+        var open = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        mobileNav.hidden = open;
+      });
+    }
     document.querySelectorAll('.nav__drop-btn').forEach(function (b) {
       b.addEventListener('click', function () {
         var open = b.getAttribute('aria-expanded') === 'true';

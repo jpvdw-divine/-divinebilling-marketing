@@ -23,7 +23,7 @@
   <meta name="twitter:image" content="https://divinebilling.online/static/img/og-divinebilling.png">
   
   <link rel="icon" type="image/svg+xml" href="/static/img/divinebilling-mark.svg">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.430">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.465">
   
 
   <script type="application/ld+json">
@@ -66,9 +66,9 @@
       
       <div class="nav__links">
         <div class="nav__drop">
-          <button type="button" class="nav__drop-btn" aria-expanded="false" data-af="Oplossings">Solutions</button>
+          <button type="button" class="nav__drop-btn" aria-expanded="false" data-af="Bedrywe">Industries</button>
           <div class="nav__drop-menu nav__drop-menu--wide">
-            <a href="/solutions" data-af="Alle departemente">All departments</a>
+            <a href="/solutions" data-af="Alle bedrywe">All industries</a>
             
             <a href="/solutions/finance" data-af="Finansies">Finance</a>
             
@@ -108,16 +108,32 @@
         <a href="/pricing" data-af="Pryse">Pricing</a>
         <a href="/faq" data-af="Vrae">FAQ</a>
         <a href="/compare" data-af="Vergelyk">Compare</a>
-        <a href="https://demo.divinebilling.online/demo/launch" data-af="Demo">Demo</a>
       </div>
       
       
       <div class="nav__end">
-        <a class="lang-toggle" href="https://divinebilling.online/af/" hreflang="af-ZA">AF</a>
-        <a class="btn btn--sm btn--ghost" href="https://login.divinebilling.online/" data-af="Teken in">Log in</a>
-        <a class="btn btn--sm btn--dark" href="https://divinebilling.online/get-started" data-af="Begin">Get started</a>
+        <a class="btn btn--sm btn--ghost nav__login" href="https://login.divinebilling.online/" data-af="Teken in">Log in</a>
+        <a class="btn btn--sm btn--primary nav__trial" href="https://divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
+        <button type="button" class="nav__burger" aria-expanded="false" aria-controls="nav-mobile" aria-label="Menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
       </div>
       
+    </div>
+    <div class="nav__mobile" id="nav-mobile" hidden>
+      <div class="wrap">
+        <a href="/solutions" data-af="Bedrywe">Industries</a>
+        <a href="/modules" data-af="Modules">Modules</a>
+        <a href="/pricing" data-af="Pryse">Pricing</a>
+        <a href="/faq" data-af="Vrae">FAQ</a>
+        <a href="/compare" data-af="Vergelyk">Compare</a>
+        <a href="https://demo.divinebilling.online/demo/launch" data-af="Lewendige demo">Live demo</a>
+        <a href="/#contact" data-af="Kontak">Contact</a>
+        <div class="nav__mobile-end">
+          <a class="btn btn--ghost" href="https://login.divinebilling.online/" data-af="Teken in">Log in</a>
+          <a class="lang-toggle" href="https://divinebilling.online/af/" hreflang="af-ZA">Afrikaans</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -126,41 +142,40 @@
   
 
   
-<header class="hero">
+<header class="hero hero--home">
   <div class="wrap hero__grid">
     <div>
       <span class="eyebrow" data-af="Gebou in Kaapstad · In SA gehuisves">Built in Cape Town · SA-hosted</span>
-      <h1 data-af="Fakturering, boeke en een portaal vir kontrakteurs.">Billing, books, and one portal for contractors.</h1>
-      <p class="lede" data-af="Een werkspasie vir kontantvloei, fakture en multi-maatskappy-konsolidasie — vir Suid-Afrikaanse SMEs. Kontrakteurs gebruik die portaal gratis, op elke plan.">One workspace for cash flow, invoices and multi-company consolidation — for South African SMBs. Contractors use the portal free, on every plan.</p>
+      <h1 data-af="Faktureer kliënte, betaal kontrakteurs, sien jou wins lewendig.">Invoice clients, pay contractors, see your profit live.</h1>
+      <p class="lede" data-af="Fakturering en multi-maatskappy-boeke vir Suid-Afrikaanse SMEs en boekhouers. Kontrakteurs gebruik die portaal gratis, op elke plan.">Billing and multi-company books for South African SMBs and bookkeepers. Contractors use the portal free, on every plan.</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="https://divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
-        <a class="btn btn--ghost" href="https://demo.divinebilling.online/demo/launch" data-af="Probeer die lewendige demo">Try the live demo</a>
+        <a class="btn btn--ghost" href="https://demo.divinebilling.online/demo/launch"><svg class="btn__icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="currentColor"/></svg><span data-af="Probeer die lewendige demo">Try the live demo</span></a>
       </div>
-      <p class="hero__note" data-af="Gratis proeftydperk · Geen kaart nodig · Kanselleer enige tyd">Free trial · No card required · Cancel anytime</p>
-      <p class="hero__note">From R99/pm ex VAT · contractors always free.</p>
-      <p class="trust-strip">SA-hosted · POPIA-aligned · Daily encrypted backups · Cancel anytime</p>
+      <p class="hero__note" data-af="Geen kaart nodig · Vanaf R99/pm eks BTW · Kanselleer enige tyd">No card required · From R99/pm ex VAT · Cancel anytime</p>
     </div>
 
-    <div class="switcher">
-      <div class="switcher__head">
-        <p data-af="Bou jou plan">Build your plan</p>
-        <span class="switcher__count"><span id="switcher-count" class="mono">6</span> of 40 modules</span>
-      </div>
-      <div class="switcher__list" id="switcher-list"></div>
-      <div class="switcher__foot">
-        <div class="switcher__tier">
-          <p data-af="Jou vlak">Your tier</p>
-          <p id="switcher-tier">Basic</p>
-        </div>
-        <div class="switcher__price">
-          <div class="amt mono">R <span id="switcher-price">99</span></div>
-          <div class="per" id="switcher-per">per month, ex VAT</div>
-          <div class="setup" id="switcher-setup">Setup waived</div>
-        </div>
-      </div>
-    </div>
+    
+    
+    <a class="hero-shot" href="https://demo.divinebilling.online/demo/launch" title="Open the live demo">
+      <span class="hero-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>demo.divinebilling.online</span></span>
+      <picture>
+        <source srcset="/static/img/product/dashboard.webp" type="image/webp">
+        <img src="/static/img/product/dashboard.png" alt="Live P&amp;L dashboard" width="1280" height="800" fetchpriority="high">
+      </picture>
+    </a>
+    
   </div>
 </header>
+
+<div class="proof-bar">
+  <ul class="wrap proof-bar__list">
+    <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.4 4.5 8.5 4.5 8.5s4.5-5.1 4.5-8.5A4.5 4.5 0 0 0 8 1.5zm0 6.3a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6z" fill="currentColor"/></svg><span data-af="Data in Suid-Afrika gehuisves">Data hosted in South Africa</span></li>
+    <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 7a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zm5.5 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM1 13c0-2.2 2-4 4.5-4S10 10.8 10 13v1H1zm10-4c2.2 0 4 1.5 4 3.5V14h-4v-1c0-1.5-.6-2.9-1.6-3.8.5-.1 1-.2 1.6-.2z" fill="currentColor"/></svg><span data-af="Kontrakteurs altyd gratis">Contractors always free</span></li>
+    <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1 2.5 3v4.2c0 3.4 2.3 6.4 5.5 7.8 3.2-1.4 5.5-4.4 5.5-7.8V3zm-1 9.9L4.3 8.2l1.1-1.1L7 8.7l3.6-3.6 1.1 1.1z" fill="currentColor"/></svg><span data-af="POPIA-belyn">POPIA-aligned</span></li>
+    <li><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5c-3 0-5.5 1-5.5 2.3v8.4c0 1.3 2.5 2.3 5.5 2.3s5.5-1 5.5-2.3V3.8C13.5 2.5 11 1.5 8 1.5zm0 1.5c2.5 0 4 .7 4 .8s-1.5.8-4 .8-4-.7-4-.8S5.5 3 8 3zm4 9.2c0 .1-1.5.8-4 .8s-4-.7-4-.8V10c1 .5 2.4.8 4 .8s3-.3 4-.8zm0-3.5c0 .1-1.5.8-4 .8s-4-.7-4-.8V6.3c1 .5 2.4.8 4 .8s3-.3 4-.8z" fill="currentColor"/></svg><span data-af="Daaglikse enkripteerde rugsteun">Daily encrypted backups</span></li>
+  </ul>
+</div>
 
 
 <section class="section" id="product">
@@ -204,8 +219,7 @@
         
       </div>
     </div>
-    <p class="fine product-tour__note">Live demo · 18 Sep 2026</p>
-    <div class="hero__cta" style="margin-top:12px">
+    <div class="hero__cta" style="margin-top:20px">
       <a class="btn btn--sm btn--primary" href="https://demo.divinebilling.online/demo/launch" data-af="Maak die lewendige demo oop">Open the live demo</a>
     </div>
   </div>
@@ -546,7 +560,10 @@
           </ul>
         </div>
       </div>
-      <div class="foot__bar">© 2026 Divine Online Solutions · Cape Town, South Africa</div>
+      <div class="foot__bar">
+        <span>© 2026 Divine Online Solutions · Cape Town, South Africa</span>
+        <a class="foot__lang" href="https://divinebilling.online/af/" hreflang="af-ZA">Afrikaans</a>
+      </div>
     </div>
   </footer>
   
@@ -556,7 +573,10 @@
   </div>
 
   <div class="db-chat" id="db-pub-chat" data-api="https://platform.divinebilling.online/api/public/support/chat">
-    <button type="button" class="db-chat__toggle" aria-expanded="false" data-af="Vra V2.0">Assistant V2.0</button>
+    <button type="button" class="db-chat__toggle" aria-expanded="false" aria-label="Ask a question">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4.5h12a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5H9l-3.5 3v-3H4A1.5 1.5 0 0 1 2.5 13V6A1.5 1.5 0 0 1 4 4.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      <span class="db-chat__label" data-af="Vra ’n vraag">Ask a question</span>
+    </button>
     <div class="db-chat__panel" role="dialog" aria-label="Ask DivineBilling">
       <div class="db-chat__head">
         <div>
@@ -659,6 +679,15 @@
         start(arm);
       }
     });
+    var burger = document.querySelector('.nav__burger');
+    var mobileNav = document.getElementById('nav-mobile');
+    if (burger && mobileNav) {
+      burger.addEventListener('click', function () {
+        var open = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', open ? 'false' : 'true');
+        mobileNav.hidden = open;
+      });
+    }
     document.querySelectorAll('.nav__drop-btn').forEach(function (b) {
       b.addEventListener('click', function () {
         var open = b.getAttribute('aria-expanded') === 'true';
@@ -674,64 +703,12 @@
 <script>
 (function () {
   var TICK = '<svg viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.6 8.8 10 3.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  var MODULES = [{"core": true, "d": "Chat on the public site and inside every office. It explains each live module, answers pricing, and logs a lead, an issue, or a bug on the support desk.", "n": "Assistant V2.0", "t": "core"}, {"core": true, "d": "Invoice your customers, send quotes and convert to invoices on acceptance. Branded PDF exports.", "n": "Clients \u0026 quotes", "t": "billing"}, {"core": true, "d": "Contractors log timesheets, raise invoices and submit for payment \u2014 you approve from one queue.", "n": "Contractor billing \u0026 payments", "t": "billing"}, {"core": true, "d": "Customers sign in to view invoices, quotes, balances and download account statements.", "n": "Customer portal \u0026 statements", "t": "portal"}, {"core": true, "d": "Weekly and monthly profit views, KPI cards and break-even tracking \u2014 updated as transactions land.", "n": "Dashboard \u0026 live P\u0026L", "t": "core"}, {"core": true, "d": "Every expense, transfer and income in one place. Manual entry, categories and full audit history.", "n": "Transactions \u0026 ledger", "t": "core"}, {"core": false, "d": "Import bank CSVs and PDF statements instead of retyping. Batch tracking and import logs.", "n": "Bank \u0026 file imports", "t": "core"}, {"core": false, "d": "South African bar and tavern POS: floor tabs, 25 ml and 50 ml tots, mixers, mix specials, kitchen display, PIN clock and manager cash-up with VAT invoices.", "n": "Bar \u2014 tots, tabs and shift cash-up", "t": "admin"}, {"core": false, "d": "Set monthly targets per category and track variance against live transactions.", "n": "Budgets vs actuals", "t": "reports"}, {"core": false, "d": "30/60/90-day projection using AR, fixed obligations and trailing cash trends.", "n": "Cash-flow forecasting", "t": "reports"}, {"core": false, "d": "One live view of linked shops: stock alerts, morning restock lists, then receive shop orders, confirm them and submit to the warehouse.", "n": "Central control \u2014 inventory \u0026 ordering", "t": "admin"}, {"core": false, "d": "Monthly client-facing website reports: WordPress core/plugin health from your own reporting agent plugin, Google Analytics traffic, PageSpeed performance, and known vulnerabilities \u2014 built and sent by Marketing.", "n": "Client Reports \u2014 website health \u0026 traffic", "t": "admin"}, {"core": false, "d": "Track contractor hours by client and project. Import timesheets from CSV or Excel.", "n": "Contract work timesheets", "t": "billing"}, {"core": false, "d": "Self-service profile, bank details, documents, timesheets and invoice submission for field staff.", "n": "Contractor portal", "t": "portal"}, {"core": false, "d": "Connect IMAP \u2014 PDF invoices flagged for payment and assigned to income or expense categories.", "n": "Email inbox capture", "t": "core"}, {"core": false, "d": "Chicken operations: flocks (age, breed, status), houses, feed, daily egg collection, eggs bought in and sold, fertility/hatch records, vaccinations and mortality history.", "n": "Farming department \u2014 Chicken farm", "t": "admin"}, {"core": false, "d": "Full HR stack for site-based workforces (security PSIRA): employee file with SA ID, document uploads, qualification expiry, site allocation, mobile leave, e-sign from phone.", "n": "HRMS \u2014 Personeel department", "t": "admin"}, {"core": false, "d": "Every admin change to a contractor invoice is logged for year-end reviews.", "n": "Invoice audit trail", "t": "security"}, {"core": false, "d": "Full working-dog stack: records, handlers, training, medical, sites, and K9 billing \u2014 dogs and guards per site invoiced to the linked client, with VAT on quotes and invoices.", "n": "K9 \u2014 Working dog management", "t": "admin"}, {"core": false, "d": "Campaigns, content calendar, lead CRM, email and social planning, brand assets, events/webinars and ROI analytics linked to Finance reports.", "n": "Marketing department", "t": "admin"}, {"core": false, "d": "SMS broadcasts to opted-in leads and customers on the company\u0027s own SMSPortal key, with delivery reports, replies and automatic STOP handling. Separate from Voting OS SMS.", "n": "Marketing \u2014 SMS (SMSPortal)", "t": "admin"}, {"core": false, "d": "Official Meta WhatsApp Cloud API: approved templates, invoice PDFs to customers, delivery and read status. Separate from the WhatsApp Web group import.", "n": "Marketing \u2014 WhatsApp Business API", "t": "admin"}, {"core": false, "d": "Fixed costs per company feed break-even and cash-flow forecasts automatically.", "n": "Monthly obligations", "t": "core"}, {"core": false, "d": "Switch companies in seconds, group consolidation and separate books per entity.", "n": "Multi-company", "t": "core"}, {"core": false, "d": "Employees, pay items, pay runs, payslips and EMP201 monthly PAYE, UIF and SDL totals.", "n": "Payroll \u2014 pay runs \u0026 SARS", "t": "admin"}, {"core": false, "d": "Shop terminals on the same cooler as Butcher \u2014 catalogue, catch-weight kg, 15% VAT receipts, transfers, time clock; staff from HR, takings posted to Finance.", "n": "POS \u2014 multi-store till", "t": "admin"}, {"core": false, "d": "See which clients and ledger categories actually make money.", "n": "Profitability by client / project", "t": "reports"}, {"core": false, "d": "SA ID / passport numbers masked by default. Reveal with password when needed.", "n": "Protected ID numbers", "t": "security"}, {"core": false, "d": "Multi-shop meat inventory plus the POS till: shared shops and SKUs, FEFO batches, directed transfers, catch-weight sales, yields and costing.", "n": "Recipe Management \u2014 Butcher department", "t": "admin"}, {"core": false, "d": "Weekly P\u0026L, 6- and 12-month trends, PDF exports and revenue calculator with break-even targets.", "n": "Reports \u0026 exports", "t": "reports"}, {"core": false, "d": "Viewer, bookkeeper, director and admin roles per company \u2014 granular access control.", "n": "Role-based permissions", "t": "admin"}, {"core": false, "d": "Fixed process: Lead in \u2192 Qualified \u2192 Discovery \u2192 Proposal \u2192 Negotiation \u2192 Closed won \u2192 Handoff \u2192 Live. CRM, inbox, e-sign proposals, VAT billing and calendar.", "n": "Sales \u2014 lead to live account", "t": "core"}, {"core": false, "d": "Weekly or monthly digest to the owner\u0027s inbox \u2014 P\u0026L summary on autopilot.", "n": "Scheduled email reports", "t": "reports"}, {"core": false, "d": "Site security stack: organogram, officers linked to HR, post orders, occurrence book, incidents, access control, equipment, training and roster \u2014 connected to Payroll and K9.", "n": "Security department \u2014 PSIRA operations", "t": "admin"}, {"core": false, "d": "Check a short page list, read Search Console, record keywords and local details, then publish an approved draft through the DOS reports plugin.", "n": "Seo", "t": "admin"}, {"core": false, "d": "School and college SIS: student file, guardians, programmes, classes, enrolment, attendance, results, fees and notes. Assign per company under Setup \u2192 Modules.", "n": "Students department \u2014 learner file", "t": "admin"}, {"core": false, "d": "Utility control room: body corporates, meter register, reading cycles, municipal bills, tariffs, billing, prepaid monitoring, field jobs, and a customer portal.", "n": "Utility department \u2014 Electrical \u0026 Water", "t": "admin"}, {"core": false, "d": "Standalone campaign workspace: consented contacts, door canvassing, ward coverage, WhatsApp/call/email gates, activists and a party white-label. Buy this department on its own.", "n": "Voting OS \u2014 party canvassing", "t": "admin"}, {"core": false, "d": "Send consented outreach by SMS from the Outreach page on the party\u0027s own SMSPortal key. STOP replies suppress SMS only. Separate from Marketing SMS.", "n": "Voting OS \u2014 SMS (SMSPortal)", "t": "admin"}, {"core": false, "d": "Consented outreach on WhatsApp with approved templates, from the Outreach page. Confirm with Meta that the party may use the WhatsApp Business Platform first.", "n": "Voting OS \u2014 WhatsApp Business API", "t": "admin"}];
-  MODULES.sort(function (a, b) {
-    if (a.core === b.core) return a.n < b.n ? -1 : (a.n > b.n ? 1 : 0);
-    return a.core ? -1 : 1;
-  });
   var TIERS = [{"all_modules": false, "audience": "Solo owner \u2014 core billing included, plus any 5 optional modules", "companies": 1, "contractors": "Unlimited", "highlight": false, "id": "basic", "modules_pick": 5, "monthly": 99, "name": "Basic", "seats": 1, "setup": null, "setup_label": "Waived", "tagline": "Start billing"}, {"all_modules": false, "audience": "Small teams \u2014 core billing plus any 12 optional modules", "companies": 3, "contractors": "Unlimited", "highlight": true, "id": "standard", "intro_monthly": 299, "intro_months": 3, "modules_pick": 12, "monthly": 695, "name": "Standard", "seats": 3, "setup": 250, "tagline": "Best for 2\u20133 companies"}, {"all_modules": true, "audience": "All 40 live modules included \u2014 agencies and groups", "companies": 8, "contractors": "Unlimited", "highlight": false, "id": "professional", "modules_pick": null, "monthly": 1295, "name": "Professional", "seats": 8, "setup": 250, "tagline": "Full stack"}, {"all_modules": true, "audience": "50+ seats, custom integrations \u0026 onboarding", "companies": "Custom", "contractors": "Unlimited", "highlight": false, "id": "enterprise", "modules_pick": null, "monthly": null, "monthly_label": "Quoted", "name": "Enterprise", "seats": "Custom", "setup": null, "tagline": "Built around you"}, {"all_modules": false, "audience": "Political parties and candidates. Voting OS only, with party colours or a white-label shell. No Finance stack.", "companies": 1, "contractors": "\u2014", "highlight": false, "id": "voting_os", "modules_pick": null, "monthly": 790, "name": "Voting OS", "seats": 8, "setup": null, "setup_label": "Waived", "standalone": true, "standalone_modules": ["voting"], "tagline": "One party workspace"}];
   var LIVE = 40;
   var GET_STARTED = "https://divinebilling.online/get-started";
   var CONTACT = "/" + '#contact';
 
-  var on = new Set();
-  MODULES.forEach(function (m, i) { if (m.core) on.add(i); });
-
-  var list = document.getElementById('switcher-list');
-  MODULES.forEach(function (m, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'mod' + (m.core ? ' mod--locked' : '');
-    b.setAttribute('aria-pressed', on.has(i));
-    if (m.core) b.setAttribute('aria-disabled', 'true');
-    b.innerHTML = '<span class="mod__box">' + TICK + '</span><span class="mod__name">' + m.n + '</span><span class="mod__tag">' + (m.core ? 'included' : m.t) + '</span>';
-    b.addEventListener('click', function () {
-      if (m.core) return;
-      on.has(i) ? on.delete(i) : on.add(i);
-      b.setAttribute('aria-pressed', on.has(i));
-      renderSwitcher();
-    });
-    list.appendChild(b);
-  });
-
   function money(v) { return v.toLocaleString('en-ZA').replace(/,/g, ' '); }
-
-  function findTier(id) {
-    for (var i = 0; i < TIERS.length; i++) {
-      if (TIERS[i].id === id) return TIERS[i];
-    }
-    return null;
-  }
-
-  function renderSwitcher() {
-    var c = on.size;
-    document.getElementById('switcher-count').textContent = c;
-    var t = findTier('basic') || { monthly: 99, setup: null };
-    if (c > 12) t = findTier('professional') || t;
-    else if (c > 5) t = findTier('standard') || t;
-    document.getElementById('switcher-tier').textContent = t.name || 'Basic';
-    document.getElementById('switcher-price').textContent = money(t.monthly || 0);
-    document.getElementById('switcher-per').textContent = 'per month, ex VAT';
-    var setupEl = document.getElementById('switcher-setup');
-    if (t.id === 'basic' || !t.setup) {
-      setupEl.hidden = false;
-      setupEl.textContent = 'Setup waived';
-    } else {
-      setupEl.hidden = false;
-      setupEl.textContent = '+ R ' + money(t.setup) + ' once-off setup';
-    }
-  }
-  renderSwitcher();
 
   var annual = false;
   var tiersEl = document.getElementById('home-tiers');
