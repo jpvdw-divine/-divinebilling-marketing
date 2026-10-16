@@ -63,6 +63,8 @@
 .h-hero { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); gap: 64px; align-items: center; padding-block: 88px 104px; }
 .h-hero__tag { display: inline-flex; align-items: center; gap: 10px; font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--sky); }
 .h-hero__tag i { width: 26px; height: 1px; background: currentColor; }
+.h-logo { position: relative; width: 200px; aspect-ratio: 360 / 255; margin: 0; overflow: hidden; border-radius: 18px; background: #fff; box-shadow: 0 18px 40px -16px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08); }
+.h-strip__tag { color: var(--brand-text); padding-top: 26px; }
 .h-hero h1 { color: var(--night-fg); font-size: clamp(44px, 5.4vw, 72px); line-height: .98; letter-spacing: -0.045em; margin: 24px 0 26px; font-weight: 750; }
 .h-hero h1 span { display: block; }
 .h-hero h1 .h-lit { color: var(--sky); }
@@ -290,6 +292,7 @@
 @media (max-width: 700px) {
   .h-hero { padding-block: 56px 72px; }
   .h-hero__lede { font-size: 17px; }
+  .h-logo { width: 156px; border-radius: 14px; }
   .h-invoice { padding: 22px 18px 20px; transform: none; }
   .h-example { transform: none; right: 10px; }
   .h-stamp { left: 18px; bottom: 22px; font-size: 22px; }
