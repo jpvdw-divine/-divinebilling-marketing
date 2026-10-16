@@ -53,20 +53,6 @@
 .h-btn--night { border-color: rgba(255,255,255,.22); color: var(--night-fg); background: rgba(255,255,255,.04); }
 .h-btn--night:hover { border-color: rgba(255,255,255,.5); }
 
-/* ---------- shared nav, homepage only ---------- */
-.page-home .nav { background: rgba(7, 13, 29, .86); border-bottom-color: #1C2848; }
-.page-home .nav .brand { color: #F2F5FB; }
-.page-home .nav__links, .page-home .nav__drop-btn { color: #9AA6C2; }
-.page-home .nav__links a:hover, .page-home .nav__links a.is-active,
-.page-home .nav__drop.is-open .nav__drop-btn, .page-home .nav__drop:hover .nav__drop-btn { color: #F2F5FB; }
-.page-home .nav__login { background: transparent; color: #F2F5FB; border-color: rgba(255,255,255,.22); }
-.page-home .nav__login:hover { border-color: rgba(255,255,255,.5); }
-.page-home .nav__burger { background: transparent; color: #F2F5FB; border-color: #1C2848; }
-.page-home .nav__mobile { background: #070D1D; border-top-color: #1C2848; }
-.page-home .nav__mobile .wrap > a { color: #F2F5FB; border-bottom-color: #1C2848; }
-.page-home .nav__mobile .btn--ghost { background: transparent; color: #F2F5FB; border-color: rgba(255,255,255,.22); }
-.page-home .nav__mobile .lang-toggle { background: transparent; color: #F2F5FB; border-color: rgba(255,255,255,.22); }
-
 /* ---------- night hero ---------- */
 .h-night { background: var(--night); color: var(--night-fg-2); position: relative; overflow: hidden; isolation: isolate; }
 .h-night::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
