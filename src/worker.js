@@ -1,7 +1,7 @@
 const LOGIN = "https://login.divinebilling.online";
 const MONITOR = "https://monitor.divinebilling.one/api/collections";
 const PLATFORM_PRICING = "https://platform.divinebilling.online/api/public-pricing";
-const WWW = "https://www.divinebilling.online";
+const SITE = "https://divinebilling.online";
 const FORM_POSTS = ["/get-started/signup", "/contact", "/become-a-reseller"];
 
 async function monitorJson(path) {
@@ -87,9 +87,10 @@ export default {
     if (path === "/status" || path === "/af/status") {
       return Response.redirect("https://monitor.divinebilling.one/public/Platform", 301);
     }
-    // One canonical host for search engines: fold the apex onto www.
-    if (url.hostname === "divinebilling.online" && (request.method === "GET" || request.method === "HEAD")) {
-      url.hostname = new URL(WWW).hostname;
+    // One canonical host for search engines: fold www onto the apex, which is
+    // what the sitemap, canonical tags and the Cloudflare www redirect use.
+    if (url.hostname === "www.divinebilling.online" && (request.method === "GET" || request.method === "HEAD")) {
+      url.hostname = new URL(SITE).hostname;
       return Response.redirect(url.toString(), 301);
     }
     if (path === "/login") {
@@ -105,7 +106,7 @@ export default {
         },
       });
     }
-    // Marketing forms post to www. dash.divinebilling.online answers with an
+    // Marketing forms post to the site host. dash.divinebilling.online answers with an
     // nginx redirect and drops the body, so these go to the login host, which
     // forwards them onto the DivineOnline books.
     if (FORM_POSTS.includes(path) && request.method === "POST") {
@@ -119,9 +120,9 @@ export default {
       });
       if (upstream.status >= 300 && upstream.status < 400) {
         const loc = (upstream.headers.get("Location") || path)
-          .replace("https://dash.divinebilling.online", WWW)
-          .replace("https://login.divinebilling.online", WWW);
-        return Response.redirect(new URL(loc, WWW).toString(), 302);
+          .replace("https://dash.divinebilling.online", SITE)
+          .replace("https://login.divinebilling.online", SITE);
+        return Response.redirect(new URL(loc, SITE).toString(), 302);
       }
       return upstream;
     }

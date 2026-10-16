@@ -1,6 +1,6 @@
 # DivineBilling public marketing site
 
-Cloudflare Worker that serves **www.divinebilling.online** and **divinebilling.online**.
+Cloudflare Worker that serves **divinebilling.online** (www redirects to the apex).
 
 - Assets: `public/` (frozen catalog)
 - Worker: `src/worker.js` (login redirect, signup POST, live pricing JSON)

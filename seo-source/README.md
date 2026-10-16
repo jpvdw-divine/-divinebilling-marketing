@@ -19,7 +19,13 @@ Only `public/` is deployed (see `wrangler.toml`), so nothing in this folder reac
 
 ## Regenerating the pages
 
-The pages are rendered by the DivineBilling app and frozen into `public/`. To rebuild them:
+DivineBilling's `tools/freeze_marketing_public.py` (from v2.10.462's `marketing/af-freeze` branch) reads
+`seo-source/files` directly: it finds this repo next to the DivineBilling checkout, in the Platform
+publisher's clone, or at `DIVINEBILLING_SEO_SOURCE`. It then writes `/guides/*` and `llms.txt` with
+the English and Afrikaans catalog. Nothing here needs copying or patching into DivineBilling. The freeze
+sets `BILLALL_MARKETING_URL=https://divinebilling.online` so these pages use the apex host.
+
+The manual steps below are the older way and are kept for reference:
 
 1. In a DivineBilling checkout, copy `files/` and `tests/` from here over the repo, then
    `git apply seo-source/divinebilling-changes.patch` (it applied cleanly to DivineBilling v2.10.350),
