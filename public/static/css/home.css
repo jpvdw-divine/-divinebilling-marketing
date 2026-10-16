@@ -49,7 +49,7 @@
 .h-btn--brand { background: var(--brand); color: #fff; }
 .h-btn--brand:hover { background: var(--brand-hover); }
 .h-btn--line { border-color: var(--line-2); color: var(--ink); background: var(--surface); }
-.h-btn--line:hover { border-color: var(--ink-3); }
+.h-btn--line:hover { background: var(--brand); border-color: var(--brand); color: #fff; }
 .h-btn--night { border-color: rgba(255,255,255,.22); color: var(--night-fg); background: rgba(255,255,255,.04); }
 .h-btn--night:hover { border-color: rgba(255,255,255,.5); }
 
