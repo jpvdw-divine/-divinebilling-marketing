@@ -60,19 +60,19 @@
   radial-gradient(40% 40% at 10% 100%, rgba(25,192,138,.10), transparent 70%); }
 .h-night::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 34px); mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); }
 
-.h-hero { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); gap: 64px; align-items: center; padding-block: 88px 104px; }
+.h-hero { display: grid; grid-template-columns: minmax(0, .48fr) minmax(0, .52fr); gap: 64px; align-items: center; padding-block: 72px 80px; }
 .h-hero__tag { display: inline-flex; align-items: center; gap: 10px; font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--sky); }
 .h-hero__tag i { width: 26px; height: 1px; background: currentColor; }
-/* Logo on a soft white glow that fades into the navy. The logo art has a white ground, so the
-   image and video multiply onto the glow: white reads as white in the core and as navy at the rim. */
-.h-logo { position: relative; width: 400px; height: 280px; max-width: calc(100% + 56px); margin: -40px 0 -44px -76px; overflow: hidden;
-  background: radial-gradient(ellipse 50% 50% at 50% 50%, #fff 46%, rgba(255,255,255,.9) 58%, rgba(255,255,255,.45) 76%, rgba(255,255,255,.12) 90%, rgba(255,255,255,0) 100%); }
-.h-logo .hero__logo-img, .h-logo .hero__logo-video { inset: auto; left: 50%; top: 50%; width: 250px; height: 373px; object-fit: cover; object-position: 50% 50%; transform: translate(-50%, -57%); mix-blend-mode: multiply; }
+/* Transparent lockup, same left edge as the headline. No white plate. */
+.h-logo { position: relative; width: min(320px, 100%); height: auto; margin: 0; }
+.h-logo .hero__logo-img { position: static; inset: auto; display: block; width: 100%; height: auto; object-fit: contain; transform: none; mix-blend-mode: normal; -webkit-mask-image: none; mask-image: none; }
+.h-logo .hero__logo-video { display: none; }
+.h-logo.hero__film.is-playing .hero__logo-img { visibility: visible; }
 .h-strip__tag { color: var(--brand-text); padding-top: 26px; }
-.h-hero h1 { color: var(--night-fg); font-size: clamp(44px, 5.4vw, 72px); line-height: .98; letter-spacing: -0.045em; margin: 24px 0 26px; font-weight: 750; }
+.h-hero h1 { color: var(--night-fg); font-size: clamp(48px, 5.8vw, 84px); line-height: .98; letter-spacing: -0.045em; margin: 64px 0 26px; font-weight: 750; }
 .h-hero h1 span { display: block; }
 .h-hero h1 .h-lit { color: var(--sky); }
-.h-hero__lede { font-size: 19px; line-height: 1.55; max-width: 31em; color: var(--night-fg-2); }
+.h-hero__lede { font-size: 21px; line-height: 1.55; max-width: 31em; color: var(--night-fg-2); }
 .h-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
 .h-hero__meta { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 30px; font: 400 13px/1.4 var(--f-mono); color: var(--night-fg-2); }
 .h-hero__meta span::before { content: "— "; color: var(--mint); }
@@ -224,9 +224,14 @@
 .h-seg em { font-style: normal; color: var(--paid); margin-left: 6px; font-size: 12px; }
 .h-seg button[aria-pressed="true"] em { color: var(--mint); }
 .h-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 22px; background: var(--surface); overflow: hidden; }
-.h-plan { padding: 32px; display: grid; gap: 20px; align-content: start; }
+.h-plan { position: relative; padding: 32px; display: grid; gap: 20px; align-content: start; cursor: pointer; transition: background .16s ease; }
+.h-plan:hover { background: #E7EEF8; }
+.h-plan:focus-visible { outline: 2px solid var(--brand); outline-offset: -2px; }
 .h-plan + .h-plan { border-left: 1px solid var(--line); }
+.h-plan.is-selected::after { content: ""; position: absolute; inset: 0; border: 2px solid var(--brand); pointer-events: none; }
+.h-plan--hi.is-selected::after { border-color: var(--sky); }
 .h-plan--hi { background: var(--night); color: var(--night-fg-2); }
+.h-plan--hi:hover { background: #121A34; }
 .h-plan--hi h3, .h-plan--hi .h-amt, .h-plan--hi li { color: var(--night-fg); }
 .h-plan__name { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .h-plan h3 { font-size: 22px; }
@@ -295,9 +300,9 @@
 }
 @media (max-width: 700px) {
   .h-hero { padding-block: 56px 72px; }
-  .h-hero__lede { font-size: 17px; }
-  .h-logo { width: 320px; height: 224px; margin: -30px 0 -34px -64px; }
-  .h-logo .hero__logo-img, .h-logo .hero__logo-video { width: 200px; height: 298px; }
+  .h-hero__lede { font-size: 18px; }
+  .h-hero h1 { margin-top: 40px; }
+  .h-logo { width: min(240px, 100%); }
   .h-invoice { padding: 22px 18px 20px; transform: none; }
   .h-example { transform: none; right: 10px; }
   .h-stamp { left: 18px; bottom: 22px; font-size: 22px; }

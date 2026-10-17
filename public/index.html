@@ -157,7 +157,7 @@
   <header class="h-wrap h-hero">
     <div>
       <div class="hero__film h-logo" aria-label="DivineBilling">
-        <img class="hero__logo-img" src="/static/img/divinebilling-logo.jpg" width="360" height="255" alt="DivineBilling">
+        <img class="hero__logo-img" src="/static/img/divinebilling-logo-hero.png" width="320" height="308" alt="DivineBilling">
         <video class="hero__logo-video" muted loop playsinline preload="none">
           <source data-src="/static/video/divinebilling-logo-move.mp4" type="video/mp4">
         </video>
@@ -365,9 +365,9 @@
       </div>
     </div>
     
-    <div class="h-plans">
+    <div class="h-plans" role="radiogroup" aria-label="Plans">
       
-      <div class="h-plan">
+      <div class="h-plan" role="radio" tabindex="0" aria-checked="false">
         <div class="h-plan__name"><h3>Basic</h3></div>
         <p class="h-for">A solo owner getting billing in order.</p>
         <div class="h-amt" data-m="99">R 99<small data-per>/month</small></div>
@@ -382,7 +382,7 @@
         <a class="h-btn h-btn--line" href="https://divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
       </div>
       
-      <div class="h-plan h-plan--hi">
+      <div class="h-plan h-plan--hi is-selected" role="radio" tabindex="0" aria-checked="true">
         <div class="h-plan__name"><h3>Standard</h3><span class="h-flag" data-af="Gewildste">Most popular</span></div>
         <p class="h-for">Small teams running two or three companies.</p>
         <div class="h-amt" data-m="695">R 695<small data-per>/month</small></div>
@@ -397,7 +397,7 @@
         <a class="h-btn h-btn--brand" href="https://divinebilling.online/get-started" data-af="Begin gratis proeftydperk">Start free trial</a>
       </div>
       
-      <div class="h-plan">
+      <div class="h-plan" role="radio" tabindex="0" aria-checked="false">
         <div class="h-plan__name"><h3>Professional</h3></div>
         <p class="h-for">Agencies and groups that want everything.</p>
         <div class="h-amt" data-m="1295">R 1 295<small data-per>/month</small></div>
@@ -746,6 +746,29 @@
   }
   bm.addEventListener('click', function () { setPeriod(false); });
   ba.addEventListener('click', function () { setPeriod(true); });
+})();
+(function () {
+  document.querySelectorAll('.h-plans').forEach(function (group) {
+    var plans = group.querySelectorAll('.h-plan');
+    function select(plan) {
+      plans.forEach(function (item) {
+        var on = item === plan;
+        item.classList.toggle('is-selected', on);
+        item.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+    }
+    plans.forEach(function (plan) {
+      plan.addEventListener('click', function (event) {
+        if (event.target.closest('a, button')) return;
+        select(plan);
+      });
+      plan.addEventListener('keydown', function (event) {
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        select(plan);
+      });
+    });
+  });
 })();
 </script>
 
