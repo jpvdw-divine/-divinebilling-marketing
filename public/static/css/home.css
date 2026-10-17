@@ -60,14 +60,14 @@
   radial-gradient(40% 40% at 10% 100%, rgba(25,192,138,.10), transparent 70%); }
 .h-night::after { content: ""; position: absolute; inset: 0; z-index: -1; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 34px); mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent); }
 
-.h-hero { display: grid; grid-template-columns: minmax(0, .48fr) minmax(0, .52fr); gap: 64px; align-items: center; padding-block: 72px 80px; }
+.h-hero { display: grid; grid-template-columns: minmax(0, .48fr) minmax(0, .52fr); gap: 64px; align-items: center; padding-block: 40px 56px; }
 .h-hero__tag { display: inline-flex; align-items: center; gap: 10px; font: 500 12px/1 var(--f-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--sky); }
 .h-hero__tag i { width: 26px; height: 1px; background: currentColor; }
 /* Brand lockup: vector mark drawn for the navy hero plus live wordmark text. */
 .h-brand { display: inline-flex; align-items: center; gap: 18px; }
-.h-brand__mark { width: 84px; height: 84px; flex: none; overflow: visible; filter: drop-shadow(0 12px 28px rgba(47,107,255,.38)); }
+.h-brand__mark { width: 68px; height: 68px; flex: none; overflow: visible; filter: drop-shadow(0 12px 28px rgba(47,107,255,.38)); }
 .h-brand__text { display: grid; gap: 9px; }
-.h-brand__word { font: 600 34px/1 var(--f-body); letter-spacing: -0.025em; color: var(--night-fg); }
+.h-brand__word { font: 600 29px/1 var(--f-body); letter-spacing: -0.025em; color: var(--night-fg); }
 .h-brand__word b { font-weight: 600; color: #5B97FF; }
 .h-brand__tag { display: inline-flex; align-items: center; gap: 10px; font: 500 10.5px/1 var(--f-mono); letter-spacing: .18em; text-transform: uppercase; color: var(--night-fg-2); white-space: nowrap; }
 .h-brand__tag::before { content: ""; width: 22px; height: 1px; background: currentColor; opacity: .6; }
@@ -86,12 +86,12 @@
   @keyframes hb-fade { from { opacity: 0; transform: translateX(-6px); } to { opacity: 1; transform: none; } }
 }
 .h-strip__tag { color: var(--brand-text); padding-top: 26px; }
-.h-hero h1 { color: var(--night-fg); font-size: clamp(48px, 5.8vw, 84px); line-height: .98; letter-spacing: -0.045em; margin: 44px 0 26px; font-weight: 750; }
+.h-hero h1 { color: var(--night-fg); font-size: clamp(44px, 4.6vw, 66px); line-height: .98; letter-spacing: -0.045em; margin: 30px 0 20px; font-weight: 750; }
 .h-hero h1 span { display: block; }
 .h-hero h1 .h-lit { color: var(--sky); }
-.h-hero__lede { font-size: 21px; line-height: 1.55; max-width: 31em; color: var(--night-fg-2); }
-.h-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
-.h-hero__meta { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 30px; font: 400 13px/1.4 var(--f-mono); color: var(--night-fg-2); }
+.h-hero__lede { font-size: 18px; line-height: 1.55; max-width: 31em; color: var(--night-fg-2); }
+.h-hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.h-hero__meta { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 22px; font: 400 13px/1.4 var(--f-mono); color: var(--night-fg-2); }
 .h-hero__meta span::before { content: "— "; color: var(--mint); }
 
 /* the invoice */
