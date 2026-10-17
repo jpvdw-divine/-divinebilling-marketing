@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.474">
+  <link rel="stylesheet" href="/static/css/marketing.css?v=2.10.495">
   
 
   <script type="application/ld+json">
@@ -69,7 +69,7 @@
 
   
 </head>
-<body>
+<body class="page-v2">
   <nav class="nav">
     <div class="wrap nav__in">
       
@@ -132,6 +132,7 @@
       </div>
       
     </div>
+    
     <div class="nav__mobile" id="nav-mobile" hidden>
       <div class="wrap">
         <a href="/solutions" data-af="Bedrywe">Industries</a>
@@ -147,6 +148,7 @@
         </div>
       </div>
     </div>
+    
   </nav>
 
   
@@ -303,7 +305,7 @@
   <div class="wrap">
     <div class="section__head">
       <h2 data-af="Prys in een reël">Pricing in one line</h2>
-      <p>Pay for office seats. Contractors and field staff use the portal free — unlimited, on every plan. From R99/pm ex VAT.</p>
+      <p>Pay for office seats. Contractors and field staff use the portal free — unlimited, on every plan. From R99/month ex VAT.</p>
     </div>
     <a class="btn btn--ghost" href="/pricing" data-af="Sien volle pryse">See full pricing</a>
   </div>
@@ -364,7 +366,7 @@
         </div>
         <div>
           <h3 data-af="Departemente">Departments</h3>
-          <ul>
+          <ul class="foot__split">
             <li><a href="/solutions" data-af="Alle departemente">All departments</a></li>
             
             <li><a href="/solutions/finance" data-af="Finansies">Finance</a></li>
@@ -410,6 +412,8 @@
             <li><a href="/compare" data-af="Vergelyk">Compare</a></li>
             <li><a href="/roadmap" data-af="Padkaart">Roadmap</a></li>
             <li><a href="https://demo.divinebilling.online/demo/launch" data-af="Demo">Demo</a></li>
+            <li><a href="/#contact" data-af="Kontak">Contact</a></li>
+            <li><a href="/become-a-reseller" data-af="Word ’n herverkoper">Become a reseller</a></li>
           </ul>
         </div>
         <div>
@@ -458,12 +462,12 @@
         <button type="button" class="db-chat__follow-btn" data-af="Vra die span om op te volg">Ask the team to follow up</button>
       </div>
       <form class="db-chat__follow" hidden>
-        <input name="name" type="text" autocomplete="name" placeholder="Name">
-        <input name="email" type="email" autocomplete="email" placeholder="Email" required>
-        <input name="phone" type="tel" autocomplete="tel" placeholder="Phone (optional)">
-        <input name="company" type="text" autocomplete="organization" placeholder="Company">
-        <input name="interest" type="text" placeholder="Module or department (optional)">
-        <textarea name="note" rows="2" placeholder="What should we follow up on?"></textarea>
+        <label class="db-chat__field"><span data-af="Naam">Name</span><input name="name" type="text" autocomplete="name"></label>
+        <label class="db-chat__field"><span data-af="E-pos *">Email *</span><input name="email" type="email" autocomplete="email" required></label>
+        <label class="db-chat__field"><span data-af="Telefoon (opsioneel)">Phone (optional)</span><input name="phone" type="tel" autocomplete="tel"></label>
+        <label class="db-chat__field"><span data-af="Maatskappy">Company</span><input name="company" type="text" autocomplete="organization"></label>
+        <label class="db-chat__field"><span data-af="Module of departement (opsioneel)">Module or department (optional)</span><input name="interest" type="text"></label>
+        <label class="db-chat__field"><span data-af="Waaroor moet ons opvolg?">What should we follow up on?</span><textarea name="note" rows="2"></textarea></label>
         <button type="submit" data-af="Stuur">Send to the team</button>
       </form>
       <form class="db-chat__form">
@@ -549,6 +553,20 @@
         mobileNav.hidden = open;
       });
     }
+    // The sticky "Start free trial" bar hides while a page's own trial buttons or
+    // price table are on screen, so phones don't show the same button twice.
+    var sticky = document.querySelector('.sticky-cta');
+    var ctaZones = document.querySelectorAll('.h-hero__cta, .hero__cta, #pricing, #pricing-tiers, .h-end__btns, form[action$="/signup"]');
+    if (sticky && ctaZones.length && 'IntersectionObserver' in window) {
+      var onScreen = new Set();
+      var watch = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) onScreen.add(entry.target); else onScreen.delete(entry.target);
+        });
+        sticky.classList.toggle('is-hidden', onScreen.size > 0);
+      });
+      ctaZones.forEach(function (el) { watch.observe(el); });
+    }
     document.querySelectorAll('.nav__drop-btn').forEach(function (b) {
       b.addEventListener('click', function () {
         var open = b.getAttribute('aria-expanded') === 'true';
@@ -558,7 +576,8 @@
     });
   })();
   </script>
-  <script src="/static/js/public-chat.js?v=2.10.426"></script>
+  <script src="/static/js/public-chat.js?v=2.10.495"></script>
+  <script src="/static/js/form-thanks.js?v=2.10.495"></script>
   
 </body>
 </html>

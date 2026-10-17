@@ -91,8 +91,8 @@ ul { margin: 0; padding: 0; }
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
-.nav__in { display: flex; align-items: center; gap: 28px; height: 60px; }
-.nav__links { display: flex; gap: 22px; font-size: 14px; color: var(--ink-2); align-items: center; }
+.nav__in { display: flex; align-items: center; gap: 20px; height: 60px; }
+.nav__links { display: flex; gap: 14px; font-size: 14px; color: var(--ink-2); align-items: center; }
 .nav__links a:hover, .nav__links a.is-active { color: var(--ink); }
 .nav__end { margin-left: auto; display: flex; align-items: center; gap: 10px; }
 .nav__drop { position: relative; }
@@ -703,8 +703,12 @@ a.stat:hover { border-color: var(--ink-3); }
 
 /* ---------- footer ---------- */
 .foot { background: var(--panel-bg); color: var(--panel-ink-2); padding: 56px 0 28px; margin-top: auto; }
-.foot__grid { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 0.9fr 0.9fr; gap: 28px; }
-@media (max-width: 980px) { .foot__grid { grid-template-columns: 1fr 1fr; } }
+.foot__grid { display: grid; grid-template-columns: 1.3fr 0.9fr 1.6fr 0.95fr 0.85fr; gap: 28px; }
+.foot__split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+@media (max-width: 980px) {
+  .foot__grid { grid-template-columns: 1fr 1fr; }
+  .foot__split { grid-template-columns: 1fr; }
+}
 .foot h3 { color: var(--panel-ink); font-size: 12px; font-weight: 500; letter-spacing: var(--track); margin-bottom: 12px; }
 .foot ul { list-style: none; display: grid; gap: 8px; }
 .foot li, .foot p { font-size: 13px; color: var(--panel-ink-2); line-height: 1.55; }
@@ -1138,3 +1142,94 @@ a.stat:hover { border-color: var(--ink-3); }
 .foot__bar { border-top-color: var(--chrome-line); margin-top: 48px; padding-top: 22px; font: 400 12px/1.5 var(--chrome-mono); color: var(--chrome-fg-3); }
 .foot__lang { color: var(--chrome-fg-2); }
 .foot__lang:hover { color: var(--chrome-fg); }
+
+/* ---------- floating bars ---------- */
+/* The chat pill sits bottom-right; keep the footer bar (and its language link) clear of it. */
+@media (min-width: 801px) { .foot { padding-bottom: 96px; } }
+/* Sticky trial bar slides away while the page's own trial buttons or prices are on screen. */
+.sticky-cta { transition: transform .2s ease, visibility .2s; }
+.sticky-cta.is-hidden { transform: translateY(110%); visibility: hidden; }
+
+/* ---------- chat follow-up form: visible labels ---------- */
+.db-chat__follow { max-height: 62%; overflow-y: auto; }
+.db-chat__field { display: grid; gap: 4px; font-size: 12px; font-weight: 500; color: var(--ink-2, #4D5870); }
+.db-chat__field input, .db-chat__field textarea { font-weight: 400; color: var(--ink, #0A1226); }
+
+/* ---------- v2 inner pages: the home page's type, navy hero band and pill buttons ----------
+   Opt-in with body class "page-v2" (pricing, sign-up, industry pages). Same palette as home.css. */
+.page-v2 {
+  --v2-night: #070D1D;
+  --v2-night-line: #1C2848;
+  --v2-night-fg: #F2F5FB;
+  --v2-night-fg-2: #9AA6C2;
+  --v2-sky: #8CB4FF;
+  --v2-bg: #F4F6F9;
+  --v2-ink: #0A1226;
+  --v2-ink-2: #4D5870;
+  --v2-ink-3: #5F6880;
+  --v2-line: #E1E5EC;
+  --v2-display: "Bricolage Grotesque", "Arial Narrow", Arial, sans-serif;
+  --v2-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --v2-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  background: var(--v2-bg);
+  color: var(--v2-ink-2);
+  font-family: var(--v2-body);
+}
+.page-v2 :is(h1, h2, h3) { font-family: var(--v2-display); color: var(--v2-ink); font-weight: 700; letter-spacing: -0.03em; text-wrap: balance; }
+.page-v2 h2 { font-size: clamp(30px, 3.8vw, 44px); line-height: 1.05; letter-spacing: -0.035em; }
+.page-v2 h3 { font-size: 19px; letter-spacing: -0.02em; }
+.page-v2 .mono { font-family: var(--v2-mono); letter-spacing: 0; }
+.page-v2 :is(.btn, .ba-btn) { font-family: var(--v2-body); font-weight: 600; border-radius: 999px; }
+.page-v2 :is(.hero, .page-head, .section) .btn:not(.btn--sm), .page-v2 .ba-contact-submit { height: 48px; padding: 0 22px; font-size: 15px; }
+
+/* navy hero band */
+.page-v2 :is(.hero, .page-head, .v2-band) { position: relative; isolation: isolate; overflow: hidden; background: var(--v2-night); color: var(--v2-night-fg-2); border-bottom: 0; }
+.page-v2 :is(.hero, .page-head, .v2-band)::before { content: ""; position: absolute; inset: 0; z-index: -1; background:
+  radial-gradient(60% 70% at 85% 15%, rgba(31,95,224,.30), transparent 70%),
+  radial-gradient(40% 50% at 5% 100%, rgba(25,192,138,.10), transparent 70%); }
+.page-v2 .hero { padding: 88px 0 80px; }
+.page-v2 .page-head { padding: 80px 0 64px; }
+.page-v2 :is(.hero, .page-head, .v2-band) h1 { color: var(--v2-night-fg); font-weight: 750; line-height: 1; letter-spacing: -0.045em; }
+.page-v2 .hero h1 { font-size: clamp(38px, 5vw, 64px); max-width: 20ch; }
+.page-v2 :is(.hero p.lede, .page-head__sub, .v2-band .sub) { color: var(--v2-night-fg-2); font-size: 18px; }
+.page-v2 :is(.hero, .page-head, .v2-band) strong { color: var(--v2-night-fg); }
+.page-v2 :is(.hero, .page-head) :is(.hero__note, .trust-strip) { color: var(--v2-night-fg-2); }
+.page-v2 :is(.hero, .page-head, .v2-band) :is(.eyebrow, .ba-modules-eyebrow) { background: none; padding: 0; border-radius: 0; margin-bottom: 22px; color: var(--v2-sky); font: 500 12px/1 var(--v2-mono); letter-spacing: .1em; text-transform: uppercase; }
+.page-v2 :is(.hero, .page-head) .btn--ghost { background: rgba(255,255,255,.04); color: var(--v2-night-fg); border: 1px solid rgba(255,255,255,.22); }
+.page-v2 :is(.hero, .page-head) .btn--ghost:hover { border-color: rgba(255,255,255,.5); }
+.page-v2 .page-head .toggle { background: rgba(255,255,255,.06); border: 1px solid var(--v2-night-line); }
+.page-v2 .page-head .billing-btn { color: var(--v2-night-fg-2); font: 600 14px/1 var(--v2-body); padding: 10px 18px; }
+.page-v2 .page-head .billing-btn.is-active { background: var(--v2-night-fg); color: var(--v2-night); box-shadow: none; }
+.page-v2 .page-head .toggle .save { color: #19C08A; }
+
+/* sections and cards */
+.page-v2 .section { border-top-color: var(--v2-line); }
+.page-v2 .section--wash { background: #fff; }
+.page-v2 .section__head p, .page-v2 .steps, .page-v2 .contact-points { color: var(--v2-ink-2); }
+.page-v2 .built-for { font: 600 clamp(22px, 2.6vw, 30px)/1.25 var(--v2-display); color: var(--v2-ink); letter-spacing: -0.02em; max-width: 34ch; }
+.page-v2 :is(.feature, .card, .tier, .ba-contact-form) { border-color: var(--v2-line); border-radius: 20px; }
+.page-v2 .feature { padding: 24px; }
+.page-v2 .feature summary { font: 600 17px/1.35 var(--v2-display); color: var(--v2-ink); letter-spacing: -0.01em; }
+.page-v2 .tier { padding: 28px 22px 22px; }
+.page-v2 .tier--featured { border: 1.5px solid var(--accent); }
+.page-v2 .tier__name { font: 700 20px/1.2 var(--v2-display); color: var(--v2-ink); letter-spacing: -0.02em; }
+.page-v2 .tier__amt { font: 750 40px/1 var(--v2-display); color: var(--v2-ink); letter-spacing: -0.04em; margin-bottom: 6px; }
+.page-v2 .tier__unit { font: 400 14px/1 var(--v2-body); letter-spacing: 0; }
+.page-v2 .tier__flag { font: 500 10px/1 var(--v2-mono); letter-spacing: .08em; text-transform: uppercase; padding: 5px 10px; }
+.page-v2 .tier__flag--intro { position: static; display: inline-block; margin: 0 0 12px; background: #DFF5EC; color: #0B7A57; text-transform: none; letter-spacing: 0; font: 600 12px/1.3 var(--v2-body); }
+.page-v2 .compare-table thead th { font: 500 11px/1.2 var(--v2-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--v2-ink); }
+.page-v2 :is(.fine, .cta-note, .tier__setup) { color: var(--v2-ink-3); }
+
+/* sign-up */
+.page-v2 .v2-band .ba-getstarted-hero { padding: 80px 24px 72px; }
+.page-v2 .v2-band .ba-getstarted-hero h1 { font-size: clamp(36px, 4.6vw, 56px); margin-bottom: 14px; }
+.page-v2 .ba-contact-signup { margin-top: 48px; }
+.page-v2 .ba-contact-form { padding: 28px; }
+.page-v2 .ba-form-group label { color: var(--v2-ink); }
+.page-v2 .ba-form-control { border-radius: 12px; font-family: var(--v2-body); }
+.page-v2 .ba-consent a, .page-v2 .ba-signup-alt a { color: var(--accent-text); }
+@media (max-width: 700px) {
+  .page-v2 .hero, .page-v2 .page-head { padding: 56px 0 52px; }
+  .page-v2 .v2-band .ba-getstarted-hero { padding: 56px 20px 48px; }
+  .page-v2 :is(.hero p.lede, .page-head__sub, .v2-band .sub) { font-size: 17px; }
+}
