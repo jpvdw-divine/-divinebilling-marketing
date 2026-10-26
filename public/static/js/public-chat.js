@@ -24,7 +24,7 @@
   function add(role, content) {
     var el = document.createElement('div');
     el.className = 'db-chat__bubble db-chat__bubble--' + (role || 'assistant');
-    var who = role === 'user' ? 'You' : 'DivineBilling';
+    var who = role === 'user' ? 'You' : 'AI Frikki';
     el.innerHTML = '<span class="db-chat__who">' + who + '</span>' + formatText(content);
     thread.appendChild(el);
     thread.scrollTop = thread.scrollHeight;
@@ -48,7 +48,7 @@
     });
   }
 
-  add('assistant', 'Assistant V2.0 — ask what any module does, compare plans, or book a demo. Leave an email if you want the team to follow up.');
+  add('assistant', 'AI Frikki — ask what any module does, compare plans, or book a demo. Leave an email if you want the team to follow up.');
 
   root.querySelectorAll('[data-ask]').forEach(function (btn) {
     btn.addEventListener('click', function () {
