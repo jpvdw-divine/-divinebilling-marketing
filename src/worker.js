@@ -153,6 +153,13 @@ export default {
     if (!env.ASSETS) {
       return new Response("Marketing assets are not bound", { status: 500 });
     }
+    // Always serve the frozen homepage for `/` (and `/index`). Do not fall
+    // through to the platform origin — that process redirects `/` to SysAdmin
+    // `/admin/` when the marketing-host guard is missing.
+    if (path === "/" || path === "/index" || path === "/index.html") {
+      const homeUrl = new URL("/index.html", url.origin);
+      return env.ASSETS.fetch(new Request(homeUrl.toString(), request));
+    }
     return env.ASSETS.fetch(request);
   },
 };
